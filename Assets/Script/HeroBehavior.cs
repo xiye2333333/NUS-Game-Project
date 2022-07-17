@@ -5,19 +5,29 @@ using UnityEngine.UI;
 
 public class HeroBehavior : MonoBehaviour
 {
-    public int HP;
-
-    public int MaxHP;
+    public int HP ;
 
     public int MP;
 
-    public int MaxMP;
-
+    public int HPCeil;
+    
+    public int MPCeil;
+    
     public int Attack;
 
-    public int Defence;
+    public int Defense;
 
-    public int Money = 100;
+    public int Money;
+    
+    public int Wood;
+    
+    public int Stone;
+
+    public int Iron;
+    
+    public int Gem;
+
+    public int Level;
 
     public float Speed = 0.1f;
 
@@ -32,18 +42,35 @@ public class HeroBehavior : MonoBehaviour
     private float mFightAt = 0f;
 
     public float roundTime = 1f;
+    
+    private int currentAttack = 0;
+
+    private float timeSinceAttack = 0.0f;
+
+    private Animator mAnimator;
+
+    private bool death = false;
+
+    private int loopCnt = 0;
+
     private GameObject StartCamp;
+
     private Vector3 StartPosition;
+    
     // Start is called before the first frame update
     void Start()
     {
-        HP = 100;
-        MaxHP = 100;
-        MP = 50;
-        MaxMP = 50;
-        Attack = 5;
-        Defence = 1;
-        
+        // HP = 100;
+        // HPCeil = 100;
+        // MP = 25;
+        // MPCeil = 50;
+        // Attack = 5;
+        // Defense = 1;
+        // Wood = 80;
+        // Stone = 80;
+        // Iron = 50;
+        // Gem = 5;
+
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;
         // initialize the monsters queue
@@ -53,18 +80,22 @@ public class HeroBehavior : MonoBehaviour
         // deactivate the freeze (not move)
         freeze = false;
 
-        mFightAt = Time.time;
+        mFightAt = 0;
         roundTime = 1f;
+        mAnimator = GetComponent<Animator>();
+        mAnimator.SetBool("Grounded",true);
+
         StartCamp = GameObject.Find("StartCamp");
         StartPosition.x = StartCamp.transform.position.x;
         StartPosition.y = this.transform.position.y;
         StartPosition.z = this.transform.position.z;
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        mFightAt+= Time.deltaTime;
         if(!freeze){
             Vector3 position = GetComponent<Transform>().position;
             position += Vector3.right * Speed * Time.smoothDeltaTime;
@@ -84,10 +115,18 @@ public class HeroBehavior : MonoBehaviour
         }
         #region Fight
         if (isFight){           
-            if ((Time.time - mFightAt) > roundTime){
+            mAnimator.SetInteger("AnimState", 0);
+            if (mFightAt > roundTime)
+            {
+                currentAttack++;
+                if (currentAttack > 3)
+                    currentAttack = 1;
 
+                if (mFightAt > 1.5f)
+                    currentAttack = 1;
                 #region HeroRound
                 Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+                mAnimator.SetTrigger("Attack"+currentAttack);
                 #endregion
 
                 #region MonsterRound
@@ -98,25 +137,40 @@ public class HeroBehavior : MonoBehaviour
                 }
                 #endregion
 
-                mFightAt = Time.time;
+                if (HP <= 0)
+                {
+                    // Death();
+                    EndFight();
+                    death = true;
+                }
+                mFightAt = 0;
             }
             
         }
         #endregion
 
-        HpBarSlider.value = (float) HP / (MaxHP*1.0f);
+        else if (!isFight && !death)
+        {
+            mAnimator.SetInteger("AnimState", 1);
+        }else if (death && loopCnt == 0)
+        {
+            mAnimator.SetTrigger("Death");
+            loopCnt++;
+            GameManager.getGM.SwitchToPause();
+        }
+        HpBarSlider.value = (float) HP / (HPCeil*1.0f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Monster"){
+        if(other.gameObject.tag == "Monster"){
             Monsters.Enqueue(other.gameObject);
             StartFight();
         }
         if (other.gameObject.tag == "EndCamp"){
             this.transform.position = StartPosition;
-            this.HP = MaxHP;
-            this.MP = MaxMP;
+            this.HP = HPCeil;
+            this.MP = MPCeil;
             TimeManager.getTM.TimePass();
         }
     }
@@ -132,10 +186,10 @@ public class HeroBehavior : MonoBehaviour
     }
 
     void isHit(int demage){
-        if (demage < Defence){
+        if (demage < Defense){
             return;
         }
-        HP -= (demage - Defence);
+        HP -= (demage - Defense);
     }
 
 }

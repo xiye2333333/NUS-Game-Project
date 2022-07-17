@@ -44,7 +44,6 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -94,13 +93,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 4106967144069191874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6a9c6ce7a7c488bbe57deb7fdb027f7, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a50bd319bfe82f45821fe23266af143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   price: 0
   Hero: {fileID: 0}
   Info: 
   BuildingInfo: {fileID: 0}
+  money: 0
+  wood: 0
+  stone: 0
+  iron: 0
+  gem: 0
+  level: 0
+  name: 
+  money: 20
+  attack: 5
+  defense: 10
+  hp: 5
+  mp: 10
+  award: 10
+  num: 1
+  day: 0
+  name: Hunted House
 --- !u!61 &1593243852778453693
 BoxCollider2D:
   m_ObjectHideFlags: 0

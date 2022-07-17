@@ -16,6 +16,7 @@ public class CameraBehavior : MonoBehaviour
     {
         Vector3 heroPosition = Hero.transform.position;
         heroPosition.z = -10;
+        heroPosition.y = 1.88f;
         // GetComponent<Transform>().position = heroPosition;
         // Camera camera = GetComponent<Camera>();
         // Debug.Log(camera.);
@@ -23,6 +24,15 @@ public class CameraBehavior : MonoBehaviour
         if (heroPosition.x >= -21)
         {
             transform.position = heroPosition;
+        }
+
+        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause){
+            if (Input.GetKey(KeyCode.A)){
+
+            }
+            if (Input.GetKey(KeyCode.D)){
+                
+            }
         }
     }
 }

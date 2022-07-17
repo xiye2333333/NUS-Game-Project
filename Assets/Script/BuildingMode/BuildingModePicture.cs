@@ -12,14 +12,23 @@ public class BuildingModePicture : MonoBehaviour
 
     private SpriteRenderer sp;
 
-    public int price;
+    public BuildMenu BuildMenu;
 
+    // public int price;
+
+    public int money = 0;
+    public int wood = 0;
+    public int stone = 0;
+    public int iron = 0;
+    public int gem = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
         Hero = GameObject.Find("Hero");
         sp = GetComponent<SpriteRenderer>();
         sp.color = Color.clear;
+        BuildMenu = GameObject.Find("Build Menu").GetComponent<BuildMenu>();
     }
 
     // Update is called once per frame
@@ -33,7 +42,7 @@ public class BuildingModePicture : MonoBehaviour
         mousePosition.y = 0;
         transform.position = mousePosition;
 
-        if (PositionIsValid())
+        if (PositionIsValid() && CanPurchase())
         {
             Color color = new Color();
             color = Color.green;
@@ -44,10 +53,15 @@ public class BuildingModePicture : MonoBehaviour
                 //弹出确认窗口
                 //Assets/Resources/Prefab/PF Village Props - Well.prefab
                 GameObject target = Instantiate(Resources.Load("Prefab/" + targetName) as GameObject);
+                //Debug.Log(target.name);
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
-                GameManager.getGM.SwitchBuildingToRunning();
-                Hero.GetComponent<HeroBehavior>().Money -= price;
+                GameManager.getGM.SwitchToRunning();
+                Purchase();
+                foreach (GameObject button in BuildMenu.Buttons)
+                {
+                    button.gameObject.SetActive(true);
+                }
                 Destroy(gameObject);
             }
         }
@@ -63,7 +77,7 @@ public class BuildingModePicture : MonoBehaviour
     public bool PositionIsValid()
     {
         ArrayList buildings = GameManager.getGM.Buildings; //GameObject
-        // Debug.Log(buildings.Capacity);
+        // Debug.Log(buildings.Count);
         // Debug.Log(GetComponent<SpriteRenderer>().bounds.max.x);
         foreach (GameObject building in buildings)
         {
@@ -77,5 +91,25 @@ public class BuildingModePicture : MonoBehaviour
         }
 
         return true;
+    }
+    
+    public bool CanPurchase()
+    {
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().Money >= money &&
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().Wood >= wood &&
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().Stone >= stone &&
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().Iron >= iron &&
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem >= gem)
+            return true;
+        return false;
+    }
+
+    public void Purchase()
+    {
+        Hero.GetComponent<HeroBehavior>().Money -= money;
+        Hero.GetComponent<HeroBehavior>().Wood -= wood;
+        Hero.GetComponent<HeroBehavior>().Stone -= stone;
+        Hero.GetComponent<HeroBehavior>().Iron -= iron;
+        Hero.GetComponent<HeroBehavior>().Gem -= gem;
     }
 }

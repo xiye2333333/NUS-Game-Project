@@ -38,22 +38,30 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)){
+            if (_gameStatus == GameStatus.Pause)
+                SwitchToRunning();
+            else if (_gameStatus == GameStatus.Running)
+                SwitchToPause();
+        }
     }
 
-    public void SwitchRunningToPause()
+    public GameStatus GetGameStatus(){
+        return _gameStatus;
+    }
+    public void SwitchToPause()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Pause;
     }
 
-    public void SwitchRunningToBuilding()
+    public void SwitchToBuilding()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Building;
     }
 
-    public void SwitchBuildingToRunning()
+    public void SwitchToRunning()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 1f;
         _gameStatus = GameStatus.Running;
