@@ -47,7 +47,7 @@ public class CameraBehavior : MonoBehaviour
             }
         }
 
-        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
+        if (GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Running)
         {
             Vector3 tmp = transform.position +
                           Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);

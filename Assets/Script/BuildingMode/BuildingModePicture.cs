@@ -56,6 +56,7 @@ public class BuildingModePicture : MonoBehaviour
                 //Debug.Log(target.name);
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
+                if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
                 GameManager.getGM.SwitchToRunning();
                 Purchase();
                 foreach (GameObject button in BuildMenu.Buttons)
@@ -70,6 +71,7 @@ public class BuildingModePicture : MonoBehaviour
                     button.gameObject.SetActive(true);
                 }
                 Destroy(gameObject);
+                if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
                 GameManager.getGM.SwitchToRunning();
             }
         }
