@@ -8,12 +8,18 @@ public class BuildingModePicture : MonoBehaviour
 {
     public string targetName = null;
 
-    public GameObject Hero; 
+    public GameObject Hero;
+
+    private SpriteRenderer sp;
+
+    public int price;
 
     // Start is called before the first frame update
     void Start()
     {
         Hero = GameObject.Find("Hero");
+        sp = GetComponent<SpriteRenderer>();
+        sp.color = Color.clear;
     }
 
     // Update is called once per frame
@@ -27,16 +33,49 @@ public class BuildingModePicture : MonoBehaviour
         mousePosition.y = 0;
         transform.position = mousePosition;
 
-        if (Input.GetMouseButtonDown(0))
+        if (PositionIsValid())
         {
-            //弹出确认窗口
-            //Assets/Resources/Prefab/PF Village Props - Well.prefab
-            GameObject Hunter = Instantiate(Resources.Load("Prefab/PF Village Props - Well") as GameObject);
-            Hunter.transform.position = transform.position;
-            GameManager.getGM.SwitchBuildingToRunning();
-            Hero.GetComponent<HeroBehavior>().Money -= 10;
-            
-            Destroy(gameObject);
+            Color color = new Color();
+            color = Color.green;
+            color.a = 0.5f;
+            sp.color = color;
+            if (Input.GetMouseButtonDown(0))
+            {
+                //弹出确认窗口
+                //Assets/Resources/Prefab/PF Village Props - Well.prefab
+                GameObject target = Instantiate(Resources.Load("Prefab/" + targetName) as GameObject);
+                GameManager.getGM.Buildings.Add(target);
+                target.transform.position = transform.position;
+                GameManager.getGM.SwitchBuildingToRunning();
+                Hero.GetComponent<HeroBehavior>().Money -= price;
+                Destroy(gameObject);
+            }
         }
+        else
+        {
+            Color color = new Color();
+            color = Color.red;
+            color.a = 0.5f;
+            sp.color = color;
+        }
+    }
+
+    public bool PositionIsValid()
+    {
+        ArrayList buildings = GameManager.getGM.Buildings; //GameObject
+        // Debug.Log(buildings.Capacity);
+        // Debug.Log(GetComponent<SpriteRenderer>().bounds.max.x);
+        foreach (GameObject building in buildings)
+        {
+            // Vector3 position = building.transform.position;
+            Bounds otherBounds = building.GetComponent<SpriteRenderer>().bounds;
+            Bounds thisBounds = GetComponent<SpriteRenderer>().bounds;
+            if (otherBounds.max.x > thisBounds.min.x && otherBounds.min.x < thisBounds.max.x)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

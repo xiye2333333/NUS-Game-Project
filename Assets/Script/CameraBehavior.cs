@@ -16,6 +16,13 @@ public class CameraBehavior : MonoBehaviour
     {
         Vector3 heroPosition = Hero.transform.position;
         heroPosition.z = -10;
-        GetComponent<Transform>().position = heroPosition;
+        // GetComponent<Transform>().position = heroPosition;
+        // Camera camera = GetComponent<Camera>();
+        // Debug.Log(camera.);
+        // Debug.Log(camera.rect.xMax);
+        if (heroPosition.x >= -21)
+        {
+            transform.position = heroPosition;
+        }
     }
 }

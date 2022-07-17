@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     private GameObject Hero;
 
     private GameStatus _gameStatus = GameStatus.Running;
+
+    private ArrayList buildings = new ArrayList();//type: GameObject
     public enum GameStatus
     {
         Pause,
@@ -55,5 +57,11 @@ public class GameManager : MonoBehaviour
     {
         Hero.GetComponent<HeroBehavior>().Speed = 1f;
         _gameStatus = GameStatus.Running;
+    }
+
+    public ArrayList Buildings
+    {
+        get => buildings;
+        set => buildings = value;
     }
 }
