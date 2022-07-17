@@ -5,6 +5,23 @@ using UnityEngine;
 public class CameraBehavior : MonoBehaviour
 {
     public GameObject Hero;
+    Vector3 heroPosition;
+
+    private float cameraSpeed = 20f;
+
+    private static CameraBehavior cb;
+
+    public static CameraBehavior getCB{
+        get{
+            return cb;
+        }
+    }
+
+    private void Awake()
+    {
+        cb = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,25 +31,25 @@ public class CameraBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 heroPosition = Hero.transform.position;
         heroPosition.z = -10;
         heroPosition.y = 1.88f;
         // GetComponent<Transform>().position = heroPosition;
         // Camera camera = GetComponent<Camera>();
         // Debug.Log(camera.);
         // Debug.Log(camera.rect.xMax);
-        if (heroPosition.x >= -21)
+        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
         {
-            transform.position = heroPosition;
+            FollowHero();
         }
 
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause){
-            if (Input.GetKey(KeyCode.A)){
-
-            }
-            if (Input.GetKey(KeyCode.D)){
-                
-            }
+            transform.position += Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
         }
+    }
+
+    public void FollowHero(){
+        heroPosition = Hero.transform.position;
+        heroPosition.z -= 1f;
+        this.transform.position = heroPosition;
     }
 }

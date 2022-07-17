@@ -60,16 +60,16 @@ public class HeroBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // HP = 100;
-        // HPCeil = 100;
-        // MP = 25;
-        // MPCeil = 50;
-        // Attack = 5;
-        // Defense = 1;
-        // Wood = 80;
-        // Stone = 80;
-        // Iron = 50;
-        // Gem = 5;
+        HP = 100;
+        HPCeil = 100;
+        MP = 50;
+        MPCeil = 50;
+        Attack = 5;
+        Defense = 1;
+        Wood = 80;
+        Stone = 80;
+        Iron = 50;
+        Gem = 5;
 
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;
@@ -159,6 +159,10 @@ public class HeroBehavior : MonoBehaviour
             GameManager.getGM.SwitchToPause();
         }
         HpBarSlider.value = (float) HP / (HPCeil*1.0f);
+
+        if (Input.GetKeyDown(KeyCode.H)){
+            BackHome();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -168,13 +172,18 @@ public class HeroBehavior : MonoBehaviour
             StartFight();
         }
         if (other.gameObject.tag == "EndCamp"){
-            this.transform.position = StartPosition;
-            this.HP = HPCeil;
-            this.MP = MPCeil;
-            TimeManager.getTM.TimePass();
+            BackHome();
         }
     }
 
+    public void BackHome(){
+        this.transform.position = StartPosition;
+        this.HP = HPCeil;
+        this.MP = MPCeil;
+        CameraBehavior.getCB.FollowHero();
+        GameManager.getGM.SwitchToPause();
+        TimeManager.getTM.TimePass();
+    }
     void StartFight(){
         freeze = true;
         isFight = true;

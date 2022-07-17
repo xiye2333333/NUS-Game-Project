@@ -9,16 +9,22 @@ public class TimeManager : MonoBehaviour
     public int GlobalDay = 1;
     private GameObject Hero;
     private static TimeManager tm;
+
+    private GameObject DayText;
+    private void Awake()
+    {
+        tm = this;
+    }
+
     void Start()
     {
-        Hero = GameObject.Find("Hero");
+        DayText = GameObject.Find("DayText");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        
+        DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
     }
 
     public static TimeManager getTM{
@@ -28,8 +34,5 @@ public class TimeManager : MonoBehaviour
     }
     public void TimePass(){
         GlobalDay++;
-    }
-    public string TimeMassege(){
-        return "Day: " + GlobalDay;
     }
 }
