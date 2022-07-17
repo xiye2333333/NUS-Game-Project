@@ -64,6 +64,14 @@ public class BuildingModePicture : MonoBehaviour
                 }
                 Destroy(gameObject);
             }
+            if (Input.GetMouseButtonDown(1)){
+                foreach (GameObject button in BuildMenu.Buttons)
+                {
+                    button.gameObject.SetActive(true);
+                }
+                Destroy(gameObject);
+                GameManager.getGM.SwitchToRunning();
+            }
         }
         else
         {
