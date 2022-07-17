@@ -7,24 +7,29 @@ using UnityEngine.UI;
 public class HeroStatusBehavior : MonoBehaviour
 {
     private GameObject MoneyText;
-    
+
     private GameObject WoodText;
 
     private GameObject StoneText;
-    
+
     private GameObject IronText;
-    
+
     private GameObject GemText;
-    
+
     private GameObject AttackText;
-    
+
     private GameObject DefenseText;
 
     private GameObject Hero;
 
     private GameObject HP;
-    
+
     private GameObject MP;
+
+    private GameObject HPText;
+
+    private GameObject MPText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +43,9 @@ public class HeroStatusBehavior : MonoBehaviour
         Hero = GameObject.Find("Hero");
         HP = GameObject.Find("HP");
         MP = GameObject.Find("MP");
+        HPText = GameObject.Find("HPtext");
+        MPText = GameObject.Find("MPtext");
+
     }
 
     // Update is called once per frame
@@ -60,10 +68,13 @@ public class HeroStatusBehavior : MonoBehaviour
 
         int HPNumber = Hero.GetComponent<HeroBehavior>().HP;
         int MaxHPNumber = Hero.GetComponent<HeroBehavior>().HPCeil;
-        HP.GetComponent<Slider>().value = (float)HPNumber / MaxHPNumber;
-        
+        HP.GetComponent<Slider>().value = (float) HPNumber / MaxHPNumber;
+
         int MPNumber = Hero.GetComponent<HeroBehavior>().MP;
         int MaxMPNumber = Hero.GetComponent<HeroBehavior>().MPCeil;
-        MP.GetComponent<Slider>().value = (float)MPNumber / MaxMPNumber;
+        MP.GetComponent<Slider>().value = (float) MPNumber / MaxMPNumber;
+        
+        HPText.GetComponent<Text>().text = "HP: " + HPNumber + "/" + MaxHPNumber;
+        MPText.GetComponent<Text>().text = "MP: " + MPNumber + "/" + MaxMPNumber;
     }
 }

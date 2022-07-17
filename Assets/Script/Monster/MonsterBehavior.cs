@@ -42,6 +42,8 @@ public class MonsterBehavior : MonoBehaviour
     {
         if (HP <= 0){
             Destroy(gameObject);
+            Hero.GetComponent<HeroBehavior>().Wood += 2;
+            Hero.GetComponent<HeroBehavior>().Stone += 2;
             Hero.GetComponent<HeroBehavior>().Money += 50;
         }
         FindDirection();

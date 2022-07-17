@@ -180,7 +180,8 @@ public class HeroBehavior : MonoBehaviour
         this.transform.position = StartPosition;
         this.HP = HPCeil;
         this.MP = MPCeil;
-        CameraBehavior.getCB.FollowHero();
+        //CameraBehavior.getCB.FollowHero();
+        CameraBehavior.getCB.BackHome();
         GameManager.getGM.SwitchToPause();
         TimeManager.getTM.TimePass();
     }
