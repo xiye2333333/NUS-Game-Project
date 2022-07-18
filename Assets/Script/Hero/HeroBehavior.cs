@@ -181,7 +181,7 @@ public class HeroBehavior : MonoBehaviour
         this.HP = HPCeil;
         this.MP = MPCeil;
         //CameraBehavior.getCB.FollowHero();
-        CameraBehavior.getCB.BackHome();
+        CameraBehavior.getCB.BackLeftHome();
         GameManager.getGM.SwitchToPause();
         TimeManager.getTM.TimePass();
     }

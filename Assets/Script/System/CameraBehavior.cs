@@ -42,8 +42,11 @@ public class CameraBehavior : MonoBehaviour
             {
                 FollowHero();
             }
+            else if (heroPosition.x <= -21){
+                BackLeftHome();
+            }
             else{
-                BackHome();
+                BackRightHome();
             }
         }
 
@@ -66,8 +69,13 @@ public class CameraBehavior : MonoBehaviour
         this.transform.position = heroPosition;
     }
 
-    public void BackHome()
+    public void BackLeftHome()
     {
         transform.position = new Vector3(-21f, 1.88f, -10f);
+    }
+
+    public void BackRightHome()
+    {
+        transform.position = new Vector3(21f, 1.88f, -10f);
     }
 }
