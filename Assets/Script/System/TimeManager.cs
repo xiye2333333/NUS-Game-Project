@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    public int GlobalDay = 1;
+    public int GlobalDay;
     private GameObject Hero;
     private static TimeManager tm;
 
@@ -19,6 +19,7 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         DayText = GameObject.Find("DayText");
+        GlobalDay = 1;
     }
 
     // Update is called once per frame
@@ -32,7 +33,12 @@ public class TimeManager : MonoBehaviour
             return tm;
         }
     }
+
     public void TimePass(){
         GlobalDay++;
+    }
+
+    public int getTime(){
+        return GlobalDay;
     }
 }

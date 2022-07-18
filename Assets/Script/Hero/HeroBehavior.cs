@@ -56,6 +56,8 @@ public class HeroBehavior : MonoBehaviour
     private GameObject StartCamp;
 
     private Vector3 StartPosition;
+
+    private bool isBoss = false;
     
     // Start is called before the first frame update
     void Start()
@@ -125,7 +127,10 @@ public class HeroBehavior : MonoBehaviour
                 if (mFightAt > 1.5f)
                     currentAttack = 1;
                 #region HeroRound
-                Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+                if (!isBoss)
+                    Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+                else
+                    Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
                 mAnimator.SetTrigger("Attack"+currentAttack);
                 #endregion
 
@@ -133,7 +138,10 @@ public class HeroBehavior : MonoBehaviour
                 foreach( GameObject M in Monsters )
                 {
                     if(M != null)
-                        isHit(M.GetComponent<MonsterBehavior>().Attack);
+                        if (!isBoss)
+                            isHit(M.GetComponent<MonsterBehavior>().Attack);
+                        else
+                            isHit(M.GetComponent<BossBehavior>().Attack);
                 }
                 #endregion
 
@@ -168,6 +176,10 @@ public class HeroBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.tag == "Monster"){
+            if (other.gameObject.name == "Boss")
+                isBoss = true;
+            else
+                isBoss = false;
             Monsters.Enqueue(other.gameObject);
             StartFight();
         }
