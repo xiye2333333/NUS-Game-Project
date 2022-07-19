@@ -24,7 +24,8 @@ public class GameManager : MonoBehaviour
         Pause,
         Running,
         Building,
-        Upgrading
+        Upgrading,
+        Bagging
     }
 
     private void Awake()
@@ -72,6 +73,13 @@ public class GameManager : MonoBehaviour
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Upgrading;
+    }
+
+    public void SwitchToBagging()
+    {
+        Hero.GetComponent<HeroBehavior>().Speed = 0f;
+        Boss.GetComponent<BossBehavior>().Speed = 0f;
+        _gameStatus = GameStatus.Bagging;
     }
 
     public void SwitchToRunning()

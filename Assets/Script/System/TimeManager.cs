@@ -48,5 +48,12 @@ public class TimeManager : MonoBehaviour
         if (GlobalDay % 5 == 0)
             MonsterNum++;
         MonsterUpd = GlobalDay / 2;
+        
+        if (GlobalDay % 1 == 0)// suppose to be 5
+        {//Assets/Resources/Prefab/Store.prefab
+            GameObject Store = Instantiate(Resources.Load("Prefab/Store") as GameObject);
+            Vector3 v = new Vector3(-26.7f, 0.62f, 0);
+            Store.transform.position = v;
+        }
     }
 }

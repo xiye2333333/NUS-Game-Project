@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.Staff;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -58,6 +59,12 @@ public class HeroBehavior : MonoBehaviour
     private Vector3 StartPosition;
 
     private bool isBoss = false;
+
+    public ArrayList EquipmentBag = new ArrayList();
+
+    public ArrayList ItemBag = new ArrayList();
+
+    public Weapon Weapon;
     
     // Start is called before the first frame update
     void Start()
@@ -98,7 +105,7 @@ public class HeroBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mFightAt+= Time.deltaTime;
+        mFightAt += Time.deltaTime;
         if(!freeze){
             Vector3 position = GetComponent<Transform>().position;
             position += Vector3.right * Speed * Time.smoothDeltaTime;

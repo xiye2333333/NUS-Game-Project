@@ -42,7 +42,7 @@ public class source_wood_2 : Building
     {
         if (level == 2)
         {
-            if (!BuildMenu.BuildingFlag)
+            if (!BuildMenu.BuildingFlag && GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Bagging)
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
                     GameManager.getGM.SwitchToUpgrading();

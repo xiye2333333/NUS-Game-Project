@@ -54,7 +54,7 @@ public class supply_hp_1 : Building
     {
         if (level == 1)
         {
-            if (!BuildMenu.BuildingFlag)
+            if (!BuildMenu.BuildingFlag && GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Bagging)
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
                     GameManager.getGM.SwitchToUpgrading();
@@ -71,7 +71,7 @@ public class supply_hp_1 : Building
 
         if (level == 2)
         {
-            if (!BuildMenu.BuildingFlag)
+            if (!BuildMenu.BuildingFlag && GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Bagging)
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
                     GameManager.getGM.SwitchToUpgrading();

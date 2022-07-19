@@ -18,7 +18,7 @@ public class BuildMenu : MonoBehaviour
     
     public Sprite Treasure;
 
-    public GameObject[] Buttons = new GameObject[6];//0:Hunter,1:HpRecover,2:HpStatue,3:AttackEquip,4:WoodSource,5:Treasure
+    public GameObject[] Buttons = new GameObject[7];//0:Hunter,1:HpRecover,2:HpStatue,3:AttackEquip,4:WoodSource,5:Treasure
     // Start is called before the first frame update
     void Start()
     {
@@ -137,5 +137,12 @@ public class BuildMenu : MonoBehaviour
             button.gameObject.SetActive(false);
         }
         SwitchToBuildMode();
+    }
+
+    public void ClickBackButton()
+    {
+        GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }
