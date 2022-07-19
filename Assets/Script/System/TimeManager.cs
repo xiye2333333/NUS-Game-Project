@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour
 {
-    public int GlobalDay;
+    public static int GlobalDay;
+    public static int BossDay;
+    public static int MonsterNum;
+    public static int MonsterUpd;
     private GameObject Hero;
+    private GameObject Boss;
     private static TimeManager tm;
 
     private GameObject DayText;
@@ -19,13 +23,18 @@ public class TimeManager : MonoBehaviour
     void Start()
     {
         DayText = GameObject.Find("DayText");
+        Boss = GameObject.Find("Boss");
         GlobalDay = 1;
+        BossDay = 10;
+        MonsterNum = 1;
+        MonsterUpd = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
+        Boss.SetActive((GlobalDay >= BossDay) ? true : false);
     }
 
     public static TimeManager getTM{
@@ -36,9 +45,8 @@ public class TimeManager : MonoBehaviour
 
     public void TimePass(){
         GlobalDay++;
-    }
-
-    public int getTime(){
-        return GlobalDay;
+        if (GlobalDay % 5 == 0)
+            MonsterNum++;
+        MonsterUpd = GlobalDay / 2;
     }
 }

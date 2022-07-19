@@ -28,20 +28,20 @@ public class equip_attack_1 : Building
     {
     }
 
-    void Upgrade()
-    {
-        if (CanUpgrade())
-        {
-            GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
-            Purchase();
-            attack = 4;
-            money = 1000;
-            wood = 50;
-            stone = 50;
-            iron = 10;
-            gem = 0;
-            name = "Attack Equipment "+ level;
-            level++;//3//4
-        }
-    }
+    // void Upgrade()
+    // {
+    //     if (CanUpgrade())
+    //     {
+    //         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
+    //         Purchase();
+    //         attack = 4;
+    //         money = 1000;
+    //         wood = 50;
+    //         stone = 50;
+    //         iron = 10;
+    //         gem = 0;
+    //         name = "Attack Equipment "+ level;
+    //         level++;//3//4
+    //     }
+    // }
 }

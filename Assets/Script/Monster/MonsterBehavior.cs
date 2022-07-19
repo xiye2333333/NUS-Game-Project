@@ -8,33 +8,37 @@ public class MonsterBehavior : MonoBehaviour
     public GameObject Hero;
 
     public int HP;
-
     public int MaxHP;
-
     public int Attack;
-
     public int Defence;
-
     public float Speed;
-
     public float Critical;
 
     public Slider HpBarSlider;
-
     public int Direction;
-
     public bool freeze;
+
+    public int Wood;
+    public int Stone;
+    public int Money;
+
+    public int Upd;
+
     // Start is called before the first frame update
     void Start()
     {
-        HP = 10;
-        MaxHP = 10;
-        Attack = 5;
-        Defence = 1;
+        Upd = TimeManager.MonsterUpd;
+        HP = 10 + Upd;
+        MaxHP = 10 + Upd;
+        Attack = 5 + Upd;
+        Defence = 1 + Upd;
         Speed = 2.0f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze  = false;
+        Wood = 2 + Upd;
+        Stone = 2 + Upd;
+        Money = 50 + 10 * Upd;
     }
 
     // Update is called once per frame
@@ -42,9 +46,9 @@ public class MonsterBehavior : MonoBehaviour
     {
         if (HP <= 0){
             Destroy(gameObject);
-            Hero.GetComponent<HeroBehavior>().Wood += 2;
-            Hero.GetComponent<HeroBehavior>().Stone += 2;
-            Hero.GetComponent<HeroBehavior>().Money += 50;
+            Hero.GetComponent<HeroBehavior>().Wood += Wood;
+            Hero.GetComponent<HeroBehavior>().Stone += Stone;
+            Hero.GetComponent<HeroBehavior>().Money += Money;
         }
         FindDirection();
         if(!freeze){

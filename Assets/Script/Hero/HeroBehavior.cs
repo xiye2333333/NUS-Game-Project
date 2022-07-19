@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HeroBehavior : MonoBehaviour
 {
-    public int HP ;
+    public int HP;
 
     public int MP;
 
@@ -72,6 +72,7 @@ public class HeroBehavior : MonoBehaviour
         Stone = 80;
         Iron = 50;
         Gem = 5;
+        Level = 3;
 
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;

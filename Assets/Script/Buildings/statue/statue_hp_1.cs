@@ -30,21 +30,21 @@ public class statue_hp_1 : Building
     }
 
 
-    void Upgrade()
-    {
-        if (CanUpgrade())
-        {
-            GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
-            Purchase();
-            hpCeil = 30;
-            money = 1500;
-            wood = 50;
-            stone = 0;
-            iron = 20;
-            gem = 2;
-            name = "HP Statue "+ level;
-            level++;//3//4
-            
-        }
-    }
+    // void Upgrade()
+    // {
+    //     if (CanUpgrade())
+    //     {
+    //         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
+    //         Purchase();
+    //         hpCeil = 30;
+    //         money = 1500;
+    //         wood = 50;
+    //         stone = 0;
+    //         iron = 20;
+    //         gem = 2;
+    //         name = "HP Statue "+ level;
+    //         level++;//3//4
+    //         
+    //     }
+    // }
 }

@@ -64,6 +64,7 @@ public class BuildingModePicture : MonoBehaviour
                     button.gameObject.SetActive(true);
                 }
                 Destroy(gameObject);
+                BuildMenu.BuildingFlag = false;
             }
         }
         else
@@ -79,6 +80,7 @@ public class BuildingModePicture : MonoBehaviour
                     button.gameObject.SetActive(true);
                 }
                 Destroy(gameObject);
+                BuildMenu.BuildingFlag = false;
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
                 GameManager.getGM.SwitchToRunning();
             }

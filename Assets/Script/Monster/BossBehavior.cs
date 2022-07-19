@@ -15,10 +15,6 @@ public class BossBehavior : MonoBehaviour
 
     public int Defence;
 
-    public int TrigDay;
-
-    public int CurrentDay;
-
     public float Speed;
 
     public float Critical;
@@ -29,8 +25,6 @@ public class BossBehavior : MonoBehaviour
 
     public bool freeze;
 
-    public bool visibility;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -38,26 +32,18 @@ public class BossBehavior : MonoBehaviour
         MaxHP = 10000;
         Attack = 500;
         Defence = 100;
-        TrigDay = 5;
-        CurrentDay = 1;
         Speed = 2.0f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze  = false;
-        visibility = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        CurrentDay = TimeManager.getTM.getTime();
-        if (CurrentDay >= TrigDay)
-            visibility = true;
-        gameObject.SetActive(visibility);
-
         if (HP <= 0){
             Destroy(gameObject);
-            Hero.GetComponent<HeroBehavior>().Money += 50;
+            Hero.GetComponent<HeroBehavior>().Money += 50000;
         }
         FindDirection();
         if(!freeze){

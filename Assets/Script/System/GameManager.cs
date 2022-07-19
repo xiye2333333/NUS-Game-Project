@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     }
     private GameObject Hero;
 
+    private GameObject Boss;
+
     private GameStatus _gameStatus = GameStatus.Running;
 
     private ArrayList buildings = new ArrayList();//type: GameObject
@@ -21,7 +23,8 @@ public class GameManager : MonoBehaviour
     {
         Pause,
         Running,
-        Building
+        Building,
+        Upgrading
     }
 
     private void Awake()
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Hero = GameObject.Find("Hero");
+        Boss = GameObject.Find("Boss");
     }
 
     // Update is called once per frame
@@ -52,18 +56,28 @@ public class GameManager : MonoBehaviour
     public void SwitchToPause()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
+        Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Pause;
     }
 
     public void SwitchToBuilding()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
+        Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Building;
+    }
+
+    public void SwitchToUpgrading()
+    {
+        Hero.GetComponent<HeroBehavior>().Speed = 0f;
+        Boss.GetComponent<BossBehavior>().Speed = 0f;
+        _gameStatus = GameStatus.Upgrading;
     }
 
     public void SwitchToRunning()
     {
         Hero.GetComponent<HeroBehavior>().Speed = 1f;
+        Boss.GetComponent<BossBehavior>().Speed = 2f;
         _gameStatus = GameStatus.Running;
     }
 

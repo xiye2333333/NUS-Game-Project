@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BuildMenu : MonoBehaviour
 {
+    public static bool BuildingFlag;
+
     public Sprite Hunter;
 
     public Sprite HpRecover;
@@ -20,7 +22,7 @@ public class BuildMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        BuildingFlag = false;
     }
 
     // Update is called once per frame
@@ -32,12 +34,13 @@ public class BuildMenu : MonoBehaviour
     private void SwitchToBuildMode()
     {
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
-        GameManager.getGM.SwitchToBuilding();
+            GameManager.getGM.SwitchToBuilding();
     }
 
     //Event function
     public void ClickHunterButton()
     {
+        BuildingFlag = true;
         GameObject HunterPicture = new GameObject("Hunter Picture");
         HunterPicture.AddComponent<SpriteRenderer>();
         HunterPicture.GetComponent<SpriteRenderer>().sprite = Hunter;
@@ -53,6 +56,7 @@ public class BuildMenu : MonoBehaviour
 
     public void ClickHpRecoverButton()
     {
+        BuildingFlag = true;
         GameObject HpRecoverPicture = new GameObject("HpRecover Picture");
         HpRecoverPicture.AddComponent<SpriteRenderer>();
         HpRecoverPicture.GetComponent<SpriteRenderer>().sprite = HpRecover;
@@ -70,6 +74,7 @@ public class BuildMenu : MonoBehaviour
     
     public void ClickHpStatueButton()
     {
+        BuildingFlag = true;
         GameObject HpStatuePicture = new GameObject("HpStatue Picture");
         HpStatuePicture.AddComponent<SpriteRenderer>();
         HpStatuePicture.GetComponent<SpriteRenderer>().sprite = HpStatue;
@@ -86,6 +91,7 @@ public class BuildMenu : MonoBehaviour
     
     public void ClickAttackEquipButton()
     {
+        BuildingFlag = true;
         GameObject AttackEquipPicture = new GameObject("AttackEquip Picture");
         AttackEquipPicture.AddComponent<SpriteRenderer>();
         AttackEquipPicture.GetComponent<SpriteRenderer>().sprite = AttackEquip;
@@ -102,6 +108,7 @@ public class BuildMenu : MonoBehaviour
     
     public void ClickWoodSourceButton()
     {
+        BuildingFlag = true;
         GameObject WoodSourcePicture = new GameObject("WoodSource Picture");
         WoodSourcePicture.AddComponent<SpriteRenderer>();
         WoodSourcePicture.GetComponent<SpriteRenderer>().sprite = WoodSource;
@@ -118,6 +125,7 @@ public class BuildMenu : MonoBehaviour
     
     public void ClickTreasureButton()
     {
+        BuildingFlag = true;
         GameObject TreasurePicture = new GameObject("Treasure Picture");
         TreasurePicture.AddComponent<SpriteRenderer>();
         TreasurePicture.GetComponent<SpriteRenderer>().sprite = Treasure;
