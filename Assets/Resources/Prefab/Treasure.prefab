@@ -149,7 +149,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.45050424}
+  m_Offset: {x: 0.004453376, y: 0.45050424}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -160,7 +160,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.8551296}
+  m_Size: {x: 0.8129581, y: 0.8551296}
   m_EdgeRadius: 0
 --- !u!114 &-1859210181885597476
 MonoBehaviour:
@@ -174,10 +174,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da99bbc37def26249b53511645c4dd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 0
-  Hero: {fileID: 0}
-  Info: 
-  BuildingInfo: {fileID: 0}
   money: 0
   wood: 0
   stone: 0
@@ -185,6 +181,8 @@ MonoBehaviour:
   gem: 0
   level: 0
   name: 
+  Info: 
+  BuildingInfo: {fileID: 0}
   addGem: 1
   day: 0
 --- !u!212 &1056184124663408074

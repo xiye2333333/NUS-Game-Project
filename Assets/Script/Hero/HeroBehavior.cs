@@ -75,10 +75,10 @@ public class HeroBehavior : MonoBehaviour
         MPCeil = 50;
         Attack = 5;
         Defense = 1;
-        Wood = 80;
-        Stone = 80;
-        Iron = 50;
-        Gem = 5;
+        Wood = 800;
+        Stone = 800;
+        Iron = 500;
+        Gem = 50;
         Level = 3;
 
         // set the initial Hp to be full

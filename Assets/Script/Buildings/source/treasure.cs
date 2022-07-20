@@ -14,7 +14,7 @@ public class treasure : Building
     {
         level = 3;
         name = "Treasure";
-        addGem = 0;
+        addGem = 1;
         Info = "Treasure: +1 gem every 3 days";
     }
 

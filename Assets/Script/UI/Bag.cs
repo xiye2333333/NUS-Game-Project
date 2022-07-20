@@ -28,6 +28,11 @@ public class Bag : MonoBehaviour
 
     public Sprite EquipmentBagBlockSprite;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        Hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
+    }
+
     void Start()
     {
         Hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
@@ -60,6 +65,7 @@ public class Bag : MonoBehaviour
 
     public void InitialEquipmentBag()
     {
+        Debug.Log(Hero.EquipmentBag.Count);
         for (int i = 0; i < Hero.EquipmentBag.Count; i++)
         {
             EquipmentBagBlock[i].GetComponent<Image>().sprite =
