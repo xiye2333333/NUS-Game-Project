@@ -92,7 +92,15 @@ public class UpgradingMode : MonoBehaviour
     public void StatusChange()
     {
         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP >=
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil += mpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().MP =
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Defense += defense;
     }

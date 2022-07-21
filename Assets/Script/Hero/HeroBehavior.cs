@@ -1,6 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using Script.Staff;
+using Script.Staff.Armor;
+using Script.Staff.Boot;
+using Script.Staff.Helmet;
+using Script.Staff.Shield;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,6 +69,14 @@ public class HeroBehavior : MonoBehaviour
     public ArrayList ItemBag = new ArrayList();
 
     public Weapon Weapon;
+
+    public Armor Armor;
+
+    public Boot Boot;
+
+    public Helmet Helmet;
+
+    public Shield Shield;
     
     // Start is called before the first frame update
     void Start()

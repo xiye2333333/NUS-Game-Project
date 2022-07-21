@@ -19,6 +19,10 @@ public class statue_mp_1 : Building
         mpCeil = -1;
         Info = "MP Statue 1: mpCeil-1";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil += mpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().MP =
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
     }
     
     void Update()

@@ -19,6 +19,10 @@ public class statue_hp_1 : Building
         hpCeil = 10;
         Info = "HP Statue 1: hpCeil+10";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP >=
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
     }
 
     // Update is called once per frame

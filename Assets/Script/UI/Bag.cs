@@ -25,19 +25,22 @@ public class Bag : MonoBehaviour
     public HeroBehavior Hero;
 
     public GameObject[] EquipmentBagBlock = new GameObject[12];
+    
+    public GameObject[] EquipmentBagBack = new GameObject[12];
 
     public Sprite EquipmentBagBlockSprite;
     // Start is called before the first frame update
     private void Awake()
     {
         Hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
+        Hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
+        UpdateText();
+        InitialEquipmentBag();
     }
 
     void Start()
     {
-        Hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
-        UpdateText();
-        InitialEquipmentBag();
+
         
     }
 
@@ -65,16 +68,18 @@ public class Bag : MonoBehaviour
 
     public void InitialEquipmentBag()
     {
-        Debug.Log(Hero.EquipmentBag.Count);
+        // Debug.Log(Hero.EquipmentBag.Count);
         for (int i = 0; i < Hero.EquipmentBag.Count; i++)
         {
             EquipmentBagBlock[i].GetComponent<Image>().sprite =
                 Resources.Load<Sprite>(((Equipment) Hero.EquipmentBag[i]).SpiritPath);
+            // EquipmentBagBlock[i].GetComponent<RectTransform>().sizeDelta = new Vector2(40, 40);
             EquipmentBagBlockBehavior blockBehavior = EquipmentBagBlock[i].AddComponent<EquipmentBagBlockBehavior>();
             blockBehavior.Equipment = (Equipment)Hero.EquipmentBag[i];
             blockBehavior.isPutOn = false;
             blockBehavior.selfSprite = EquipmentBagBlockSprite;
-            Debug.Log(((Equipment) Hero.EquipmentBag[i]).SpiritPath);
+            blockBehavior.back = EquipmentBagBack[i];
+            // Debug.Log(((Equipment) Hero.EquipmentBag[i]).SpiritPath);
         }
         
     }
@@ -99,5 +104,15 @@ public class Bag : MonoBehaviour
         if (GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Pause)
             GameManager.getGM.SwitchToRunning();
         gameObject.SetActive(false);
+    }
+
+    public void OnPointerEnterBlock(GameObject gameObject)
+    {
+        gameObject.GetComponent<Image>().color = new Color(109/255f, 205/255f, 205/255f, 255f);
+    }
+    
+    public void OnPointerExitBlock(GameObject gameObject)
+    {
+        gameObject.GetComponent<Image>().color = new Color(1, 1, 1, 1);
     }
 }
