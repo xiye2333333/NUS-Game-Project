@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 781603844722127386}
   - component: {fileID: 4570548038761219679}
   - component: {fileID: 8874462457969867979}
+  - component: {fileID: 8917425903186406360}
   m_Layer: 5
   m_Name: Armor2
   m_TagString: Untagged
@@ -108,7 +109,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -153,6 +154,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8917425903186406360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950747876998640910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterArmor2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickWoodArmor
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1091063324768565571
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +226,7 @@ GameObject:
   - component: {fileID: 3573696991757981284}
   - component: {fileID: 9112390200466688887}
   - component: {fileID: 7703919250846061682}
+  - component: {fileID: 1359406213200253248}
   m_Layer: 5
   m_Name: Boot2
   m_TagString: Untagged
@@ -183,7 +246,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 19
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -228,6 +291,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1359406213200253248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091063324768565571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterBoot2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickIronBoot
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1471513967191847564
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +446,7 @@ GameObject:
   - component: {fileID: 3770170467723103111}
   - component: {fileID: 1495795516047559827}
   - component: {fileID: 6946556689230847737}
+  - component: {fileID: 6586226330898571367}
   m_Layer: 5
   m_Name: Sword3
   m_TagString: Untagged
@@ -386,6 +511,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6586226330898571367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618402217760124700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterSword3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickIronSword
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1697474806671132502
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +602,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 22
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -491,7 +677,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 20
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -622,6 +808,7 @@ GameObject:
   - component: {fileID: 558962636595211246}
   - component: {fileID: 3689888624516123143}
   - component: {fileID: 8965836236140248757}
+  - component: {fileID: 7023579459935731625}
   m_Layer: 5
   m_Name: Boot1
   m_TagString: Untagged
@@ -641,7 +828,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 18
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -686,6 +873,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7023579459935731625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2561564016228817134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterBoot1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickLeatherBoots
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2722038606406187490
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,7 +964,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 23
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -772,6 +1020,7 @@ GameObject:
   - component: {fileID: 4251298672610865604}
   - component: {fileID: 7513106580106113382}
   - component: {fileID: 2723389104275242970}
+  - component: {fileID: 3644579632705407222}
   m_Layer: 5
   m_Name: Armor3
   m_TagString: Untagged
@@ -791,7 +1040,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 17
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -836,6 +1085,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3644579632705407222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2855310184279994574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterArmor3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickIronArmor
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &3001775146056281529
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,25 +1193,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StoreText: {fileID: 4762537236083503635}
-  Helm1: {fileID: 0}
-  Helm2: {fileID: 0}
-  Helm3: {fileID: 0}
-  Armor1: {fileID: 0}
-  Armor2: {fileID: 0}
-  Armor3: {fileID: 0}
-  Boot1: {fileID: 0}
-  Boot2: {fileID: 0}
-  Sword1: {fileID: 0}
-  Sword2: {fileID: 0}
-  Sword3: {fileID: 0}
-  Sword4: {fileID: 0}
-  Shield1: {fileID: 0}
-  Shield2: {fileID: 0}
-  Potion1: {fileID: 0}
-  Potion2: {fileID: 0}
+  Helm1: {fileID: 9014570540486580041}
+  Helm2: {fileID: 9014570541689036865}
+  Helm3: {fileID: 9014570541640084966}
+  Armor1: {fileID: 9014570540782014023}
+  Armor2: {fileID: 9014570540817929592}
+  Armor3: {fileID: 9014570541332471522}
+  Boot1: {fileID: 9014570539725040129}
+  Boot2: {fileID: 9014570540814457514}
+  Sword1: {fileID: 9014570539843249806}
+  Sword2: {fileID: 9014570541536829406}
+  Sword3: {fileID: 9014570540621214438}
+  Sword4: {fileID: 9014570540155288742}
+  Shield1: {fileID: 2151278113113431002}
+  Shield2: {fileID: 6794917028056026014}
+  Potion1: {fileID: 1697474806671132502}
+  Potion2: {fileID: 2722038606406187490}
   InfoPicture: {fileID: 4147364051694817662}
   InfoText: {fileID: 3881891189142776262}
   Hero: {fileID: 0}
+  CurrentObject: {fileID: 0}
 --- !u!1 &3314372926018307625
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,7 +1245,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 12
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1015,6 +1326,22 @@ MonoBehaviour:
         - m_Target: {fileID: 3135072923962233738}
           m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
           m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickLeatherHelmet
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1390,6 +1717,7 @@ GameObject:
   - component: {fileID: 1204455698180721395}
   - component: {fileID: 5987503932753499465}
   - component: {fileID: 2533641704498830704}
+  - component: {fileID: 8047826433555755538}
   m_Layer: 5
   m_Name: Shield2
   m_TagString: Untagged
@@ -1454,6 +1782,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8047826433555755538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4741419074291488196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterShield2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickIronShield
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4762537236083503635
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1930,7 @@ GameObject:
   - component: {fileID: 4262009233881652453}
   - component: {fileID: 2463151662028216784}
   - component: {fileID: 8448555370059604590}
+  - component: {fileID: 153668375776538221}
   m_Layer: 5
   m_Name: Helm2
   m_TagString: Untagged
@@ -1560,7 +1950,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 13
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1605,6 +1995,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &153668375776538221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5037600602197980928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterHelm2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickHelmet
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5224302478505629652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,6 +2231,7 @@ GameObject:
   - component: {fileID: 7934339085197114840}
   - component: {fileID: 5656114041590089037}
   - component: {fileID: 8032294028232758742}
+  - component: {fileID: 6062241278154657404}
   m_Layer: 5
   m_Name: Shield1
   m_TagString: Untagged
@@ -1844,6 +2296,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6062241278154657404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721183752294879362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterShield1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickWoodShield
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6794917028056026014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,7 +2387,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 21
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1930,6 +2443,7 @@ GameObject:
   - component: {fileID: 5996506141599369898}
   - component: {fileID: 6911538609408125163}
   - component: {fileID: 8936750249291111920}
+  - component: {fileID: 3457565443109555331}
   m_Layer: 5
   m_Name: Helm3
   m_TagString: Untagged
@@ -1949,7 +2463,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 14
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1994,6 +2508,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3457565443109555331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7107910036597410738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterHelm3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickIronHelmet
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7442981759486484100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2080,6 +2655,7 @@ GameObject:
   - component: {fileID: 7268548485370407736}
   - component: {fileID: 898622346789860458}
   - component: {fileID: 8895409064746389015}
+  - component: {fileID: 2547130559862950379}
   m_Layer: 5
   m_Name: Sword4
   m_TagString: Untagged
@@ -2144,6 +2720,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2547130559862950379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7603272942704222527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterSword4
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickGoldSword
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &7914907879891828838
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2792,7 @@ GameObject:
   - component: {fileID: 7690034179635058874}
   - component: {fileID: 1546220303851717204}
   - component: {fileID: 4210733387767336715}
+  - component: {fileID: 7785725474173433830}
   m_Layer: 5
   m_Name: Sword2
   m_TagString: Untagged
@@ -2219,6 +2857,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7785725474173433830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914907879891828838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterSword2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickWoodSword
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8385044327203395068
 GameObject:
   m_ObjectHideFlags: 0
@@ -2230,6 +2929,7 @@ GameObject:
   - component: {fileID: 2728912302329914285}
   - component: {fileID: 5376979156448805271}
   - component: {fileID: 3825573665693744126}
+  - component: {fileID: 89789184696968508}
   m_Layer: 5
   m_Name: Armor1
   m_TagString: Untagged
@@ -2249,7 +2949,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9014570540860141716}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2294,6 +2994,67 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &89789184696968508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8385044327203395068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: EnterArmor1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: ExitOneStaff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3135072923962233738}
+          m_TargetAssemblyTypeName: StoreBehavior, Assembly-CSharp
+          m_MethodName: OnClickLeatherArmor
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8475909667244065007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,10 +3556,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5263613956070882142, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263613956070882142, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5263613956070882142, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+--- !u!1 &9014570540814457514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955258037947, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570539843249806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613956434234015, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570541536829406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613954906862543, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570540621214438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613956205731575, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &9014570540860141716 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5263613955303578757, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570540817929592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955328489833, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570541640084966 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955077276151, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570540155288742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955739996343, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570540486580041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613956070882136, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570541689036865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955125840976, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570540782014023 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613955225461334, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570541332471522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613954702275315, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
+  m_PrefabInstance: {fileID: 3753236973746383889}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9014570539725040129 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5263613956315989520, guid: 6668362e08762d74d8475a357f188a9e, type: 3}
   m_PrefabInstance: {fileID: 3753236973746383889}
   m_PrefabAsset: {fileID: 0}

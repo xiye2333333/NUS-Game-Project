@@ -27,7 +27,7 @@ namespace Script.Store
         public static int Stone = 500;
         public static int Iron = 100;
         public static int Gem = 0;
-        public static string Info = "Add 50 attack";
+        public static string Info = "Add 80 attack";
     }
 
     public class GoldSwordPrice
@@ -37,7 +37,7 @@ namespace Script.Store
         public static int Stone = 1000;
         public static int Iron = 500;
         public static int Gem = 5;
-        public static string Info = "Add 200 attack";
+        public static string Info = "Add 300 attack";
     }
 
     public class LeatherHelmetPrice
@@ -47,7 +47,7 @@ namespace Script.Store
         public static int Stone = 0;
         public static int Iron = 0;
         public static int Gem = 0;
-        public static string Info = "Add 5 defence";
+        public static string Info = "Add 10 HP, Add 5 defence";
     }
 
     public class HelmetPrice
@@ -57,7 +57,7 @@ namespace Script.Store
         public static int Stone = 100;
         public static int Iron = 0;
         public static int Gem = 0;
-        public static string Info = "Add 15 defence";
+        public static string Info = "Add 50 HP, Add 15 defence";
     }
 
     public class IronHelmetPrice
@@ -67,7 +67,7 @@ namespace Script.Store
         public static int Stone = 200;
         public static int Iron = 100;
         public static int Gem = 1;
-        public static string Info = "Add 30 defence";
+        public static string Info = "Add 200 HP, Add 50 defence";
     }
 
     public class LeatherArmorPrice
@@ -77,7 +77,7 @@ namespace Script.Store
         public static int Stone = 0;
         public static int Iron = 0;
         public static int Gem = 0;
-        public static string Info = "Add 10 defence";
+        public static string Info = "Add 20 HP, Add 10 defence";
     }
 
     public class WoodArmorPrice
@@ -87,7 +87,7 @@ namespace Script.Store
         public static int Stone = 100;
         public static int Iron = 50;
         public static int Gem = 1;
-        public static string Info = "Add 30 defence";
+        public static string Info = "Add 100 HP, Add 50 defence";
     }
 
     public class IronArmorPrice
@@ -97,7 +97,7 @@ namespace Script.Store
         public static int Stone = 500;
         public static int Iron = 200;
         public static int Gem = 3;
-        public static string Info = "Add 80 defence";
+        public static string Info = "Add 500 HP, Add 200 defence";
     }
 
     public class LeatherBootPrice
@@ -107,7 +107,7 @@ namespace Script.Store
         public static int Stone = 0;
         public static int Iron = 0;
         public static int Gem = 0;
-        public static string Info = "Add 5 defence";
+        public static string Info = "Add 10 HP, Add 5 defence";
     }
 
     public class IronBootPrice
@@ -117,7 +117,7 @@ namespace Script.Store
         public static int Stone = 150;
         public static int Iron = 50;
         public static int Gem = 0;
-        public static string Info = "Add 20 defence";
+        public static string Info = "Add 100 HP, Add 50 defence";
     }
 
     public class WoodShieldPrice
@@ -137,7 +137,7 @@ namespace Script.Store
         public static int Stone = 500;
         public static int Iron = 200;
         public static int Gem = 2;
-        public static string Info = "Add 60 defence";
+        public static string Info = "Add 250 defence";
     }
 
     public class SmallPotionPrice
