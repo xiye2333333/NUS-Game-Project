@@ -46,7 +46,7 @@ public class HeroBehavior : MonoBehaviour
 
     private float mFightAt = 0f;
 
-    public float roundTime = 1f;
+    public float roundTime = 0.5f;
     
     private int currentAttack = 0;
 
@@ -77,6 +77,8 @@ public class HeroBehavior : MonoBehaviour
     public Helmet Helmet;
 
     public Shield Shield;
+
+    private bool heroRound;
     
     // Start is called before the first frame update
     void Start()
@@ -101,9 +103,11 @@ public class HeroBehavior : MonoBehaviour
         isFight = false;
         // deactivate the freeze (not move)
         freeze = false;
+        // set the hero attack first
+        heroRound = true;
 
         mFightAt = 0;
-        roundTime = 1f;
+        roundTime = 0.5f;
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("Grounded",true);
 
@@ -139,31 +143,38 @@ public class HeroBehavior : MonoBehaviour
         if (isFight){           
             mAnimator.SetInteger("AnimState", 0);
             if (mFightAt > roundTime)
-            {
-                currentAttack++;
-                if (currentAttack > 3)
-                    currentAttack = 1;
-
-                if (mFightAt > 1.5f)
-                    currentAttack = 1;
+            {   
                 #region HeroRound
-                if (!isBoss)
-                    Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
-                else
-                    Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
-                mAnimator.SetTrigger("Attack"+currentAttack);
-                #endregion
-
-                #region MonsterRound
-                foreach( GameObject M in Monsters )
-                {
-                    if(M != null)
-                        if (!isBoss)
-                            isHit(M.GetComponent<MonsterBehavior>().Attack);
-                        else
-                            isHit(M.GetComponent<BossBehavior>().Attack);
+                if(heroRound){
+                    currentAttack++;
+                    if (currentAttack > 3){
+                        currentAttack = 1;
+                    }
+                    if (mFightAt > 1.5f){
+                        currentAttack = 1;
+                    }
+                    if (!isBoss){
+                        Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+                    }
+                    else{
+                        Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
+                    } 
+                    mAnimator.SetTrigger("Attack"+currentAttack);
                 }
                 #endregion
+                #region MonsterRound
+                else{
+                    foreach( GameObject M in Monsters )
+                    {
+                        if(M != null)
+                            if (!isBoss)
+                                isHit(M.GetComponent<MonsterBehavior>().Attack);
+                            else
+                                isHit(M.GetComponent<BossBehavior>().Attack);
+                    }
+                }
+                #endregion
+                heroRound = !heroRound;
 
                 if (HP <= 0)
                 {
@@ -225,6 +236,7 @@ public class HeroBehavior : MonoBehaviour
     void EndFight(){
         freeze = false;
         isFight = false;
+        heroRound = true;
     }
 
     void isHit(int demage){

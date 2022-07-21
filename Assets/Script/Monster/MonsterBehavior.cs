@@ -23,6 +23,7 @@ public class MonsterBehavior : MonoBehaviour
     public int Money;
 
     public int Upd;
+    private Animator mAnimator;
 
     // Start is called before the first frame update
     void Start()
@@ -32,13 +33,16 @@ public class MonsterBehavior : MonoBehaviour
         MaxHP = 10 + Upd;
         Attack = 5 + Upd;
         Defence = 1 + Upd;
-        Speed = 2.0f;
+        Speed = 1.5f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze  = false;
         Wood = 2 + Upd;
         Stone = 2 + Upd;
         Money = 50 + 10 * Upd;
+
+        mAnimator = GetComponent<Animator>();
+        mAnimator.SetTrigger("run");
     }
 
     // Update is called once per frame
@@ -75,9 +79,11 @@ public class MonsterBehavior : MonoBehaviour
 
     public void Freeze(){
         freeze = true;
+        mAnimator.SetTrigger("stand");
     }
     public void DeFreeze(){
         freeze = false;
+        mAnimator.SetTrigger("run");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -88,9 +94,11 @@ public class MonsterBehavior : MonoBehaviour
     }
     
     public void isHit(int demage){
+
         if (demage < Defence){
             return;
         }
         HP -= (demage - Defence);
+        
     }
 }
