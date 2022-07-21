@@ -69,7 +69,7 @@ public class StoreBehavior : MonoBehaviour
     {
         if (Hero.transform.position.x > -16)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -620,5 +620,10 @@ public class StoreBehavior : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void DisableBlock(GameObject gameObject)//限制购买一次
+    {
+        gameObject.SetActive(false);
     }
 }

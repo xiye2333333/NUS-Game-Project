@@ -51,9 +51,12 @@ public class TimeManager : MonoBehaviour
         
         if (GlobalDay % 1 == 0)// suppose to be 5
         {//Assets/Resources/Prefab/Store.prefab
-            GameObject Store = Instantiate(Resources.Load("Prefab/Store") as GameObject);
+            // GameObject Store = Instantiate(Resources.Load("Prefab/Store") as GameObject);
+            GameObject StoreManager = GameObject.Find("StoreManager");
+            StoreManager.transform.Find("Store").gameObject.SetActive(true);
+            
             Vector3 v = new Vector3(-26.7f, 0.62f, 0);
-            Store.transform.position = v;
+            StoreManager.transform.Find("Store").position = v;
         }
     }
 }
