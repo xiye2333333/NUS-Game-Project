@@ -28,6 +28,7 @@ public class statue_defense_1 : Building
             name = "Defense Statue 2";
             defense = 4;
             Info = "Defense Statue 2: defense+4";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("defense2");
         }
 
         if (level == 3)
@@ -35,6 +36,7 @@ public class statue_defense_1 : Building
             name = "Defense Statue 3";
             defense = 8;
             Info = "Defense Statue 3: defense+8";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("defense3");
         }
     }
 

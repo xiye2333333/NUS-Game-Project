@@ -21,8 +21,10 @@ public class MonsterBehavior : MonoBehaviour
     public int Wood;
     public int Stone;
     public int Money;
+    public float dieTime;
 
     public int Upd;
+
     private Animator mAnimator;
 
     // Start is called before the first frame update
@@ -33,13 +35,15 @@ public class MonsterBehavior : MonoBehaviour
         MaxHP = 10 + Upd;
         Attack = 5 + Upd;
         Defence = 1 + Upd;
-        Speed = 1.5f;
+        Speed = 2.0f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze  = false;
         Wood = 2 + Upd;
         Stone = 2 + Upd;
         Money = 50 + 10 * Upd;
+
+        dieTime = 1f;
 
         mAnimator = GetComponent<Animator>();
         mAnimator.SetTrigger("run");
@@ -49,10 +53,8 @@ public class MonsterBehavior : MonoBehaviour
     void Update()
     {
         if (HP <= 0){
-            Destroy(gameObject);
-            Hero.GetComponent<HeroBehavior>().Wood += Wood;
-            Hero.GetComponent<HeroBehavior>().Stone += Stone;
-            Hero.GetComponent<HeroBehavior>().Money += Money;
+            mAnimator.SetTrigger("death");
+            Invoke("killMonster",dieTime);
         }
         FindDirection();
         if(!freeze){
@@ -79,11 +81,9 @@ public class MonsterBehavior : MonoBehaviour
 
     public void Freeze(){
         freeze = true;
-        mAnimator.SetTrigger("stand");
     }
     public void DeFreeze(){
         freeze = false;
-        mAnimator.SetTrigger("run");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -94,11 +94,24 @@ public class MonsterBehavior : MonoBehaviour
     }
     
     public void isHit(int demage){
-
+        mAnimator.SetTrigger("takehit");
         if (demage < Defence){
             return;
         }
         HP -= (demage - Defence);
-        
+        Vector3 position = GetComponent<Transform>().position;
+        position.z = -2.0f;
+        GetComponent<Transform>().position = position;
+    }
+
+    public void attack(){
+        mAnimator.SetTrigger("attack");
+    }
+
+    void killMonster(){
+        Hero.GetComponent<HeroBehavior>().Wood += Wood;
+        Hero.GetComponent<HeroBehavior>().Stone += Stone;
+        Hero.GetComponent<HeroBehavior>().Money += Money;
+        Destroy(gameObject);
     }
 }

@@ -27,6 +27,7 @@ public class supply_hp_1 : Building
             name = "HP Supply 2";
             hp = 40;
             Info = "HP Supply 2: hp+40";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover2");
         }
 
         if (level == 3)
@@ -34,6 +35,7 @@ public class supply_hp_1 : Building
             name = "HP Supply 3";
             hp = 80;
             Info = "HP Supply 3: hp+80";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover3");
         }
     }
 

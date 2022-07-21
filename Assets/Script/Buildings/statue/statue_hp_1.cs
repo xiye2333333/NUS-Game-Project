@@ -33,6 +33,7 @@ public class statue_hp_1 : Building
             name = "HP Statue 2";
             hpCeil = 20;
             Info = "HP Statue 2: hpCeil+20";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpStatue2");
         }
 
         if (level == 3)
@@ -40,6 +41,7 @@ public class statue_hp_1 : Building
             name = "HP Statue 3";
             hpCeil = 50;
             Info = "HP Statue 3: hpCeil+50";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpStatue3");
         }
     }
 

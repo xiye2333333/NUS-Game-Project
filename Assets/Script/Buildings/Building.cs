@@ -14,6 +14,8 @@ public class Building : MonoBehaviour
     public int gem;
     
     public int level;
+    public bool sure=false;
+    
     
     public string name;
     public string Info;

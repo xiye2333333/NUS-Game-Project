@@ -91,7 +91,7 @@ public class Bag : MonoBehaviour
             if (block.GetComponent<EquipmentBagBlockBehavior>() != null)
             {
                 Destroy(block.GetComponent<EquipmentBagBlockBehavior>());
-                GetComponent<Image>().sprite = EquipmentBagBlockSprite;
+                block.GetComponent<Image>().sprite = EquipmentBagBlockSprite;
             }
         }
         InitialEquipmentBag();

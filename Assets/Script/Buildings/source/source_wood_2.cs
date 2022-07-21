@@ -27,6 +27,7 @@ public class source_wood_2 : Building
             name = "Wood Source 2";
             addWood = 6;
             Info = "Wood Source 2: wood+6";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("wood3");
         }
     }
     

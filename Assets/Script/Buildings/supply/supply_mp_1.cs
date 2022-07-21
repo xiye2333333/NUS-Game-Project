@@ -27,6 +27,7 @@ public class supply_mp_1 : Building
             name = "MP Supply 2";
             mp = 2;
             Info = "MP Supply 2: mp+2";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover2");
         }
 
         if (level == 3)
@@ -34,6 +35,7 @@ public class supply_mp_1 : Building
             name = "MP Supply 3";
             mp = 3;
             Info = "MP Supply 3: mp+3";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover3");
         }
     }
 

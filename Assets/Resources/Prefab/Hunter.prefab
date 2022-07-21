@@ -111,6 +111,7 @@ MonoBehaviour:
   monsterNum: 2
   monsterTriggerTime: 0.3
   offsetY: 0
+  randomMonsterOffset: 0
 --- !u!61 &1593243852778453693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34281063, y: 1.3879086}
+  m_Offset: {x: 0.26548982, y: 1.3879086}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -135,7 +136,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.590092, y: 2.7758172}
+  m_Size: {x: 8.0054035, y: 2.7758172}
   m_EdgeRadius: 0
 --- !u!1 &9148290865705204703
 GameObject:

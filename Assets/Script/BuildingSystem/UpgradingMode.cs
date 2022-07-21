@@ -18,7 +18,8 @@ public class UpgradingMode : MonoBehaviour
     public int defense = 0;
 
     public int level;
-
+    
+    public int addLevel = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,24 +37,26 @@ public class UpgradingMode : MonoBehaviour
             Purchase();
             StatusChange();
             building.GetComponent<Building>().level++;
+            building.GetComponent<Building>().sure = true;
             // Debug.Log(building.GetComponent<Building>().level);
             // Debug.Log(GameObject.Find("Hero").GetComponent<HeroBehavior>().Level);
-            money = 0;
-            wood = 0;
-            stone = 0;
-            iron = 0;
-            gem = 0;
-            hpCeil = 0;
-            mpCeil = 0;
-            attack = 0;
-            defense = 0;
-            level = 0;
+            
         }
         else
         {
             Debug.Log("Not enough resources");
         }
-
+        money = 0;
+        wood = 0;
+        stone = 0;
+        iron = 0;
+        gem = 0;
+        hpCeil = 0;
+        mpCeil = 0;
+        attack = 0;
+        defense = 0;
+        level = 0;
+        addLevel = 0;
         // building.GetComponent<Building>().Upgrade();
         // Debug.Log(building.GetComponent<Building>().name);
         GameObject.Find("Upgrade").SetActive(false);
@@ -63,6 +66,17 @@ public class UpgradingMode : MonoBehaviour
 
     public void OnClickCancel()
     {
+        money = 0;
+        wood = 0;
+        stone = 0;
+        iron = 0;
+        gem = 0;
+        hpCeil = 0;
+        mpCeil = 0;
+        attack = 0;
+        defense = 0;
+        level = 0;
+        addLevel = 0;
         GameObject.Find("Upgrade").SetActive(false);
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToRunning();
@@ -103,5 +117,7 @@ public class UpgradingMode : MonoBehaviour
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Defense += defense;
-    }
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Level += addLevel;
+
+        }
 }

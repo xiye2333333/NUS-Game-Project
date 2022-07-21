@@ -93,7 +93,7 @@ public class HeroBehavior : MonoBehaviour
         Stone = 800;
         Iron = 500;
         Gem = 50;
-        Level = 3;
+        Level = 1;
 
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;
@@ -107,7 +107,7 @@ public class HeroBehavior : MonoBehaviour
         heroRound = true;
 
         mFightAt = 0;
-        roundTime = 0.5f;
+        roundTime = 0.8f;
         mAnimator = GetComponent<Animator>();
         mAnimator.SetBool("Grounded",true);
 
@@ -167,8 +167,10 @@ public class HeroBehavior : MonoBehaviour
                     foreach( GameObject M in Monsters )
                     {
                         if(M != null)
-                            if (!isBoss)
+                            if (!isBoss){
+                                M.GetComponent<MonsterBehavior>().attack();
                                 isHit(M.GetComponent<MonsterBehavior>().Attack);
+                            }
                             else
                                 isHit(M.GetComponent<BossBehavior>().Attack);
                     }

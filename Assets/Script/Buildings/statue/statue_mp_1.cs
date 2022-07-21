@@ -32,6 +32,7 @@ public class statue_mp_1 : Building
             name = "MP Statue 2";
             mpCeil = -2;
             Info = "MP Statue 2: mpCeil-2";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpStatue2");
         }
 
         if (level == 3)
@@ -39,6 +40,7 @@ public class statue_mp_1 : Building
             name = "MP Statue 3";
             mpCeil = -3;
             Info = "MP Statue 3: mpCeil-3";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpStatue3");
         }
     }
 

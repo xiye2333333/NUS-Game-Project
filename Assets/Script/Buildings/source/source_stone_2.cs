@@ -27,6 +27,7 @@ public class source_stone_2 : Building
             name = "Stone Source 2";
             addStone = 6;
             Info = "Stone Source 2: stone+6";
+            GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("stone3");
         }
     }
     

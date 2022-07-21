@@ -71,6 +71,8 @@ public class StoreBehavior : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        StoreText.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
     }
 
     // public void AddEvent(GameObject GO)
@@ -312,7 +314,7 @@ public class StoreBehavior : MonoBehaviour
         // transform.Find("Canvas").Find("StorePage").gameObject.SetActive(true);
     }
 
-    public void OnClickKnife()
+    public void OnClickKnife(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -321,6 +323,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.EquipmentBag.Add(new Knife());
             heroBehavior.Money -= KnifePrice.Money;
             Debug.Log("Buy a Knife");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -329,7 +332,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
     
-    public void OnClickWoodSword()
+    public void OnClickWoodSword(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -342,6 +345,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodSwordPrice.Iron;
             heroBehavior.Gem -= WoodSwordPrice.Gem;
             Debug.Log("Buy a Wood Sword");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -350,7 +354,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
     
-    public void OnClickIronSword()
+    public void OnClickIronSword(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -363,6 +367,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronSwordPrice.Iron;
             heroBehavior.Gem -= IronSwordPrice.Gem;
             Debug.Log("Buy a Iron Sword");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -371,7 +376,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
     
-    public void OnClickGoldSword()
+    public void OnClickGoldSword(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -384,6 +389,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= GoldSwordPrice.Iron;
             heroBehavior.Gem -= GoldSwordPrice.Gem;
             Debug.Log("Buy a Gold Sword");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -392,7 +398,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
     
-    public void OnClickWoodShield()
+    public void OnClickWoodShield(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -405,6 +411,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodShieldPrice.Iron;
             heroBehavior.Gem -= WoodShieldPrice.Gem;
             Debug.Log("Buy a Wooden Shield");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -413,7 +420,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
     
-    public void OnClickIronShield()
+    public void OnClickIronShield(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -426,6 +433,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronShieldPrice.Iron;
             heroBehavior.Gem -= IronShieldPrice.Gem;
             Debug.Log("Buy a Iron Shield");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -434,7 +442,7 @@ public class StoreBehavior : MonoBehaviour
         
     }
 
-    public void OnClickLeatherHelmet()
+    public void OnClickLeatherHelmet(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -447,6 +455,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherHelmetPrice.Iron;
             heroBehavior.Gem -= LeatherHelmetPrice.Gem;
             Debug.Log("Buy a Leather Helmet");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -454,7 +463,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
 
-    public void OnClickHelmet()
+    public void OnClickHelmet(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -467,6 +476,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= HelmetPrice.Iron;
             heroBehavior.Gem -= HelmetPrice.Gem;
             Debug.Log("Buy a Normal Helmet");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -474,7 +484,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
 
-    public void OnClickIronHelmet()
+    public void OnClickIronHelmet(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -487,6 +497,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronHelmetPrice.Iron;
             heroBehavior.Gem -= IronHelmetPrice.Gem;
             Debug.Log("Buy a Iron Helmet");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -494,7 +505,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
     
-    public void OnClickLeatherArmor()
+    public void OnClickLeatherArmor(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -507,6 +518,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherArmorPrice.Iron;
             heroBehavior.Gem -= LeatherArmorPrice.Gem;
             Debug.Log("Buy a Leather Armor");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -514,7 +526,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
 
-    public void OnClickWoodArmor()
+    public void OnClickWoodArmor(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -527,6 +539,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodArmorPrice.Iron;
             heroBehavior.Gem -= WoodArmorPrice.Gem;
             Debug.Log("Buy a Wooden Armor");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -534,7 +547,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
     
-    public void OnClickIronArmor()
+    public void OnClickIronArmor(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -547,6 +560,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronArmorPrice.Iron;
             heroBehavior.Gem -= IronArmorPrice.Gem;
             Debug.Log("Buy a Iron Armor");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -554,7 +568,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
     
-    public void OnClickLeatherBoots()
+    public void OnClickLeatherBoots(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -567,6 +581,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherBootPrice.Iron;
             heroBehavior.Gem -= LeatherBootPrice.Gem;
             Debug.Log("Buy a Leather Boots");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -574,7 +589,7 @@ public class StoreBehavior : MonoBehaviour
         }
     }
 
-    public void OnClickIronBoot()
+    public void OnClickIronBoot(GameObject gameObject)
     {
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
@@ -587,6 +602,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronBootPrice.Iron;
             heroBehavior.Gem -= IronBootPrice.Gem;
             Debug.Log("Buy a Iron Boots");
+            DisableBlock(gameObject);
         }
         else
         {
@@ -624,6 +640,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void DisableBlock(GameObject gameObject)//限制购买一次
     {
+        ExitOneStaff();
         gameObject.SetActive(false);
     }
 }
