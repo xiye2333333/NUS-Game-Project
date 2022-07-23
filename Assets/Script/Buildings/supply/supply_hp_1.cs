@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -16,8 +17,8 @@ public class supply_hp_1 : Building
     {
         level = 1;
         name = "HP Supply 1";
-        hp = 20;
-        Info = "HP Supply 1: hp+20";
+        hp = 50;
+        Info = "HP Supply 1: hp+50";
     }
     
     void Update()
@@ -25,16 +26,16 @@ public class supply_hp_1 : Building
         if (level == 2)
         {
             name = "HP Supply 2";
-            hp = 40;
-            Info = "HP Supply 2: hp+40";
+            hp = 100;
+            Info = "HP Supply 2: hp+100";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover2");
         }
 
         if (level == 3)
         {
             name = "HP Supply 3";
-            hp = 80;
-            Info = "HP Supply 3: hp+80";
+            hp = 200;
+            Info = "HP Supply 3: hp+200";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover3");
         }
     }
@@ -49,6 +50,8 @@ public class supply_hp_1 : Building
                     GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
             else
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().HP = temp;
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayRecover();
+            GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainHP(hp);
         }
     }
 

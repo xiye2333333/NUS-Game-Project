@@ -34,6 +34,7 @@ namespace Script.UI
                     isPutOn = true;
                     gameObject.GetComponent<Image>().sprite = selfSprite;
                     back.GetComponent<Image>().color = new Color(255/255f, 255/255f, 255/255f, 255/255f);
+                    GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
                     Destroy(this);
                 }
 

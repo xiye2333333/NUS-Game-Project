@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Script.Staff;
@@ -34,7 +35,9 @@ public class HeroBehavior : MonoBehaviour
 
     public int Level;
 
-    public float Speed = 0.1f;
+    public float Speed = 1f;
+
+    public float TrueSpeed = 1f;
 
     public Slider HpBarSlider;
 
@@ -52,9 +55,9 @@ public class HeroBehavior : MonoBehaviour
 
     private float timeSinceAttack = 0.0f;
 
-    private Animator mAnimator;
+    public Animator mAnimator;
 
-    private bool death = false;
+    public bool death = false;
 
     private int loopCnt = 0;
 
@@ -80,6 +83,8 @@ public class HeroBehavior : MonoBehaviour
 
     private bool heroRound;
     
+    public ArrayList BuildingList = new ArrayList();
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -89,10 +94,11 @@ public class HeroBehavior : MonoBehaviour
         MPCeil = 50;
         Attack = 5;
         Defense = 1;
-        Wood = 800;
-        Stone = 800;
-        Iron = 500;
-        Gem = 50;
+        Wood = 10000;
+        Stone = 10000;
+        Iron = 10000;
+        Gem = 10000;
+        Money = 50000;
         Level = 1;
 
         // set the initial Hp to be full
@@ -160,6 +166,7 @@ public class HeroBehavior : MonoBehaviour
                         Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
                     } 
                     mAnimator.SetTrigger("Attack"+currentAttack);
+                    GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayHeroHit();
                 }
                 #endregion
                 #region MonsterRound
@@ -193,11 +200,12 @@ public class HeroBehavior : MonoBehaviour
         else if (!isFight && !death)
         {
             mAnimator.SetInteger("AnimState", 1);
-        }else if (death && loopCnt == 0)
+        }else if (death && TimeManager.loopCnt == 0)
         {
             mAnimator.SetTrigger("Death");
-            loopCnt++;
+            //TimeManager.loopCnt++;
             GameManager.getGM.SwitchToPause();
+            GameObject.Find("Canvas").transform.Find("LossPanel").gameObject.SetActive(true);
         }
         HpBarSlider.value = (float) HP / (HPCeil*1.0f);
 
@@ -242,10 +250,8 @@ public class HeroBehavior : MonoBehaviour
     }
 
     void isHit(int demage){
-        if (demage < Defense){
-            return;
-        }
-        HP -= (demage - Defense);
+        HP -= (int)Math.Round((double)demage * (1f - (double)Defense / ((double)Defense + 40f)));
     }
+
 
 }

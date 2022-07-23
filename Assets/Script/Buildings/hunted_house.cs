@@ -7,23 +7,74 @@ using Random = UnityEngine.Random;
 
 public class hunted_house : Building
 {
+    public float monsterTriggerTime = 0.6f;
+    public float offsetX;
+    public float offsetY;
+
+    public float randomMonsterOffset;
+
+    private float timeStamp;
+    private bool ifreleaseMonsters;
+    private int monsterReleaseNum;
+
     void Start()
     {
         name = "Hunted House";
         Info = "Hunt monsters for money. May be dangerous.";
+
+        randomMonsterOffset = 0.7f;
+        offsetX = 0.5f;
+        offsetY = 0.5f;
+        timeStamp = Time.time;
+        ifreleaseMonsters = false;
+        monsterReleaseNum = 0;
     }
     
     void Update()
     {
+        if(ifreleaseMonsters){
+            if(monsterReleaseNum < TimeManager.MonsterNum){
+                if(Time.time - timeStamp > monsterTriggerTime){
+                    releaseMonsters();
+                    timeStamp = Time.time;
+                    monsterReleaseNum++;
+                }
+            }
+        }
+    }
+
+    void releaseMonsters(){
+        GameObject Monster = Instantiate(Resources.Load("Prefab/Monster A") as GameObject);
+        Vector3 p = gameObject.transform.position;
+        //p.x += Random.value * (2*randomMonsterOffset) - randomMonsterOffset;
+        p.x += offsetX;
+        p.y = offsetY;
+        Monster.transform.position = p;
+
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Hero")
         {
-            GameObject Monster = Instantiate(Resources.Load("Prefab/Monster A") as GameObject);
-            Monster.transform.position = gameObject.transform.position;
+            ifreleaseMonsters = true;
         }
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Hero")
+        {
+            ifreleaseMonsters = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "Hero")
+        {
+            ifreleaseMonsters = false;
+            monsterReleaseNum = 0;
+        }
+    }
 }

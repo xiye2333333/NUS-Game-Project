@@ -1,34 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildMenu : MonoBehaviour
 {
     public static bool BuildingFlag;
-    
+
     public Sprite Hunter;
 
     public Sprite HpRecover;
-    
+
     public Sprite MpRecover;
-    
+
     public Sprite HpStatue;
-    
+
     public Sprite MpStatue;
-    
+
     public Sprite AttackStatue;
-    
+
     public Sprite DefenseStatue;
-    
+
     public Sprite WoodSource;
-    
+
     public Sprite StoneSource;
-    
+
     public Sprite IronSource;
-    
+
     public Sprite Treasure;
 
-    public GameObject[] Buttons = new GameObject[11];
+    public GameObject[] Buttons = new GameObject[12];
+
+    public GameObject BuildingInfo;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +42,6 @@ public class BuildMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     private void SwitchToBuildMode()
@@ -61,6 +64,7 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
 
@@ -79,9 +83,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickMpRecoverButton()
     {
         BuildingFlag = true;
@@ -97,9 +102,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickHpStatueButton()
     {
         BuildingFlag = true;
@@ -114,9 +120,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickMpStatueButton()
     {
         BuildingFlag = true;
@@ -131,9 +138,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickAttackStatueButton()
     {
         BuildingFlag = true;
@@ -148,9 +156,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickDefenseStatueButton()
     {
         BuildingFlag = true;
@@ -165,9 +174,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickWoodSourceButton()
     {
         BuildingFlag = true;
@@ -182,9 +192,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickStoneSourceButton()
     {
         BuildingFlag = true;
@@ -199,9 +210,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickIronSourceButton()
     {
         BuildingFlag = true;
@@ -218,9 +230,10 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
-    
+
     public void ClickTreasureButton()
     {
         BuildingFlag = true;
@@ -234,6 +247,7 @@ public class BuildMenu : MonoBehaviour
         {
             button.gameObject.SetActive(false);
         }
+
         SwitchToBuildMode();
     }
 
@@ -242,5 +256,115 @@ public class BuildMenu : MonoBehaviour
         GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
         gameObject.SetActive(false);
+    }
+
+    public void EnterHunterBlock()
+    {
+        // hunted_house house = new hunted_house();
+        string text = "";
+        text += "Hunted house" + "\n";
+        text += "Hunt monsters for money. May be dangerous." + "\n";
+        text += "Money: 20" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterHPStatueBlock()
+    {
+        // statue_hp_1 statue = new statue_hp_1() ;
+        string text = "";
+        text += "HP Statue" + "\n";
+        text += "HP Statue 1: hpCeil+10" + "\n";
+        text += "Money: 300 Wood: 5" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterMPStatueBlock()
+    {
+        // statue_mp_1 statue = new statue_mp_1() ;
+        string text = "";
+        text += "MP Statue 1" + "\n";
+        text += "MP Statue 1: mpCeil-1" + "\n";
+        text += "Money: 300 Stone: 5" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterHPSupplyBlock()
+    {
+        // supply_hp_1 statue = new supply_hp_1() ;
+        string text = "";
+        text += "HP Supply" + "\n";
+        text += "HP Supply 1: hp+50" + "\n";
+        text += "Money: 80" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterMPSupplyBlock()
+    {
+        // supply_mp_1 statue = new supply_mp_1() ;
+        string text = "";
+        text += "MP Supply" + "\n";
+        text += "MP Supply 1: mp+1" + "\n";
+        text += "Money: 80" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterAttackStatueBlock()
+    {
+        // statue_attack_1 statue = new statue_attack_1() ;
+        string text = "";
+        text += "Attack Statue" + "\n";
+        text += "Attack Statue 1: attack+5" + "\n";
+        text += "Money: 150 Wood: 5" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterDenfenseStatueBlock()
+    {
+        // statue_defense_1 statue = new statue_defense_1() ;
+        string text = "";
+        text += "Defense Statue" + "\n";
+        text += "Defense Statue 1: defense+5" + "\n";
+        text += "Money: 150 Stone: 5" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterWoodSourceBlock()
+    {
+        // source_wood_2 statue = new source_wood_2() ;
+        string text = "";
+        text += "Wood Source 1" + "\n";
+        text += "Wood Source 1: wood+3" + "\n";
+        text += "Money: 350 Stone: 20" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterStoneSourceBlock()
+    {
+        // source_stone_2 statue = new source_stone_2() ;
+        string text = "";
+        text += "Stone Source" + "\n";
+        text += "Stone Source 1: stone+3" + "\n";
+        text += "Money: 350 Wood: 20" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterIronSourceBlock()
+    {
+        // source_iron_3 statue = new source_iron_3() ;
+        string text = "";
+        text += "Source Iron" + "\n";
+        text += "Source Iron: iron+2" + "\n";
+        text += "Money: 1500 Wood: 50 Stone: 50 Gem: 1" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterTresureBlock()
+    {
+        // treasure statue = new treasure() ;
+        string text = "";
+        text += "Treasure" + "\n";
+        text += "Treasure: +1 gem every 3 days" + "\n";
+        text += "Gem: 5" + "\n";
+        BuildingInfo.GetComponent<Text>().text = text;
     }
 }

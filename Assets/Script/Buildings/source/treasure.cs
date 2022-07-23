@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -31,6 +32,7 @@ public class treasure : Building
             if (day % 3 == 0)
             {
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem += addGem;
+                GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainGem(addGem);
             }
         }
     }

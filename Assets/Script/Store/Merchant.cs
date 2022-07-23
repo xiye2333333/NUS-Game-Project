@@ -19,6 +19,7 @@ public class Merchant : MonoBehaviour
             GameObject.Find("StoreCanvas").transform.Find("StorePage").gameObject.SetActive(true);
             GameManager.getGM.SwitchToPause();
             StorePageIsOpen = true;
+            GameManager.getGM.SwitchToBagging();
         }
     }
 }

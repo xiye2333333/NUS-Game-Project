@@ -49,6 +49,7 @@ public class supply_mp_1 : Building
                     GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
             else
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().MP = temp;
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayRecover();
         }
     }
 

@@ -54,6 +54,7 @@ public class BuildingModePicture : MonoBehaviour
                 //Assets/Resources/Prefab/PF Village Props - Well.prefab
                 GameObject target = Instantiate(Resources.Load("Prefab/" + targetName) as GameObject);
                 //Debug.Log(target.name);
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Add(target);
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
@@ -63,6 +64,8 @@ public class BuildingModePicture : MonoBehaviour
                 {
                     button.gameObject.SetActive(true);
                 }
+                
+                GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayPlace();
                 Destroy(gameObject);
                 BuildMenu.BuildingFlag = false;
             }

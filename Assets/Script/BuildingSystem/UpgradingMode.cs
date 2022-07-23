@@ -38,6 +38,7 @@ public class UpgradingMode : MonoBehaviour
             StatusChange();
             building.GetComponent<Building>().level++;
             building.GetComponent<Building>().sure = true;
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayUpgrade();
             // Debug.Log(building.GetComponent<Building>().level);
             // Debug.Log(GameObject.Find("Hero").GetComponent<HeroBehavior>().Level);
             

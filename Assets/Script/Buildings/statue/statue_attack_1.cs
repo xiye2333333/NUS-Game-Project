@@ -16,8 +16,8 @@ public class statue_attack_1 : Building
     {
         level = 1;
         name = "Attack Statue 1";
-        attack = 2;
-        Info = "Attack Statue 1: attack+2";
+        attack = 5;
+        Info = "Attack Statue 1: attack+5";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
     }
     
@@ -26,16 +26,16 @@ public class statue_attack_1 : Building
         if (level == 2)
         {
             name = "Attack Statue 2";
-            attack = 4;
-            Info = "Attack Statue 2: attack+4";
+            attack = 10;
+            Info = "Attack Statue 2: attack+10";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("attack2");
         }
 
         if (level == 3)
         {
             name = "Attack Statue 3";
-            attack = 8;
-            Info = "Attack Statue 3: attack+8";
+            attack = 20;
+            Info = "Attack Statue 3: attack+20";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("attack3");
         }
     }
@@ -56,7 +56,7 @@ public class statue_attack_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().attack = 2;
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().attack = 5;
                 GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade Attack Statue 1?\n It needs money=400, wood=20 and stone=20";
             }
         }
@@ -76,7 +76,7 @@ public class statue_attack_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 50;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 10;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().attack = 4;
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().attack = 10;
                 GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade Attack Statue 2?\n It needs money=1000, wood=50, stone=50 and iron=10";
             }
         }

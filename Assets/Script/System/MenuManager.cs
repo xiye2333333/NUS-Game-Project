@@ -36,6 +36,11 @@ public class MenuManager : MonoBehaviour
         Application.Quit();
     }
 
+    public void OnClickSettingButton()
+    {
+        
+    }
+
     // public void OnClickBuildingFunctionButton()
     // {
     //     SceneManager.LoadScene("Scenes/BuildingFunction");

@@ -85,7 +85,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterHelm1()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Leather Helmet" + "\n";
@@ -100,7 +100,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterHelm2()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Normal Helmet" + "\n";
@@ -115,7 +115,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterHelm3()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Helmet" + "\n";
@@ -132,7 +132,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterArmor1()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Leather Armor" + "\n";
@@ -145,7 +145,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterArmor2()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Wooden Armor" + "\n";
@@ -162,7 +162,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterArmor3()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Armor" + "\n";
@@ -179,7 +179,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterBoot1()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Leather Boot" + "\n";
@@ -192,7 +192,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterBoot2()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Boot" + "\n";
@@ -209,7 +209,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterShield1()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Wooden Shield" + "\n";
@@ -223,7 +223,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterShield2()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Shield" + "\n";
@@ -240,7 +240,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterSword1()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Knife" + "\n";
@@ -253,7 +253,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterSword2()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Wooden Sword" + "\n";
@@ -267,7 +267,7 @@ public class StoreBehavior : MonoBehaviour
     
     public void EnterSword4()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Sword" + "\n";
@@ -284,7 +284,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void EnterSword3()
     {
-        InfoPicture.gameObject.SetActive(true);
+        // InfoPicture.gameObject.SetActive(true);
         Text text = InfoText.GetComponent<Text>();
         string info = "";
         info += "Iron Sword" + "\n";
@@ -301,7 +301,7 @@ public class StoreBehavior : MonoBehaviour
 
     public void ExitOneStaff()
     {
-        InfoPicture.gameObject.SetActive(false);
+        // InfoPicture.gameObject.SetActive(false);
         CurrentObject.GetComponent<Image>().color = new Color(255/255f,255/255f,255/255f,255/255f);
     }
 
@@ -323,6 +323,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.EquipmentBag.Add(new Knife());
             heroBehavior.Money -= KnifePrice.Money;
             Debug.Log("Buy a Knife");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -345,6 +346,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodSwordPrice.Iron;
             heroBehavior.Gem -= WoodSwordPrice.Gem;
             Debug.Log("Buy a Wood Sword");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -367,6 +369,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronSwordPrice.Iron;
             heroBehavior.Gem -= IronSwordPrice.Gem;
             Debug.Log("Buy a Iron Sword");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -389,6 +392,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= GoldSwordPrice.Iron;
             heroBehavior.Gem -= GoldSwordPrice.Gem;
             Debug.Log("Buy a Gold Sword");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -411,6 +415,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodShieldPrice.Iron;
             heroBehavior.Gem -= WoodShieldPrice.Gem;
             Debug.Log("Buy a Wooden Shield");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -433,6 +438,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronShieldPrice.Iron;
             heroBehavior.Gem -= IronShieldPrice.Gem;
             Debug.Log("Buy a Iron Shield");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -455,6 +461,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherHelmetPrice.Iron;
             heroBehavior.Gem -= LeatherHelmetPrice.Gem;
             Debug.Log("Buy a Leather Helmet");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -476,6 +483,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= HelmetPrice.Iron;
             heroBehavior.Gem -= HelmetPrice.Gem;
             Debug.Log("Buy a Normal Helmet");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -497,6 +505,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronHelmetPrice.Iron;
             heroBehavior.Gem -= IronHelmetPrice.Gem;
             Debug.Log("Buy a Iron Helmet");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -518,6 +527,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherArmorPrice.Iron;
             heroBehavior.Gem -= LeatherArmorPrice.Gem;
             Debug.Log("Buy a Leather Armor");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -539,6 +549,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= WoodArmorPrice.Iron;
             heroBehavior.Gem -= WoodArmorPrice.Gem;
             Debug.Log("Buy a Wooden Armor");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -560,6 +571,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronArmorPrice.Iron;
             heroBehavior.Gem -= IronArmorPrice.Gem;
             Debug.Log("Buy a Iron Armor");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -581,6 +593,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= LeatherBootPrice.Iron;
             heroBehavior.Gem -= LeatherBootPrice.Gem;
             Debug.Log("Buy a Leather Boots");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -602,6 +615,7 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Iron -= IronBootPrice.Iron;
             heroBehavior.Gem -= IronBootPrice.Gem;
             Debug.Log("Buy a Iron Boots");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
             DisableBlock(gameObject);
         }
         else
@@ -623,6 +637,7 @@ public class StoreBehavior : MonoBehaviour
         GameObject.Find("StoreCanvas").transform.Find("StorePage").gameObject.SetActive(false);
         GameManager.getGM.SwitchToRunning();
         GameObject.Find("Merchant").GetComponent<Merchant>().StorePageIsOpen = false;
+        GameManager.getGM.SwitchToRunning();
     }
     
     public bool SourceIsEnough(int money, int wood, int stone, int iron, int gem)

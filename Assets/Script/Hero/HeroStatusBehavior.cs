@@ -58,13 +58,13 @@ public class HeroStatusBehavior : MonoBehaviour
         int gemNumber = Hero.GetComponent<HeroBehavior>().Gem;
         int attackNumber = Hero.GetComponent<HeroBehavior>().Attack;
         int defenseNumber = Hero.GetComponent<HeroBehavior>().Defense;
-        MoneyText.GetComponent<Text>().text = "Money: " + moneyNumber;
-        WoodText.GetComponent<Text>().text = "Wood: " + woodNumber;
-        StoneText.GetComponent<Text>().text = "Stone: " + stoneNumber;
-        IronText.GetComponent<Text>().text = "Iron: " + ironNumber;
-        GemText.GetComponent<Text>().text = "Gem: " + gemNumber;
-        AttackText.GetComponent<Text>().text = "Attack: " + attackNumber;
-        DefenseText.GetComponent<Text>().text = "Defense: " + defenseNumber;
+        MoneyText.GetComponent<Text>().text =""+moneyNumber;
+        WoodText.GetComponent<Text>().text = "" + woodNumber;
+        StoneText.GetComponent<Text>().text = "" + stoneNumber;
+        IronText.GetComponent<Text>().text = "" + ironNumber;
+        GemText.GetComponent<Text>().text = "" + gemNumber;
+        AttackText.GetComponent<Text>().text = "" + attackNumber;
+        DefenseText.GetComponent<Text>().text = "" + defenseNumber;
 
         int HPNumber = Hero.GetComponent<HeroBehavior>().HP;
         int MaxHPNumber = Hero.GetComponent<HeroBehavior>().HPCeil;
@@ -74,7 +74,7 @@ public class HeroStatusBehavior : MonoBehaviour
         int MaxMPNumber = Hero.GetComponent<HeroBehavior>().MPCeil;
         MP.GetComponent<Slider>().value = (float) MPNumber / MaxMPNumber;
         
-        HPText.GetComponent<Text>().text = "HP: " + HPNumber + "/" + MaxHPNumber;
-        MPText.GetComponent<Text>().text = "MP: " + MPNumber + "/" + MaxMPNumber;
+        HPText.GetComponent<Text>().text = "" + HPNumber + "/" + MaxHPNumber;
+        MPText.GetComponent<Text>().text = "" + MPNumber + "/" + MaxMPNumber;
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class MonsterBehavior : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class MonsterBehavior : MonoBehaviour
     public int Money;
     public float dieTime;
 
+    private int flag = 0;
+
     public int Upd;
 
     private Animator mAnimator;
@@ -31,19 +34,19 @@ public class MonsterBehavior : MonoBehaviour
     void Start()
     {
         Upd = TimeManager.MonsterUpd;
-        HP = 10 + Upd;
-        MaxHP = 10 + Upd;
-        Attack = 5 + Upd;
-        Defence = 1 + Upd;
+        HP = 15 + 2*Upd;
+        MaxHP = 15 + 2*Upd;
+        Attack = 15 + 2*Upd;
+        Defence = 2 + 2*Upd;
         Speed = 2.0f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze  = false;
         Wood = 2 + Upd;
         Stone = 2 + Upd;
-        Money = 50 + 10 * Upd;
+        Money = 50 + 20 * Upd;
 
-        dieTime = 1f;
+        dieTime = 0.5f;
 
         mAnimator = GetComponent<Animator>();
         mAnimator.SetTrigger("run");
@@ -61,7 +64,8 @@ public class MonsterBehavior : MonoBehaviour
            Move(); 
         }
         HpBarSlider.value = (float) HP / (MaxHP*1.0f);
-        
+        if (Hero.GetComponent<HeroBehavior>().death)
+            Invoke("killMonster",dieTime);
     }
 
     void FindDirection(){
@@ -95,10 +99,7 @@ public class MonsterBehavior : MonoBehaviour
     
     public void isHit(int demage){
         mAnimator.SetTrigger("takehit");
-        if (demage < Defence){
-            return;
-        }
-        HP -= (demage - Defence);
+        HP -= (int)Math.Round((double)demage * (1f - (double)Defence / ((double)Defence + 40f)));
         Vector3 position = GetComponent<Transform>().position;
         position.z = -2.0f;
         GetComponent<Transform>().position = position;
@@ -106,12 +107,18 @@ public class MonsterBehavior : MonoBehaviour
 
     public void attack(){
         mAnimator.SetTrigger("attack");
+        GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayMonsterHit();
     }
 
     void killMonster(){
-        Hero.GetComponent<HeroBehavior>().Wood += Wood;
-        Hero.GetComponent<HeroBehavior>().Stone += Stone;
-        Hero.GetComponent<HeroBehavior>().Money += Money;
+        if (flag == 0)
+        {
+            Hero.GetComponent<HeroBehavior>().Wood += Wood;
+            Hero.GetComponent<HeroBehavior>().Stone += Stone;
+            Hero.GetComponent<HeroBehavior>().Money += Money;
+            flag = 1;
+        }
+        // Debug.Log(Money);
         Destroy(gameObject);
     }
 }

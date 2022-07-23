@@ -84,8 +84,8 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToRunning()
     {
-        Hero.GetComponent<HeroBehavior>().Speed = 1f;
-        Boss.GetComponent<BossBehavior>().Speed = 2f;
+        Hero.GetComponent<HeroBehavior>().Speed = Hero.GetComponent<HeroBehavior>().TrueSpeed;
+        Boss.GetComponent<BossBehavior>().Speed = Hero.GetComponent<HeroBehavior>().TrueSpeed * 2;
         _gameStatus = GameStatus.Running;
     }
 

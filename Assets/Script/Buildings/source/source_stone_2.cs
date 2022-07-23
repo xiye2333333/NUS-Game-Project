@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -36,6 +37,8 @@ public class source_stone_2 : Building
         if (collision.gameObject.name == "Hero")
         {
             GameObject.Find("Hero").GetComponent<HeroBehavior>().Stone += addStone;
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayWood();
+            GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainStone(addStone);
         }
     }
 

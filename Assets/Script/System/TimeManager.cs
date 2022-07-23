@@ -8,6 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     public static int GlobalDay;
     public static int BossDay;
+    public static int loopCnt;
     public static int MonsterNum;
     public static int MonsterUpd;
     private GameObject Hero;
@@ -15,6 +16,7 @@ public class TimeManager : MonoBehaviour
     private static TimeManager tm;
 
     private GameObject DayText;
+    public GameObject SwitchDay;
     private void Awake()
     {
         tm = this;
@@ -34,7 +36,24 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
-        Boss.SetActive((GlobalDay >= BossDay) ? true : false);
+        if (!BossBehavior.isWin)
+            Boss.SetActive((GlobalDay % BossDay == 0) ? true : false);
+        if (GlobalDay % BossDay == 0)
+        {
+            Debug.Log(123);
+            for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+            {
+                Debug.Log(111);
+                ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+            {
+                ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
     }
 
     public static TimeManager getTM{
@@ -48,6 +67,9 @@ public class TimeManager : MonoBehaviour
         if (GlobalDay % 5 == 0)
             MonsterNum++;
         MonsterUpd = GlobalDay / 2;
+        SwitchDay.SetActive(true);
+        GameObject DaySwitchText = GameObject.Find("DaySwitchText").gameObject;
+        DaySwitchText.GetComponent<Text>().text = "Day: " + GlobalDay;
         
         if (GlobalDay % 1 == 0)// suppose to be 5
         {//Assets/Resources/Prefab/Store.prefab
