@@ -24,11 +24,13 @@ public class LossPanel : MonoBehaviour
         GameObject.Find("LossPanel").SetActive(false);
         Hero.GetComponent<HeroBehavior>().Money /= 2;
         Hero.GetComponent<HeroBehavior>().death = false;
-        // Hero.GetComponent<HeroBehavior>().GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Hero Knight_0");
-        // Hero.GetComponent<HeroBehavior>().mAnimator.SetBool("Grounded",true);
+        Hero.GetComponent<HeroBehavior>().GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Hero Knight_0");
+        Hero.GetComponent<HeroBehavior>().mAnimator.SetBool("Grounded",true);
+        Hero.GetComponent<HeroBehavior>().mAnimator.SetTrigger("Block");
+        
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetInteger("AnimState", 1);
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetTrigger("Run");
-        Hero.GetComponent<HeroBehavior>().BackHome();     
+        Hero.GetComponent<HeroBehavior>().BackHome();
     }
 
     public void OnClickExit()

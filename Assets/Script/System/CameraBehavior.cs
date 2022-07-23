@@ -52,11 +52,29 @@ public class CameraBehavior : MonoBehaviour
 
         if (GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Running)
         {
-            Vector3 tmp = transform.position +
-                          Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
+            Vector3 tmp = new Vector3();
+            if (Input.mousePosition.x < 10)
+            {
+                tmp = transform.position + Vector3.left * (cameraSpeed * Time.smoothDeltaTime);
+            }
+            else if (Input.mousePosition.x > Screen.width - 10)
+            {
+                tmp = transform.position + Vector3.right * (cameraSpeed * Time.smoothDeltaTime);
+            }
+
             if (tmp.x > -21 && tmp.x < 21)
-                transform.position +=
-                    Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
+            {
+                transform.position += Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
+                // transform.position = tmp;
+                if (Input.mousePosition.x < 10)
+                {
+                    transform.position += Vector3.left * (cameraSpeed * Time.smoothDeltaTime);
+                }
+                else if (Input.mousePosition.x > Screen.width - 10)
+                {
+                    transform.position += Vector3.right * (cameraSpeed * Time.smoothDeltaTime);
+                }
+            }
         }
         // Debug.Log(transform.position);
     }
