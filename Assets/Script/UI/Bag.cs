@@ -10,6 +10,8 @@ public class Bag : MonoBehaviour
 {
     public GameObject HeartText;
 
+    public GameObject MpText;
+
     public GameObject AttackText;
 
     public GameObject DefenceText;
@@ -22,6 +24,8 @@ public class Bag : MonoBehaviour
 
     public GameObject IronText;
 
+    public GameObject GemText;
+    
     public HeroBehavior Hero;
 
     public GameObject[] EquipmentBagBlock = new GameObject[12];
@@ -58,12 +62,14 @@ public class Bag : MonoBehaviour
     public void UpdateText()
     {
         HeartText.GetComponent<Text>().text = Hero.HP + "/" + Hero.HPCeil;
+        MpText.GetComponent<Text>().text = Hero.MP + "/" + Hero.MPCeil;
         AttackText.GetComponent<Text>().text = Hero.Attack.ToString();
         DefenceText.GetComponent<Text>().text = Hero.Defense.ToString();
         GoldText.GetComponent<Text>().text = Hero.Money.ToString();
         WoodText.GetComponent<Text>().text = Hero.Wood.ToString();
         StoneText.GetComponent<Text>().text = Hero.Stone.ToString();
         IronText.GetComponent<Text>().text = Hero.Iron.ToString();
+        GemText.GetComponent<Text>().text = Hero.Gem.ToString();
     }
 
     public void InitialEquipmentBag()
@@ -102,7 +108,7 @@ public class Bag : MonoBehaviour
         GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
         if (GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Pause)
-            GameManager.getGM.SwitchToRunning();
+            GameManager.getGM.SwitchToPause();
         gameObject.SetActive(false);
     }
 

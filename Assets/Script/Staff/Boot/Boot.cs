@@ -59,5 +59,10 @@ namespace Script.Staff.Boot
                 return false;
             }
         }
+
+        public override void Use(GameObject target, bool isBoss)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

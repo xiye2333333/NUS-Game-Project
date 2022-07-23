@@ -262,49 +262,49 @@ public class BuildMenu : MonoBehaviour
     {
         // hunted_house house = new hunted_house();
         string text = "";
-        text += "Hunted house" + "\n";
-        text += "Hunt monsters for money. May be dangerous." + "\n";
-        text += "Money: 20" + "\n";
-        BuildingInfo.GetComponent<Text>().text = text;
-    }
-
-    public void EnterHPStatueBlock()
-    {
-        // statue_hp_1 statue = new statue_hp_1() ;
-        string text = "";
-        text += "HP Statue" + "\n";
-        text += "HP Statue 1: hpCeil+10" + "\n";
-        text += "Money: 300 Wood: 5" + "\n";
-        BuildingInfo.GetComponent<Text>().text = text;
-    }
-
-    public void EnterMPStatueBlock()
-    {
-        // statue_mp_1 statue = new statue_mp_1() ;
-        string text = "";
-        text += "MP Statue 1" + "\n";
-        text += "MP Statue 1: mpCeil-1" + "\n";
-        text += "Money: 300 Stone: 5" + "\n";
+        text += "Monster House" + "\n";
+        text += "Hunt monsters for money.\nIt is also getting stronger." + "\n";
+        text += "Need: 20 gold coins";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
     public void EnterHPSupplyBlock()
     {
-        // supply_hp_1 statue = new supply_hp_1() ;
+        // statue_hp_1 statue = new statue_hp_1() ;
         string text = "";
-        text += "HP Supply" + "\n";
-        text += "HP Supply 1: hp+50" + "\n";
-        text += "Money: 80" + "\n";
+        text += "Treatment Station" + "\n";
+        text += "Heal yourself by 50HP.\nBy eating, it seems." + "\n";
+        text += "Need: 80 gold coins";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
     public void EnterMPSupplyBlock()
     {
+        // statue_mp_1 statue = new statue_mp_1() ;
+        string text = "";
+        text += "Magic Well" + "\n";
+        text += "Increase your MP by 1.\nMagic flows in it." + "\n";
+        text += "Need: 80 gold coins";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterHPStatueBlock()
+    {
+        // supply_hp_1 statue = new supply_hp_1() ;
+        string text = "";
+        text += "Goddess Statue" + "\n";
+        text += "Increase HP ceiling by 10.\nGoddess blesses you." + "\n";
+        text += "Need: 300 gold coins and 5 woods";
+        BuildingInfo.GetComponent<Text>().text = text;
+    }
+
+    public void EnterMPStatueBlock()
+    {
         // supply_mp_1 statue = new supply_mp_1() ;
         string text = "";
-        text += "MP Supply" + "\n";
-        text += "MP Supply 1: mp+1" + "\n";
-        text += "Money: 80" + "\n";
+        text += "Cross Statue" + "\n";
+        text += "Decrease MP ceiling by 1.\nReward for piety." + "\n";
+        text += "Need: 300 gold coins and 5 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -312,9 +312,9 @@ public class BuildMenu : MonoBehaviour
     {
         // statue_attack_1 statue = new statue_attack_1() ;
         string text = "";
-        text += "Attack Statue" + "\n";
-        text += "Attack Statue 1: attack+5" + "\n";
-        text += "Money: 150 Wood: 5" + "\n";
+        text += "Knight Statue" + "\n";
+        text += "Increase attack by 2.\nKnight gives you power." + "\n";
+        text += "Need: 150 gold coins and 5 woods";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -322,9 +322,9 @@ public class BuildMenu : MonoBehaviour
     {
         // statue_defense_1 statue = new statue_defense_1() ;
         string text = "";
-        text += "Defense Statue" + "\n";
-        text += "Defense Statue 1: defense+5" + "\n";
-        text += "Money: 150 Stone: 5" + "\n";
+        text += "Shield Statue" + "\n";
+        text += "Increase defense by 2.\nDivine shield gives you power." + "\n";
+        text += "Need: 150 gold coins and 5 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -332,9 +332,9 @@ public class BuildMenu : MonoBehaviour
     {
         // source_wood_2 statue = new source_wood_2() ;
         string text = "";
-        text += "Wood Source 1" + "\n";
-        text += "Wood Source 1: wood+3" + "\n";
-        text += "Money: 350 Stone: 20" + "\n";
+        text += "Logging Camp" + "\n";
+        text += "Get 6 pieces of wood.\nIt regenerates every day." + "\n";
+        text += "Need: 350 gold coins and 20 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -342,9 +342,9 @@ public class BuildMenu : MonoBehaviour
     {
         // source_stone_2 statue = new source_stone_2() ;
         string text = "";
-        text += "Stone Source" + "\n";
-        text += "Stone Source 1: stone+3" + "\n";
-        text += "Money: 350 Wood: 20" + "\n";
+        text += "Quarry" + "\n";
+        text += "Get 6 stones.\nIt regenerates every day." + "\n";
+        text += "Need: 350 gold coins and 20 woods";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -352,9 +352,9 @@ public class BuildMenu : MonoBehaviour
     {
         // source_iron_3 statue = new source_iron_3() ;
         string text = "";
-        text += "Source Iron" + "\n";
-        text += "Source Iron: iron+2" + "\n";
-        text += "Money: 1500 Wood: 50 Stone: 50 Gem: 1" + "\n";
+        text += "Iron Area" + "\n";
+        text += "Get 6 irons.\nIt regenerates every day." + "\n";
+        text += "Need: 1500 gold coins, 50 woods, 50 stones and 1 gem";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -362,9 +362,9 @@ public class BuildMenu : MonoBehaviour
     {
         // treasure statue = new treasure() ;
         string text = "";
-        text += "Treasure" + "\n";
-        text += "Treasure: +1 gem every 3 days" + "\n";
-        text += "Gem: 5" + "\n";
+        text += "Treasure Chest" + "\n";
+        text += "Get 1 gem every 3 days.\nIt appreciates your creation." + "\n";
+        text += "Need: 5 gems";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 }

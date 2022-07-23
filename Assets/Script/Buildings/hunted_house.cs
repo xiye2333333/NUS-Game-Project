@@ -19,8 +19,8 @@ public class hunted_house : Building
 
     void Start()
     {
-        name = "Hunted House";
-        Info = "Hunt monsters for money. May be dangerous.";
+        name = "Monster House";
+        Info = "Monster House\nHunt monsters for money.\nIt is also getting stronger.";
 
         randomMonsterOffset = 0.7f;
         offsetX = 0.5f;

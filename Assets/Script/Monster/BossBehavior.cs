@@ -53,6 +53,7 @@ public class BossBehavior : MonoBehaviour
     {
         if (HP <= 0){
             isWin = true;
+            // mAnimator.SetTrigger("Death");
             Destroy(gameObject);
             GameObject.Find("Canvas").transform.Find("WinPanel").gameObject.SetActive(true);
             //Hero.GetComponent<HeroBehavior>().Money += 50000;
@@ -85,6 +86,7 @@ public class BossBehavior : MonoBehaviour
     }
 
     void Move(){
+        mAnimator.SetBool("Walk",true);
         Vector3 position = GetComponent<Transform>().position;
         position.x += Direction * Speed * Time.smoothDeltaTime;
         GetComponent<Transform>().position = position;
@@ -106,5 +108,12 @@ public class BossBehavior : MonoBehaviour
     
     public void isHit(int demage){
         HP -= (int)Math.Round((double)demage * (1f - (double)Defence / ((double)Defence + 40f)));
+        mAnimator.SetTrigger("Hurt");
+    }
+    
+    public void attack()
+    {
+        mAnimator.SetTrigger("Attack");
+        mAnimator.SetBool("Walk",false);
     }
 }

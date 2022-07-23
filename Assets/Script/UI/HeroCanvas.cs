@@ -15,13 +15,14 @@ namespace Script.UI
         private float time;
 
         private Vector3 delta = Vector3.zero;
+
         private void Update()
         {
             if (ObtainImage.active)
             {
                 delta += Vector3.up * 50f * Time.deltaTime;
-                ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position+
-                Vector3.up * 1.5f) + delta;
+                ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position +
+                    Vector3.up * 1.5f) + delta;
                 Color color = ObtainImage.GetComponent<Image>().color;
                 color.a = Mathf.Lerp(color.a, 0, Time.deltaTime * 2);
                 ObtainImage.GetComponent<Image>().color = color;
@@ -40,9 +41,10 @@ namespace Script.UI
             ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Staff/Wooden Plank");
             ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             ObtainText.GetComponent<Text>().text = "+ " + wood;
-            ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up*1.5f);
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
         }
-        
+
         public void ObtainStone(int stone)
         {
             time = Time.time;
@@ -50,9 +52,10 @@ namespace Script.UI
             ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Staff/Coal");
             ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             ObtainText.GetComponent<Text>().text = "+ " + stone;
-            ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up*1.5f);
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
         }
-        
+
         public void ObtainIron(int iron)
         {
             time = Time.time;
@@ -60,7 +63,8 @@ namespace Script.UI
             ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Staff/Silver Ingot");
             ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             ObtainText.GetComponent<Text>().text = "+ " + iron;
-            ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up*1.5f);
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
         }
 
         public void ObtainGem(int gem)
@@ -70,9 +74,10 @@ namespace Script.UI
             ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Staff/Diamond");
             ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             ObtainText.GetComponent<Text>().text = "+ " + gem;
-            ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up*1.5f);
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
         }
-        
+
         public void ObtainHP(int hp)
         {
             time = Time.time;
@@ -80,9 +85,30 @@ namespace Script.UI
             ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Staff/Heart");
             ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
             ObtainText.GetComponent<Text>().text = "+ " + hp;
-            ObtainImage.transform.position = Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up*1.5f);
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
         }
         
-        
+        public void UseBash()
+        {
+            time = Time.time;
+            ObtainImage.SetActive(true);
+            ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Skill/Icon13");
+            ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            ObtainText.GetComponent<Text>().text = "Use Bash!";
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
+        }
+
+        public void UseHolyLight()
+        {
+            time = Time.time;
+            ObtainImage.SetActive(true);
+            ObtainImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Skill/Icon11");
+            ObtainImage.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            ObtainText.GetComponent<Text>().text = "Use Holy Light!";
+            ObtainImage.transform.position =
+                Camera.main.WorldToScreenPoint(Hero.transform.position + Vector3.up * 1.5f);
+        }
     }
 }

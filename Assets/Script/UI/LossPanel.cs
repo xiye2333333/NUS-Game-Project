@@ -31,6 +31,8 @@ public class LossPanel : MonoBehaviour
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetInteger("AnimState", 1);
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetTrigger("Run");
         Hero.GetComponent<HeroBehavior>().BackHome();
+        Hero.GetComponent<HeroBehavior>().timer = 0f;
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Monsters.Clear();
     }
 
     public void OnClickExit()

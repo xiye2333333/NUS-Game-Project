@@ -14,9 +14,9 @@ public class source_iron_3 : Building
     void Start()
     {
         level = 3;
-        name = "Source Iron";
-        addIron = 2;
-        Info = "Source Iron: iron+2";
+        name = "Iron Area(max)";
+        addIron = 6;
+        Info = "Iron Area(max)\nGet 6 irons.\nIt regenerates every day.";
     }
 
     // Update is called once per frame

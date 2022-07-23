@@ -15,9 +15,9 @@ public class source_wood_2 : Building
     void Start()
     {
         level = 2;
-        name = "Wood Source 1";
-        addWood = 3;
-        Info = "Wood Source 1: wood+3";
+        name = "Logging Camp - 1";
+        addWood = 6;
+        Info = "Logging Camp - 1\nGet 6 pieces of wood.\nIt regenerates every day.";
     }
 
     // Update is called once per frame
@@ -25,9 +25,9 @@ public class source_wood_2 : Building
     {
         if (level == 3)
         {
-            name = "Wood Source 2";
-            addWood = 6;
-            Info = "Wood Source 2: wood+6";
+            name = "Logging Camp - 2(max)";
+            addWood = 15;
+            Info = "Logging Camp - 2(max)\nGet 15 pieces of wood.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("wood3");
         }
     }
@@ -60,7 +60,7 @@ public class source_wood_2 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 15;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
                 GameObject.Find("UpgradeText").GetComponent<Text>().text =
-                    "Are you sure to upgrade Wood Source 1?\n It needs money=1000, stone=50 and iron=15.";
+                    "Are you sure to upgrade\nLogging Camp - 1?\nIt needs 1000 gold coins, 50 stones and 15 irons.";
             }
         }
     }

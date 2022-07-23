@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.Skill;
 using Script.Staff;
 using Script.Staff.Armor;
 using Script.Staff.Boot;
@@ -16,26 +17,26 @@ public class HeroBehavior : MonoBehaviour
     public int MP;
 
     public int HPCeil;
-    
+
     public int MPCeil;
-    
+
     public int Attack;
 
     public int Defense;
 
     public int Money;
-    
+
     public int Wood;
-    
+
     public int Stone;
 
     public int Iron;
-    
+
     public int Gem;
 
     public int Level;
 
-    public float Speed = 1f;
+    public float Speed = 0f;
 
     public float TrueSpeed = 1f;
 
@@ -50,7 +51,7 @@ public class HeroBehavior : MonoBehaviour
     private float mFightAt = 0f;
 
     public float roundTime = 0.5f;
-    
+
     private int currentAttack = 0;
 
     private float timeSinceAttack = 0.0f;
@@ -82,9 +83,15 @@ public class HeroBehavior : MonoBehaviour
     public Shield Shield;
 
     private bool heroRound;
-    
+
     public ArrayList BuildingList = new ArrayList();
-    
+
+    public float timer = 0f;
+
+    public int MPrecover = 0;
+
+    public Skill Skill;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -94,12 +101,13 @@ public class HeroBehavior : MonoBehaviour
         MPCeil = 50;
         Attack = 5;
         Defense = 1;
-        Wood = 10000;
-        Stone = 10000;
-        Iron = 10000;
-        Gem = 10000;
-        Money = 50000;
+        Wood = 0;
+        Stone = 0;
+        Iron = 0;
+        Gem = 0;
+        Money = 200;
         Level = 1;
+        MPrecover = 5;
 
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;
@@ -115,12 +123,13 @@ public class HeroBehavior : MonoBehaviour
         mFightAt = 0;
         roundTime = 0.8f;
         mAnimator = GetComponent<Animator>();
-        mAnimator.SetBool("Grounded",true);
+        mAnimator.SetBool("Grounded", true);
 
         StartCamp = GameObject.Find("StartCamp");
         StartPosition.x = StartCamp.transform.position.x;
         StartPosition.y = this.transform.position.y;
         StartPosition.z = this.transform.position.z;
+        
 
     }
 
@@ -128,61 +137,107 @@ public class HeroBehavior : MonoBehaviour
     void Update()
     {
         mFightAt += Time.deltaTime;
-        if(!freeze){
+        if (!freeze)
+        {
             Vector3 position = GetComponent<Transform>().position;
             position += Vector3.right * Speed * Time.smoothDeltaTime;
             GetComponent<Transform>().position = position;
         }
+
         GetComponent<SpriteRenderer>().sortingOrder = 1000;
-        
-        while(Monsters.Count > 0){
-            if (Monsters.Peek() == null){
+
+        while (Monsters.Count > 0)
+        {
+            if (Monsters.Peek() == null)
+            {
                 Monsters.Dequeue();
-            }else{
+            }
+            else
+            {
                 break;
             }
         }
-        if (Monsters.Count == 0){
+
+        if (Monsters.Count == 0)
+        {
             EndFight();
         }
+
         #region Fight
-        if (isFight){           
+
+        if (isFight)
+        {
             mAnimator.SetInteger("AnimState", 0);
             if (mFightAt > roundTime)
-            {   
+            {
                 #region HeroRound
-                if(heroRound){
+
+                if (heroRound)
+                {
                     currentAttack++;
-                    if (currentAttack > 3){
+                    if (currentAttack > 3)
+                    {
                         currentAttack = 1;
                     }
-                    if (mFightAt > 1.5f){
+
+                    if (mFightAt > 1.5f)
+                    {
                         currentAttack = 1;
                     }
-                    if (!isBoss){
-                        Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+
+                    if (!isBoss)
+                    {
+                        if (MP == MPCeil && Skill != null)
+                        {
+                            MP = 0;
+                            Skill.Use(Monsters.Peek(), false);
+                        }
+                        else
+                        {
+                            Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
+                            if (MP + MPrecover < MPCeil)
+                            {
+                                MP += MPrecover;
+                            }
+                            else if (MP + MPrecover > MPCeil && MP < MPCeil)
+                            {
+                                MP = MPCeil;
+                            }
+                        }
                     }
-                    else{
+                    else
+                    {
                         Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
-                    } 
-                    mAnimator.SetTrigger("Attack"+currentAttack);
+                    }
+
+                    mAnimator.SetTrigger("Attack" + currentAttack);
                     GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayHeroHit();
                 }
+
                 #endregion
+
                 #region MonsterRound
-                else{
-                    foreach( GameObject M in Monsters )
+
+                else
+                {
+                    foreach (GameObject M in Monsters)
                     {
-                        if(M != null)
-                            if (!isBoss){
+                        if (M != null)
+                            if (!isBoss)
+                            {
                                 M.GetComponent<MonsterBehavior>().attack();
                                 isHit(M.GetComponent<MonsterBehavior>().Attack);
                             }
                             else
+                            {
+                                M.GetComponent<BossBehavior>().attack();
                                 isHit(M.GetComponent<BossBehavior>().Attack);
+                            }
                     }
                 }
+
                 #endregion
+
                 heroRound = !heroRound;
 
                 if (HP <= 0)
@@ -191,32 +246,45 @@ public class HeroBehavior : MonoBehaviour
                     EndFight();
                     death = true;
                 }
+
                 mFightAt = 0;
             }
-            
         }
+
         #endregion
 
         else if (!isFight && !death)
         {
             mAnimator.SetInteger("AnimState", 1);
-        }else if (death && TimeManager.loopCnt == 0)
+        }
+        else if (death && TimeManager.loopCnt == 0)
         {
-            mAnimator.SetTrigger("Death");
+            if (timer == 0)
+            {
+                mAnimator.SetTrigger("Death");
+                timer = Time.time;
+            }
+
             //TimeManager.loopCnt++;
             GameManager.getGM.SwitchToPause();
-            GameObject.Find("Canvas").transform.Find("LossPanel").gameObject.SetActive(true);
+            if (Time.time - timer > 1f)
+            {
+                GameObject.Find("Canvas").transform.Find("LossPanel").gameObject.SetActive(true);
+            }
         }
-        HpBarSlider.value = (float) HP / (HPCeil*1.0f);
 
-        if (Input.GetKeyDown(KeyCode.H)){
+        HpBarSlider.value = (float) HP / (HPCeil * 1.0f);
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
             BackHome();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Monster"){
+        if (other.gameObject.tag == "Monster")
+        {
             if (other.gameObject.name == "Boss")
                 isBoss = true;
             else
@@ -224,12 +292,15 @@ public class HeroBehavior : MonoBehaviour
             Monsters.Enqueue(other.gameObject);
             StartFight();
         }
-        if (other.gameObject.tag == "EndCamp"){
+
+        if (other.gameObject.tag == "EndCamp")
+        {
             BackHome();
         }
     }
 
-    public void BackHome(){
+    public void BackHome()
+    {
         this.transform.position = StartPosition;
         this.HP = HPCeil;
         this.MP = MPCeil;
@@ -238,20 +309,22 @@ public class HeroBehavior : MonoBehaviour
         GameManager.getGM.SwitchToPause();
         TimeManager.getTM.TimePass();
     }
-    void StartFight(){
+
+    void StartFight()
+    {
         freeze = true;
         isFight = true;
     }
 
-    void EndFight(){
+    void EndFight()
+    {
         freeze = false;
         isFight = false;
         heroRound = true;
     }
 
-    void isHit(int demage){
-        HP -= (int)Math.Round((double)demage * (1f - (double)Defense / ((double)Defense + 40f)));
+    void isHit(int demage)
+    {
+        HP -= (int) Math.Round((double) demage * (1f - (double) Defense / ((double) Defense + 40f)));
     }
-
-
 }

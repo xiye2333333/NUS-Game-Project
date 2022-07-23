@@ -16,26 +16,26 @@ public class supply_hp_1 : Building
     void Start()
     {
         level = 1;
-        name = "HP Supply 1";
+        name = "Treatment Station - 1";
         hp = 50;
-        Info = "HP Supply 1: hp+50";
+        Info = "Treatment Station - 1\nHeal yourself by 50HP.\nBy eating, it seems.";
     }
     
     void Update()
     {
         if (level == 2)
         {
-            name = "HP Supply 2";
+            name = "Treatment Station - 2";
             hp = 100;
-            Info = "HP Supply 2: hp+100";
+            Info = "Treatment Station - 2\nHeal yourself by 100HP.\nBy eating, it seems.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover2");
         }
 
         if (level == 3)
         {
-            name = "HP Supply 3";
+            name = "Treatment Station - 3(max)";
             hp = 200;
-            Info = "HP Supply 3: hp+200";
+            Info = "Treatment Station - 3(max)\nHeal yourself by 200HP.\nBy eating, it seems.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpRecover3");
         }
     }
@@ -70,7 +70,7 @@ public class supply_hp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 200;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 5;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade HP Supply 1?\n It needs money=200 and wood=5.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade Treatment Station - 1?\nIt needs 200 gold coins and 5 woods.";
             }
         }
 
@@ -88,7 +88,7 @@ public class supply_hp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 5;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade HP Supply 2?\n It needs money=500, wood=20 and iron=5.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade Treatment Station - 2?\nIt needs 500 gold coins, 20 woods and 5 irons.";
             }
         }
     }

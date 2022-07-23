@@ -15,9 +15,9 @@ public class statue_hp_1 : Building
     void Start()
     {
         level = 1;
-        name = "HP Statue 1";
-        hpCeil = 10;
-        Info = "HP Statue 1: hpCeil+10";
+        name = "Goddess Statue - 1";
+        hpCeil = 20;
+        Info = "Goddess Statue - 1\nIncrease HP ceiling by 20.\nGoddess blesses you.";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
@@ -30,17 +30,17 @@ public class statue_hp_1 : Building
     {
         if (level == 2)
         {
-            name = "HP Statue 2";
-            hpCeil = 20;
-            Info = "HP Statue 2: hpCeil+20";
+            name = "Goddess Statue - 2";
+            hpCeil = 50;
+            Info = "Goddess Statue - 2\nIncrease HP ceiling by 50.\nGoddess blesses you.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpStatue2");
         }
 
         if (level == 3)
         {
-            name = "HP Statue 3";
-            hpCeil = 50;
-            Info = "HP Statue 3: hpCeil+50";
+            name = "Goddess Statue - 3(max)";
+            hpCeil = 100;
+            Info = "Goddess Statue - 3(max)\nIncrease HP ceiling by 100.\nGoddess blesses you.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("HpStatue3");
         }
     }
@@ -60,8 +60,8 @@ public class statue_hp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 10;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().hpCeil = 10;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade HP Statue 1?\n It needs money=700, wood=20 and iron=10.";
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().hpCeil = 30;
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nGoddess Statue - 1?\nIt needs 700 gold coins, 20 woods and 10 irons.";
             }
         }
 
@@ -80,8 +80,8 @@ public class statue_hp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().gem = 2;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().hpCeil = 30;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade HP Statue 2?\n It needs money=1500, wood=50, iron=20 and gem=2.";
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().hpCeil = 50;
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nGoddess Statue - 2?\nIt needs 1500 gold coins, 50 woods, 20 irons and 2 gems.";
             }
         }
     }

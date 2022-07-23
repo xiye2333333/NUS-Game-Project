@@ -45,6 +45,7 @@ public class HeroStatusBehavior : MonoBehaviour
         MP = GameObject.Find("MP");
         HPText = GameObject.Find("HPtext");
         MPText = GameObject.Find("MPtext");
+        
 
     }
 

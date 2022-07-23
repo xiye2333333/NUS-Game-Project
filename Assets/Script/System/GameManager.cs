@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject Boss;
 
-    private GameStatus _gameStatus = GameStatus.Running;
+    private GameStatus _gameStatus = GameStatus.Pause;
 
     private ArrayList buildings = new ArrayList();//type: GameObject
     public enum GameStatus

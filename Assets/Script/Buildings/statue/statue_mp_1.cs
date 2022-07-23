@@ -15,9 +15,9 @@ public class statue_mp_1 : Building
     void Start()
     {
         level = 1;
-        name = "MP Statue 1";
+        name = "Cross Statue - 1";
         mpCeil = -1;
-        Info = "MP Statue 1: mpCeil-1";
+        Info = "Cross Statue - 1\nDecrease MP ceiling by 1.\nReward for piety.";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil += mpCeil;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
@@ -29,17 +29,17 @@ public class statue_mp_1 : Building
     {
         if (level == 2)
         {
-            name = "MP Statue 2";
+            name = "Cross Statue - 2";
             mpCeil = -2;
-            Info = "MP Statue 2: mpCeil-2";
+            Info = "Cross Statue - 2\nDecrease MP ceiling by 2.\nReward for piety.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpStatue2");
         }
 
         if (level == 3)
         {
-            name = "MP Statue 3";
+            name = "Cross Statue - 3(max)";
             mpCeil = -3;
-            Info = "MP Statue 3: mpCeil-3";
+            Info = "Cross Statue - 3(max)\nDecrease MP ceiling by 3.\nReward for piety.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpStatue3");
         }
     }
@@ -61,7 +61,7 @@ public class statue_mp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 10;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().mpCeil = -1;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade MP Statue 1?\n It needs money=1000, wood=20 and iron=10.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nCross Statue - 1?\nIt needs 1000 gold coins, 20 woods and 10 irons.";
             }
         }
 
@@ -81,7 +81,7 @@ public class statue_mp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().gem = 2;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().mpCeil = -1;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade MP Statue 2?\n It needs money=2500, wood=50, iron=20 and gem=2.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nCross Statue - 2?\nIt needs 2500 gold coins, 50 woods, 20 irons and 2 gems.";
             }
         }
     }

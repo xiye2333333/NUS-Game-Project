@@ -44,10 +44,10 @@ public class home : Building
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
 
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 300;
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 500;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 1;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().addLevel = 1;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Do you want to upgrade your home?\nIt will offer more diverse and advanced buildings.\n  It needs money=300.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Do you want to upgrade your home?\nIt will offer more diverse and advanced buildings.\nIt needs 500 gold coins.";
             }
         }
 
@@ -61,12 +61,12 @@ public class home : Building
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
 
-                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;
+                GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1500;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 60;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 60;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().addLevel = 1;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Do you want to upgrade your home?\nIt will offer more diverse and advanced buildings.\n It needs money=1000, wood=60 and stone=60.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Do you want to upgrade your home?\nIt will offer more diverse and advanced buildings.\nIt needs 1500 gold coins, 60 woods and 60 stones.";
             }
         }
     }

@@ -47,9 +47,9 @@ public class Canvas : MonoBehaviour
         }
         else
         {
-            GameObject.Find("Hero").GetComponent<HeroBehavior>().TrueSpeed = 2f;
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().TrueSpeed = 5f;
             if(GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
-                GameObject.Find("Hero").GetComponent<HeroBehavior>().Speed = 2f;
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().Speed = 5f;
             //Assets/Resources/uiui/quick.png
             button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/quick");
             isDoubleSpeed = true;

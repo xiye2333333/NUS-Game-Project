@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.Skill;
 using Script.Staff;
 using Script.Staff.Armor;
 using Script.Staff.Boot;
@@ -42,9 +43,9 @@ public class StoreBehavior : MonoBehaviour
 
     public GameObject Shield2;
 
-    public GameObject Potion1;
+    public GameObject Bash;
 
-    public GameObject Potion2;
+    public GameObject HolyLight;
 
     public GameObject InfoPicture;
 
@@ -53,7 +54,8 @@ public class StoreBehavior : MonoBehaviour
     public GameObject Hero;
 
     public GameObject CurrentObject;
-    
+
+    public GameObject Chat;
     // Start is called before the first frame update
     
     
@@ -72,7 +74,39 @@ public class StoreBehavior : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        StoreText.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
+        StoreText.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2 + Vector3.right * 1.2f);
+
+        if (TimeManager.GlobalDay%10 == 2)
+            Chat.GetComponent<Text>().text =
+                "I am a merchant. Click on me if you need anything. You're gonna have to give me something in exchange.";
+        if (TimeManager.GlobalDay%10 == 3)
+            Chat.GetComponent<Text>().text =
+                "These are left over from the brave men of the past. Some of them are because of better equipment. Others are because... They could no longer pick up their equipment.";
+        if (TimeManager.GlobalDay%10 == 4)
+            Chat.GetComponent<Text>().text =
+                "You want to know why you're here? That's funny. I'd also like to know.";
+        if (TimeManager.GlobalDay%10 == 1)
+            Chat.GetComponent<Text>().text =
+                "You have to find a way to survive. Those guys are getting stronger every day.";
+        if (TimeManager.GlobalDay%10 == 5)
+            Chat.GetComponent<Text>().text =
+                "You ask the big guy? God knows where it comes from!";
+        if (TimeManager.GlobalDay%10 == 6)
+            Chat.GetComponent<Text>().text =
+                "Yesterday was a close call! I saw it knock you down, and today you're standing here unharmed. Maybe one day you can beat it.";
+        if (TimeManager.GlobalDay%10 == 7)
+            Chat.GetComponent<Text>().text =
+                "I guess we're cursed... You have to run laps here every day, and I have to stand here every day.";
+        if (TimeManager.GlobalDay%10 == 8)
+            Chat.GetComponent<Text>().text =
+                "I have seen generations of brave men. Someone once got the better of the big guy and disappeared from the world. If you want to get out of this world, you're gonna have to make an effort.";
+        if (TimeManager.GlobalDay%10 == 9)
+            Chat.GetComponent<Text>().text =
+                "If one day you buy everything from me, I will still come back every day... You're the only friend in the world.";
+        if (TimeManager.GlobalDay%10 == 0)
+            Chat.GetComponent<Text>().text =
+                "Watch out, the big guy's coming, and it's getting stronger!";
+
     }
 
     // public void AddEvent(GameObject GO)
@@ -299,6 +333,30 @@ public class StoreBehavior : MonoBehaviour
         CurrentObject = Sword3;
     }
 
+    public void EnterBash()
+    {
+        Text text = InfoText.GetComponent<Text>();
+        string info = "";
+        info += "Bash" + "\n";
+        info += "Money: "+ 500 + "\n";
+        info += "Double Damage\n";
+        text.text = info;
+        Bash.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);
+        CurrentObject = Bash;
+    }
+
+    public void EnterHolyLight()
+    {
+        Text text = InfoText.GetComponent<Text>();
+        string info = "";
+        info += "Holy Light" + "\n";
+        info += "Money: "+ 500 + "\n";
+        info += "Heal 20% of your max HP\n";
+        text.text = info;
+        HolyLight.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);
+        CurrentObject = HolyLight;
+    }
+    
     public void ExitOneStaff()
     {
         // InfoPicture.gameObject.SetActive(false);
@@ -623,6 +681,42 @@ public class StoreBehavior : MonoBehaviour
             Debug.Log("Source not enough");
         }
     }
+    
+    public void OnClickBash(GameObject gameObject)
+    {
+        Hero = GameObject.Find("Hero");
+        HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
+        if (SourceIsEnough(500,0,0,0,0))
+        {
+            heroBehavior.EquipmentBag.Add(new Bash());
+            heroBehavior.Money -= 500;
+            Debug.Log("Buy Bash");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            DisableBlock(gameObject);
+        }
+        else
+        {
+            Debug.Log("Source not enough");
+        }
+    }
+
+    public void OnClickHolyLight(GameObject gameObject)
+    {
+        Hero = GameObject.Find("Hero");
+        HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
+        if (SourceIsEnough(500,0,0,0,0))
+        {
+            heroBehavior.EquipmentBag.Add(new HolyLight());
+            heroBehavior.Money -= 500;
+            Debug.Log("Buy Bash");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            DisableBlock(gameObject);
+        }
+        else
+        {
+            Debug.Log("Source not enough");
+        }
+    }
 
     public void OnClickExit()
     {
@@ -635,9 +729,9 @@ public class StoreBehavior : MonoBehaviour
         // GameObject.Find("BuildButton").gameObject.SetActive(true);
         // GameObject.Find("BagButton").gameObject.SetActive(false);
         GameObject.Find("StoreCanvas").transform.Find("StorePage").gameObject.SetActive(false);
-        GameManager.getGM.SwitchToRunning();
+        GameManager.getGM.SwitchToPause();
         GameObject.Find("Merchant").GetComponent<Merchant>().StorePageIsOpen = false;
-        GameManager.getGM.SwitchToRunning();
+        GameManager.getGM.SwitchToPause();
     }
     
     public bool SourceIsEnough(int money, int wood, int stone, int iron, int gem)

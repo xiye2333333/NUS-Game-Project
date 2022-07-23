@@ -15,26 +15,26 @@ public class supply_mp_1 : Building
     void Start()
     {
         level = 1;
-        name = "MP Supply 1";
-        mp = 1;
-        Info = "MP Supply 1: mp+1";
+        name = "Magic Well - 1";
+        mp = 5;
+        Info = "Magic Well - 1\nIncrease your MP by 5.\nMagic flows in it.";
     }
     
     void Update()
     {
         if (level == 2)
         {
-            name = "MP Supply 2";
-            mp = 2;
-            Info = "MP Supply 2: mp+2";
+            name = "Magic Well - 2";
+            mp = 10;
+            Info = "Magic Well - 2\nIncrease your MP by 10.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover2");
         }
 
         if (level == 3)
         {
-            name = "MP Supply 3";
-            mp = 3;
-            Info = "MP Supply 3: mp+3";
+            name = "Magic Well - 3(max)";
+            mp = 15;
+            Info = "Magic Well - 3(max)\nIncrease your MP by 15.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover3");
         }
     }
@@ -68,7 +68,7 @@ public class supply_mp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 200;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 5;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade MP Supply 1?\n It needs money=200 and stone=5.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nMagic Well - 1?\nIt needs 200 gold coins and 5 stones.";
             }
         }
 
@@ -86,7 +86,7 @@ public class supply_mp_1 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 5;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
-                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade MP Supply 2?\n It needs money=500, stone=20 and iron=5.";
+                GameObject.Find("UpgradeText").GetComponent<Text>().text = "Are you sure to upgrade\nMagic Well - 2?\nIt needs 500 gold coins, 20 stones and 5 irons.";
             }
         }
     }

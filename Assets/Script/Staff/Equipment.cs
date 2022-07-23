@@ -8,5 +8,7 @@ namespace Script.Staff
         public abstract void PutDown();
 
         public abstract bool BodyBlockIsEmpty();
+        
+        public abstract void Use(GameObject target, bool isBoss);
     }
 }

@@ -15,9 +15,9 @@ public class source_stone_2 : Building
     void Start()
     {
         level = 2;
-        name = "Stone Source 1";
-        addStone = 3;
-        Info = "Stone Source 1: stone+3";
+        name = "Quarry - 1";
+        addStone = 6;
+        Info = "Quarry - 1\nGet 6 stones.\nIt regenerates every day.";
     }
 
     // Update is called once per frame
@@ -25,9 +25,9 @@ public class source_stone_2 : Building
     {
         if (level == 3)
         {
-            name = "Stone Source 2";
-            addStone = 6;
-            Info = "Stone Source 2: stone+6";
+            name = "Quarry - 2(max)";
+            addStone = 15;
+            Info = "Quarry - 2(max)\nGet 15 stones.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("stone3");
         }
     }
@@ -59,7 +59,7 @@ public class source_stone_2 : Building
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 15;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
                 GameObject.Find("UpgradeText").GetComponent<Text>().text =
-                    "Are you sure to upgrade Stone Source 1?\n It needs money=1000, wood=50 and iron=15.";
+                    "Are you sure to upgrade\nQuarry - 1?\nIt needs 1000 gold coins, 50 woods and 15 irons.";
             }
         }
     }

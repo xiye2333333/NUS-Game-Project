@@ -14,9 +14,9 @@ public class treasure : Building
     void Start()
     {
         level = 3;
-        name = "Treasure";
+        name = "Treasure Chest(max)";
         addGem = 1;
-        Info = "Treasure: +1 gem every 3 days";
+        Info = "Treasure Chest(max)\nGet 1 gem every 3 days.\nIt appreciates your creation.";
     }
 
     // Update is called once per frame
