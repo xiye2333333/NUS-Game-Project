@@ -11073,7 +11073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1138886445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14307,7 +14307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1452369485
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14361,9 +14361,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Use one day to get recover.
+  m_Text: 'You will lose half of your money for the cost.
 
-    Go to the next day and keep trying!!'
+    Go to the next day
+    and keep trying!!'
 --- !u!222 &1452369487
 CanvasRenderer:
   m_ObjectHideFlags: 0

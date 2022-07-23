@@ -202,7 +202,7 @@ public class HeroBehavior : MonoBehaviour
             mAnimator.SetInteger("AnimState", 1);
         }else if (death && TimeManager.loopCnt == 0)
         {
-            mAnimator.SetTrigger("Death");
+            //mAnimator.SetTrigger("Death");
             //TimeManager.loopCnt++;
             GameManager.getGM.SwitchToPause();
             GameObject.Find("Canvas").transform.Find("LossPanel").gameObject.SetActive(true);
