@@ -90,7 +90,10 @@ public class BuildingModePicture : MonoBehaviour
     }
 
     public bool PositionIsValid()
-    {
+    {   
+        Bounds thisBounds = GetComponent<SpriteRenderer>().bounds;
+        if (thisBounds.min.x < -24.5f || thisBounds.max.x > 28.5f)
+            return false;
         ArrayList buildings = GameManager.getGM.Buildings; //GameObject
         // Debug.Log(buildings.Count);
         // Debug.Log(GetComponent<SpriteRenderer>().bounds.max.x);
@@ -98,7 +101,6 @@ public class BuildingModePicture : MonoBehaviour
         {
             // Vector3 position = building.transform.position;
             Bounds otherBounds = building.GetComponent<SpriteRenderer>().bounds;
-            Bounds thisBounds = GetComponent<SpriteRenderer>().bounds;
             if (otherBounds.max.x > thisBounds.min.x && otherBounds.min.x < thisBounds.max.x)
             {
                 return false;
