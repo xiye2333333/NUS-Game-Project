@@ -39,7 +39,11 @@ public class LossPanel : MonoBehaviour
     {
         GameObject.Find("LossPanel").SetActive(false);
         if (BossBehavior.visiblity)
+        {
+            Boss = GameObject.Find("Boss");
+            Hero = GameObject.Find("Hero");
             Boss.GetComponent<BossBehavior>().Reset();
+        }
         //Hero.GetComponent<HeroBehavior>().Money /= 2;
         Hero.GetComponent<HeroBehavior>().death = false;
         Hero.GetComponent<HeroBehavior>().GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Hero Knight_0");

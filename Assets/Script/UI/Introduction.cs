@@ -129,7 +129,7 @@ public class Introduction : MonoBehaviour
             {
                 text = "Now your first day is started!\n" +
                        "Please watching the hero fight with the monster to know the fighting part.";
-                if (Hero.GetComponent<HeroBehavior>().Stone != 0)
+                if (Hero.GetComponent<HeroBehavior>().Money > 300)
                 {
                     step = 6f;
                 }
@@ -137,9 +137,8 @@ public class Introduction : MonoBehaviour
         }
         else if (step >= 6 && step < 7)
         {
-            text = "Now you can press <color=#FF0000>H</color> to skip the day.\n" +
-                   "Attention! It will skip the rest of buildings!\n" +
-                   "Or you can click <color=#FF0000>speed up</color> button to run out of the first day.";
+            text =
+                   "Now you can click <color=#FF0000>speed up</color>button or double press H to run out of the first day.";
             if (TimeManager.GlobalDay == 2)
             {
                 step = 7f;

@@ -16,7 +16,7 @@ public class treasure : Building
         level = 3;
         name = "Treasure Chest(max)";
         addGem = 1;
-        Info = "Treasure Chest(max)\nGet 1 gem every 3 days.\nIt appreciates your creation.";
+        Info = "Treasure Chest(max)\nGet 1 gem every day.\nIt appreciates your creation.";
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class treasure : Building
         if (collision.gameObject.name == "Hero")
         {
             day++;
-            if (day % 3 == 0)
+            if (day % 1 == 0)
             {
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem += addGem;
                 GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainGem(addGem);

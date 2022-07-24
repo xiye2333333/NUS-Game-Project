@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class statue_hp_1 : Building
-// statue_hp_1: hpCeil+10; money=300, wood=5
+// statue_hp_1: hpCeil+10; money=150, wood=5
 // statue_hp_2: hpCeil+20; money=700, wood=20, iron=10
 // statue_hp_3: hpCeil+50; money=1500, wood=50, iron=20, gem=2
 {
@@ -19,6 +19,7 @@ public class statue_hp_1 : Building
         hpCeil = 20;
         Info = "Goddess Statue - 1\nIncrease HP ceiling by 20.\nGoddess blesses you.";
         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().HP += hpCeil;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
@@ -45,7 +46,7 @@ public class statue_hp_1 : Building
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 1)
         {
@@ -55,7 +56,11 @@ public class statue_hp_1 : Building
                     GameManager.getGM.SwitchToUpgrading();
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 700;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 10;
@@ -74,7 +79,11 @@ public class statue_hp_1 : Building
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1500;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 50;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 20;

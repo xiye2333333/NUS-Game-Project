@@ -16,8 +16,8 @@ public class source_wood_2 : Building
     {
         level = 2;
         name = "Logging Camp - 1";
-        addWood = 6;
-        Info = "Logging Camp - 1\nGet 6 pieces of wood.\nIt regenerates every day.";
+        addWood = 20;
+        Info = "Logging Camp - 1\nGet 20 pieces of wood.\nIt regenerates every day.";
     }
 
     // Update is called once per frame
@@ -26,8 +26,8 @@ public class source_wood_2 : Building
         if (level == 3)
         {
             name = "Logging Camp - 2(max)";
-            addWood = 15;
-            Info = "Logging Camp - 2(max)\nGet 15 pieces of wood.\nIt regenerates every day.";
+            addWood = 100;
+            Info = "Logging Camp - 2(max)\nGet 100 pieces of wood.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("wood3");
         }
     }
@@ -43,7 +43,7 @@ public class source_wood_2 : Building
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 2)
         {
@@ -53,6 +53,11 @@ public class source_wood_2 : Building
                     GameManager.getGM.SwitchToUpgrading();
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
 
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;

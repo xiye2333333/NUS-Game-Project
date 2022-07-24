@@ -37,21 +37,20 @@ public class MonsterBehavior : MonoBehaviour
     void Start()
     {
         Upd = TimeManager.MonsterUpd;
-        HP = 15 + 2 * Upd;
-        MaxHP = 15 + 2 * Upd;
-        Attack = 15 + 2 * Upd;
-        Defence = 2 + 2 * Upd;
+        HP = 15 + 2 * Upd - TimeManager.GlobalDay / 5 * 5 + (TimeManager.GlobalDay / 10) * (TimeManager.GlobalDay % 10);
+        MaxHP = 15 + 2 * Upd - TimeManager.GlobalDay / 5 * 5 + (TimeManager.GlobalDay / 10) * (TimeManager.GlobalDay % 10);
+        Attack = 15 + 2 * Upd - TimeManager.GlobalDay / 5 * 5 + (TimeManager.GlobalDay / 15) * (TimeManager.GlobalDay % 15);
+        Defence = 2 + 2 * Upd - TimeManager.GlobalDay / 5 * 2;
         Speed = 2.0f;
         Critical = 0f;
         Hero = GameObject.Find("Hero");
         freeze = false;
-        Wood = 2 + Upd;
-        Stone = 2 + Upd;
-        Iron = 1 + Upd / 2;
+        Wood = 2 + Upd - TimeManager.GlobalDay / 5 * 2;
+        Stone = 2 + Upd - TimeManager.GlobalDay / 5 * 2;
+        Iron = 1 + Upd / 2 - - TimeManager.GlobalDay / 5;
         Gem = 1;
 
-        Money = 50 + 20 * Upd;
-
+        Money = 60 + 20 * Upd - TimeManager.GlobalDay / 5 * 20;
         dieTime = 0.5f;
 
         mAnimator = GetComponent<Animator>();

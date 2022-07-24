@@ -5,8 +5,8 @@ namespace Script.Staff
         public GoldenSword()
         {
             name = "Golden Sword";
-            info = "A legendary golden sword\nAdd 300 attack power.";
-            Attack = 300;
+            info = "A legendary golden sword\nAdd 80 attack power.";
+            Attack = 80;
             SpiritPath = "Staff/Golden Sword";
         }
     }

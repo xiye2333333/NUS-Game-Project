@@ -98,12 +98,12 @@ public class HeroBehavior : MonoBehaviour
         MP = 0;
         MPCeil = 50;
         Attack = 5;
-        Defense = 1;
+        Defense = 5;
         Wood = 0;
         Stone = 0;
         Iron = 0;
         Gem = 0;
-        Money = 200;
+        Money = 300;
         Level = 1;
         MPrecover = 5;
 

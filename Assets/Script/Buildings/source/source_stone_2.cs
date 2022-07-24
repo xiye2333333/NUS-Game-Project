@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Script.UI;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -16,8 +17,8 @@ public class source_stone_2 : Building
     {
         level = 2;
         name = "Quarry - 1";
-        addStone = 6;
-        Info = "Quarry - 1\nGet 6 stones.\nIt regenerates every day.";
+        addStone = 20;
+        Info = "Quarry - 1\nGet 20 stones.\nIt regenerates every day.";
     }
 
     // Update is called once per frame
@@ -26,8 +27,8 @@ public class source_stone_2 : Building
         if (level == 3)
         {
             name = "Quarry - 2(max)";
-            addStone = 15;
-            Info = "Quarry - 2(max)\nGet 15 stones.\nIt regenerates every day.";
+            addStone = 100;
+            Info = "Quarry - 2(max)\nGet 100 stones.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("stone3");
         }
     }
@@ -42,7 +43,7 @@ public class source_stone_2 : Building
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 2)
         {
@@ -50,10 +51,14 @@ public class source_stone_2 : Building
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
                     GameManager.getGM.SwitchToUpgrading();
-
+    
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 50;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 15;
@@ -63,4 +68,5 @@ public class source_stone_2 : Building
             }
         }
     }
+    
 }

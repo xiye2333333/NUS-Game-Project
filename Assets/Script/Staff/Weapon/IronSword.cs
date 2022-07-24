@@ -5,8 +5,8 @@ namespace Script.Staff
         public IronSword()
         {
             name = "Iron Sword";
-            info = "An excellent iron sword\nAdd 80 attack power";
-            Attack = 80;
+            info = "An excellent iron sword\nAdd 30 attack power";
+            Attack = 30;
             SpiritPath = "Staff/Iron Sword";
         }
     }

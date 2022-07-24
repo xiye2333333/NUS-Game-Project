@@ -59,7 +59,7 @@ public class BuildMenu : MonoBehaviour
         HunterPicture.GetComponent<SpriteRenderer>().sprite = Hunter;
         HunterPicture.AddComponent<BuildingModePicture>();
         HunterPicture.GetComponent<BuildingModePicture>().targetName = "Hunter";
-        HunterPicture.GetComponent<BuildingModePicture>().money = 20;
+        HunterPicture.GetComponent<BuildingModePicture>().money = 50;
         foreach (GameObject button in Buttons)
         {
             button.gameObject.SetActive(false);
@@ -114,7 +114,7 @@ public class BuildMenu : MonoBehaviour
         HpStatuePicture.GetComponent<SpriteRenderer>().sprite = HpStatue;
         HpStatuePicture.AddComponent<BuildingModePicture>();
         HpStatuePicture.GetComponent<BuildingModePicture>().targetName = "HpStatue";
-        HpStatuePicture.GetComponent<BuildingModePicture>().money = 300;
+        HpStatuePicture.GetComponent<BuildingModePicture>().money = 150;
         HpStatuePicture.GetComponent<BuildingModePicture>().wood = 5;
         foreach (GameObject button in Buttons)
         {
@@ -132,7 +132,7 @@ public class BuildMenu : MonoBehaviour
         HpStatuePicture.GetComponent<SpriteRenderer>().sprite = MpStatue;
         HpStatuePicture.AddComponent<BuildingModePicture>();
         HpStatuePicture.GetComponent<BuildingModePicture>().targetName = "MpStatue";
-        HpStatuePicture.GetComponent<BuildingModePicture>().money = 500;
+        HpStatuePicture.GetComponent<BuildingModePicture>().money = 150;
         HpStatuePicture.GetComponent<BuildingModePicture>().stone = 5;
         foreach (GameObject button in Buttons)
         {
@@ -186,8 +186,8 @@ public class BuildMenu : MonoBehaviour
         WoodSourcePicture.GetComponent<SpriteRenderer>().sprite = WoodSource;
         WoodSourcePicture.AddComponent<BuildingModePicture>();
         WoodSourcePicture.GetComponent<BuildingModePicture>().targetName = "WoodSource";
-        WoodSourcePicture.GetComponent<BuildingModePicture>().money = 350;
-        WoodSourcePicture.GetComponent<BuildingModePicture>().stone = 20;
+        WoodSourcePicture.GetComponent<BuildingModePicture>().money = 200;
+        WoodSourcePicture.GetComponent<BuildingModePicture>().stone = 5;
         foreach (GameObject button in Buttons)
         {
             button.gameObject.SetActive(false);
@@ -204,8 +204,8 @@ public class BuildMenu : MonoBehaviour
         StoneSourcePicture.GetComponent<SpriteRenderer>().sprite = StoneSource;
         StoneSourcePicture.AddComponent<BuildingModePicture>();
         StoneSourcePicture.GetComponent<BuildingModePicture>().targetName = "StoneSource";
-        StoneSourcePicture.GetComponent<BuildingModePicture>().money = 350;
-        StoneSourcePicture.GetComponent<BuildingModePicture>().wood = 20;
+        StoneSourcePicture.GetComponent<BuildingModePicture>().money = 200;
+        StoneSourcePicture.GetComponent<BuildingModePicture>().wood = 5;
         foreach (GameObject button in Buttons)
         {
             button.gameObject.SetActive(false);
@@ -222,10 +222,9 @@ public class BuildMenu : MonoBehaviour
         IronSourcePicture.GetComponent<SpriteRenderer>().sprite = IronSource;
         IronSourcePicture.AddComponent<BuildingModePicture>();
         IronSourcePicture.GetComponent<BuildingModePicture>().targetName = "IronSource";
-        IronSourcePicture.GetComponent<BuildingModePicture>().money = 1500;
+        IronSourcePicture.GetComponent<BuildingModePicture>().money = 1000;
         IronSourcePicture.GetComponent<BuildingModePicture>().wood = 50;
         IronSourcePicture.GetComponent<BuildingModePicture>().stone = 50;
-        IronSourcePicture.GetComponent<BuildingModePicture>().gem = 1;
         foreach (GameObject button in Buttons)
         {
             button.gameObject.SetActive(false);
@@ -242,7 +241,7 @@ public class BuildMenu : MonoBehaviour
         TreasurePicture.GetComponent<SpriteRenderer>().sprite = Treasure;
         TreasurePicture.AddComponent<BuildingModePicture>();
         TreasurePicture.GetComponent<BuildingModePicture>().targetName = "Treasure";
-        TreasurePicture.GetComponent<BuildingModePicture>().gem = 5;
+        TreasurePicture.GetComponent<BuildingModePicture>().gem = 2;
         foreach (GameObject button in Buttons)
         {
             button.gameObject.SetActive(false);
@@ -264,7 +263,7 @@ public class BuildMenu : MonoBehaviour
         string text = "";
         text += "Monster House" + "\n";
         text += "Hunt monsters for money.\nIt is also getting stronger." + "\n";
-        text += "Need: 20 gold coins";
+        text += "Need: 50 gold coins";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -294,7 +293,7 @@ public class BuildMenu : MonoBehaviour
         string text = "";
         text += "Goddess Statue" + "\n";
         text += "Increase HP ceiling by 10.\nGoddess blesses you." + "\n";
-        text += "Need: 300 gold coins and 5 woods";
+        text += "Need: 150 gold coins and 5 woods";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -303,8 +302,8 @@ public class BuildMenu : MonoBehaviour
         // supply_mp_1 statue = new supply_mp_1() ;
         string text = "";
         text += "Cross Statue" + "\n";
-        text += "Decrease MP ceiling by 1.\nReward for piety." + "\n";
-        text += "Need: 300 gold coins and 5 stones";
+        text += "Decrease MP ceiling by 5.\nReward for piety." + "\n";
+        text += "Need: 150 gold coins and 5 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -333,8 +332,8 @@ public class BuildMenu : MonoBehaviour
         // source_wood_2 statue = new source_wood_2() ;
         string text = "";
         text += "Logging Camp" + "\n";
-        text += "Get 6 pieces of wood.\nIt regenerates every day." + "\n";
-        text += "Need: 350 gold coins and 20 stones";
+        text += "Get 20 pieces of wood.\nIt regenerates every day." + "\n";
+        text += "Need: 200 gold coins and 5 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -343,8 +342,8 @@ public class BuildMenu : MonoBehaviour
         // source_stone_2 statue = new source_stone_2() ;
         string text = "";
         text += "Quarry" + "\n";
-        text += "Get 6 stones.\nIt regenerates every day." + "\n";
-        text += "Need: 350 gold coins and 20 woods";
+        text += "Get 20 stones.\nIt regenerates every day." + "\n";
+        text += "Need: 200 gold coins and 5 woods";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -353,8 +352,8 @@ public class BuildMenu : MonoBehaviour
         // source_iron_3 statue = new source_iron_3() ;
         string text = "";
         text += "Iron Area" + "\n";
-        text += "Get 6 irons.\nIt regenerates every day." + "\n";
-        text += "Need: 1500 gold coins, 50 woods, 50 stones and 1 gem";
+        text += "Get 50 irons.\nIt regenerates every day." + "\n";
+        text += "Need: 1000 gold coins, 50 woods, 50 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 
@@ -363,8 +362,8 @@ public class BuildMenu : MonoBehaviour
         // treasure statue = new treasure() ;
         string text = "";
         text += "Treasure Chest" + "\n";
-        text += "Get 1 gem every 3 days.\nIt appreciates your creation." + "\n";
-        text += "Need: 5 gems";
+        text += "Get 1 gem every day.\nIt appreciates your creation." + "\n";
+        text += "Need: 2 gems";
         BuildingInfo.GetComponent<Text>().text = text;
     }
 }

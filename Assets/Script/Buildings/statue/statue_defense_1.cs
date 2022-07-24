@@ -40,7 +40,7 @@ public class statue_defense_1 : Building
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 1)
         {
@@ -50,7 +50,11 @@ public class statue_defense_1 : Building
                     GameManager.getGM.SwitchToUpgrading();
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 400;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 20;
@@ -69,7 +73,11 @@ public class statue_defense_1 : Building
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 50;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 50;

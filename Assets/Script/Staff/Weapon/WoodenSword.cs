@@ -5,9 +5,9 @@ namespace Script.Staff
         public WoodenSword()
         {
             name = "Wooden Sword";
-            info = "A good wooden sword\nAdd 20 attack power";
+            info = "A good wooden sword\nAdd 15 attack power";
             SpiritPath = "Staff/Wooden Sword";
-            Attack = 20;
+            Attack = 15;
         }
     }
 }
