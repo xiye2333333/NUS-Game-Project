@@ -5674,7 +5674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dd5863910bbab64bbeb47151bfcd7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDoubleSpeed: 0
+  SpeedButton: {fileID: 0}
 --- !u!1 &480138219 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3314372926018307625, guid: 058198da70886ba42aca66940bc33fc2, type: 3}
@@ -6757,6 +6757,7 @@ MonoBehaviour:
   HpBarSlider: {fileID: 656420927}
   Direction: -1
   freeze: 1
+  timer: 0
 --- !u!61 &564906799
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17303,7 +17304,6 @@ MonoBehaviour:
   Gem: 0
   Level: 2
   Speed: 0
-  TrueSpeed: 1
   HpBarSlider: {fileID: 2052814756}
   isFight: 0
   roundTime: 1
@@ -17460,7 +17460,7 @@ GameObject:
   - component: {fileID: 1330282684}
   m_Layer: 5
   m_Name: Speed
-  m_TagString: Untagged
+  m_TagString: SpeedButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
