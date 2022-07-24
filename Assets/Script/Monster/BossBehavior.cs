@@ -54,6 +54,7 @@ public class BossBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameObject.FindGameObjectWithTag("BossHPText").GetComponent<Text>().text = "Boss HP " + HP + "/" + MaxHP;
         if (HP <= 0){
             isWin = true;
             // mAnimator.SetTrigger("Death");
