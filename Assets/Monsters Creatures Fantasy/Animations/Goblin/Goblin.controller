@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 15c067d592a52b843bf86a62958b3ea5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 7728b1dad98b4534a80ae8c9fee0c7a8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eb65079a1e352334d9ee8ee6ad2db364, type: 2}
+  m_Motion: {fileID: 7400000, guid: bd26c19e0a618fd4fbb20e2c8c748dae, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -109,7 +109,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mushroom
+  m_Name: Goblin
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: takehit
@@ -175,7 +175,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aef9dc792b5fdf64c956b93db7e433b4, type: 2}
+  m_Motion: {fileID: 7400000, guid: 847f19c82422a8941a688ff82ec8f938, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -334,7 +334,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e3bf76f441fa11f48a94a265607f4cf5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 955c5f94405c8094c856452f0c56be96, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -361,7 +361,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cb90ccf1682ef7248b63adba89470305, type: 2}
+  m_Motion: {fileID: 7400000, guid: 45473132b12182c479b91a4d634c86c3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

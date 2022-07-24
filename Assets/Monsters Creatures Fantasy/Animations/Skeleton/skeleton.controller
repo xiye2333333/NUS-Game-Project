@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 15c067d592a52b843bf86a62958b3ea5, type: 2}
+  m_Motion: {fileID: 7400000, guid: 351e866980e737f40bb950c1a44adbf2, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eb65079a1e352334d9ee8ee6ad2db364, type: 2}
+  m_Motion: {fileID: 7400000, guid: a6f30ec736fd9794fb16f14fc6b9ce8c, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -109,7 +109,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mushroom
+  m_Name: skeleton
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: takehit
@@ -175,7 +175,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aef9dc792b5fdf64c956b93db7e433b4, type: 2}
+  m_Motion: {fileID: 7400000, guid: b483996cd83da7e4ea4cc5adc0e33552, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -334,7 +334,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e3bf76f441fa11f48a94a265607f4cf5, type: 2}
+  m_Motion: {fileID: 7400000, guid: be1167c99a21e764590d6fc65959e549, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -361,7 +361,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: cb90ccf1682ef7248b63adba89470305, type: 2}
+  m_Motion: {fileID: 7400000, guid: a445b2893eb5b4745b61c2960db20ccf, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

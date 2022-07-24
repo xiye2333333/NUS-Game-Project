@@ -44,7 +44,18 @@ public class hunted_house : Building
     }
 
     void releaseMonsters(){
-        GameObject Monster = Instantiate(Resources.Load("Prefab/Monster A") as GameObject);
+        int GlobalDay = TimeManager.GlobalDay;
+        String MonsterType = "Prefab/Monster ";
+        if (GlobalDay < 5){
+            MonsterType += "A";
+        }else if(GlobalDay < 10){
+            MonsterType += "B";
+        }else if(GlobalDay < 15){
+            MonsterType += "C";
+        }else{
+            MonsterType += "D";
+        }
+        GameObject Monster = Instantiate(Resources.Load(MonsterType) as GameObject);
         Vector3 p = gameObject.transform.position;
         //p.x += Random.value * (2*randomMonsterOffset) - randomMonsterOffset;
         p.x += offsetX;
