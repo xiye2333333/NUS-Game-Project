@@ -92,7 +92,16 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem >= gem &&
             GameObject.Find("Hero").GetComponent<HeroBehavior>().Level >= level)
             return true;
-        return false;
+        else if (GameObject.Find("Hero").GetComponent<HeroBehavior>().Level < level)
+        {
+            GameObject.Find("BuildingInfo").GetComponent<Text>().text = "Upgrade Failed:\nInsufficient home level!";
+            return false;
+        }
+        else
+        {
+            GameObject.Find("BuildingInfo").GetComponent<Text>().text = "Upgrade Failed:\nNot enough resources!";
+            return false;
+        }
     }
 
     public void Purchase()

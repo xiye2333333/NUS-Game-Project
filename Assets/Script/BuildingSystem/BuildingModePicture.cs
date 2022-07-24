@@ -21,7 +21,7 @@ public class BuildingModePicture : MonoBehaviour
     public int stone = 0;
     public int iron = 0;
     public int gem = 0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,13 +58,13 @@ public class BuildingModePicture : MonoBehaviour
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
-                GameManager.getGM.SwitchToRunning();
+                    GameManager.getGM.SwitchToRunning();
                 Purchase();
                 foreach (GameObject button in BuildMenu.Buttons)
                 {
                     button.gameObject.SetActive(true);
                 }
-                
+
                 GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayPlace();
                 Destroy(gameObject);
                 BuildMenu.BuildingFlag = false;
@@ -77,22 +77,25 @@ public class BuildingModePicture : MonoBehaviour
             color.a = 0.5f;
             sp.color = color;
         }
-        if (Input.GetMouseButtonDown(1)){
-                foreach (GameObject button in BuildMenu.Buttons)
-                {
-                    button.gameObject.SetActive(true);
-                }
-                Destroy(gameObject);
-                BuildMenu.BuildingFlag = false;
-                if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
-                GameManager.getGM.SwitchToRunning();
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            foreach (GameObject button in BuildMenu.Buttons)
+            {
+                button.gameObject.SetActive(true);
             }
+
+            Destroy(gameObject);
+            BuildMenu.BuildingFlag = false;
+            if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
+                GameManager.getGM.SwitchToRunning();
+        }
     }
 
     public bool PositionIsValid()
-    {   
+    {
         Bounds thisBounds = GetComponent<SpriteRenderer>().bounds;
-        if (thisBounds.min.x < -24.5f || thisBounds.max.x > 28.5f)
+        if (thisBounds.min.x < -24.5f || thisBounds.max.x > 27f)
             return false;
         ArrayList buildings = GameManager.getGM.Buildings; //GameObject
         // Debug.Log(buildings.Count);
@@ -109,7 +112,7 @@ public class BuildingModePicture : MonoBehaviour
 
         return true;
     }
-    
+
     public bool CanPurchase()
     {
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().Money >= money &&
