@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     private GameObject Boss;
 
     private GameStatus _gameStatus = GameStatus.Pause;
+
+    private GameObject PauseButton;
 
     private ArrayList buildings = new ArrayList();//type: GameObject
     public enum GameStatus
@@ -38,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         Hero = GameObject.Find("Hero");
         Boss = GameObject.Find("Boss");
+        PauseButton = GameObject.FindGameObjectWithTag("PauseButton");
     }
 
     // Update is called once per frame
@@ -61,6 +65,7 @@ public class GameManager : MonoBehaviour
     }
     public void SwitchToPause()
     {
+        PauseButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/pause");
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Pause;
@@ -68,6 +73,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToBuilding()
     {
+        PauseButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/pause");
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Building;
@@ -75,6 +81,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToUpgrading()
     {
+        PauseButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/pause");
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Upgrading;
@@ -82,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToBagging()
     {
+        PauseButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/pause");
         Hero.GetComponent<HeroBehavior>().Speed = 0f;
         Boss.GetComponent<BossBehavior>().Speed = 0f;
         _gameStatus = GameStatus.Bagging;
@@ -89,6 +97,7 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToRunning()
     {
+        PauseButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/running");
         Hero.GetComponent<HeroBehavior>().Speed = Canvas.SpeedRate;
         Boss.GetComponent<BossBehavior>().Speed = Canvas.SpeedRate * 2;
         _gameStatus = GameStatus.Running;

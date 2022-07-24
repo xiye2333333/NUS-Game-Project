@@ -61,4 +61,13 @@ public class Canvas : MonoBehaviour
             SpeedRate = 5;
         }
     }
+
+    public void OnClickPauseButton(GameObject button){
+        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running){
+            GameManager.getGM.SwitchToPause();
+        }
+        else{
+            GameManager.getGM.SwitchToRunning();
+        }
+    }
 }

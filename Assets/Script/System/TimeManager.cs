@@ -8,7 +8,7 @@ public class TimeManager : MonoBehaviour
 {
     public static int GlobalDay;
     public static int BossDay;
-    public static int loopCnt;
+    public static bool GameMode;
     public static int MonsterNum;
     public static int MonsterUpd;
     private GameObject Hero;
@@ -27,7 +27,8 @@ public class TimeManager : MonoBehaviour
         DayText = GameObject.Find("DayText");
         Boss = GameObject.Find("Boss");
         GlobalDay = 1;
-        BossDay = 10;
+        GameMode = false;
+        BossDay = 5;
         MonsterNum = 1;
         MonsterUpd = 0;
     }
@@ -35,6 +36,10 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameMode)
+            BossDay = 10;
+        else 
+            BossDay = 5;
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
         if (!BossBehavior.isWin && Boss != null){
             BossBehavior.visiblity = (GlobalDay % BossDay == 0) ? true : false;
