@@ -95,7 +95,7 @@ public class HeroBehavior : MonoBehaviour
     {
         HP = 100;
         HPCeil = 100;
-        MP = 50;
+        MP = 0;
         MPCeil = 50;
         Attack = 5;
         Defense = 1;
