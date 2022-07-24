@@ -38,8 +38,6 @@ public class HeroBehavior : MonoBehaviour
 
     public float Speed = 0f;
 
-    public float TrueSpeed = 1f;
-
     public Slider HpBarSlider;
 
     public Queue<GameObject> Monsters;
@@ -158,6 +156,9 @@ public class HeroBehavior : MonoBehaviour
             }
         }
 
+        if (BossBehavior.isWin && Monsters.Count != 0)
+            Monsters.Dequeue();
+
         if (Monsters.Count == 0)
         {
             EndFight();
@@ -246,6 +247,7 @@ public class HeroBehavior : MonoBehaviour
                     // Death();
                     EndFight();
                     death = true;
+                    GameManager.getGM.SwitchToPause();
                 }
 
                 mFightAt = 0;
@@ -267,8 +269,7 @@ public class HeroBehavior : MonoBehaviour
             }
 
             //TimeManager.loopCnt++;
-            GameManager.getGM.SwitchToPause();
-            if (Time.time - timer > 1f)
+            if (Time.time - timer > 1.4f)
             {
                 GameObject.Find("Canvas").transform.Find("LossPanel").gameObject.SetActive(true);
             }
@@ -276,7 +277,7 @@ public class HeroBehavior : MonoBehaviour
 
         HpBarSlider.value = (float) HP / (HPCeil * 1.0f);
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             BackHome();
         }
@@ -304,7 +305,7 @@ public class HeroBehavior : MonoBehaviour
     {
         this.transform.position = StartPosition;
         this.HP = HPCeil;
-        this.MP = MPCeil;
+        //this.MP = MPCeil;
         //CameraBehavior.getCB.FollowHero();
         CameraBehavior.getCB.BackLeftHome();
         GameManager.getGM.SwitchToPause();

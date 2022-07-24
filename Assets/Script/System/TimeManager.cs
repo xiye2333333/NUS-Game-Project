@@ -36,7 +36,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
-        if (!BossBehavior.isWin){
+        if (!BossBehavior.isWin && Boss != null){
             BossBehavior.visiblity = (GlobalDay % BossDay == 0) ? true : false;
             Boss.SetActive(BossBehavior.visiblity);
         }
