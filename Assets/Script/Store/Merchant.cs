@@ -8,7 +8,7 @@ public class Merchant : MonoBehaviour
     public bool StorePageIsOpen = false;
     public void OnMouseDown()
     {
-        if (StorePageIsOpen == false)
+        if (StorePageIsOpen == false && !GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.activeInHierarchy)
         {
             if(GameObject.Find("Build Menu") != null)
                 GameObject.Find("Build Menu").SetActive(false);
