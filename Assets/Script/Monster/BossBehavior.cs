@@ -31,6 +31,8 @@ public class BossBehavior : MonoBehaviour
 
     public static bool visiblity;
 
+    public float timer = 0f;
+
     Vector3 StartPoint;
     // Start is called before the first frame update
     void Start()
@@ -56,12 +58,20 @@ public class BossBehavior : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("BossHPText").GetComponent<Text>().text = "Boss HP " + HP + "/" + MaxHP;
         if (HP <= 0){
-            isWin = true;
-            // mAnimator.SetTrigger("Death");
-            Destroy(gameObject);
-            GameObject.Find("Canvas").transform.Find("WinPanel").gameObject.SetActive(true);
+            
+            if (timer == 0)
+            {
+                mAnimator.SetTrigger("Death");
+                isWin = true;
+                GameManager.getGM.SwitchToPause();
+                timer = Time.time;
+            }     
+            if (Time.time - timer > 1.4f)
+            {
+                Destroy(gameObject);
+                GameObject.Find("Canvas").transform.Find("WinPanel").gameObject.SetActive(true);
+            }
             //Hero.GetComponent<HeroBehavior>().Money += 50000;
-            //mAnimator.SetTrigger("Death");
         }
         FindDirection();
         if(!freeze){
