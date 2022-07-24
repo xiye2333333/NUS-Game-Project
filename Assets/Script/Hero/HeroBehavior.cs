@@ -164,14 +164,13 @@ public class HeroBehavior : MonoBehaviour
             EndFight();
         }
 
-        #region Fight
 
         if (isFight)
         {
             mAnimator.SetInteger("AnimState", 0);
             if (mFightAt > roundTime)
             {
-                #region HeroRound
+               
 
                 if (heroRound)
                 {
@@ -196,7 +195,7 @@ public class HeroBehavior : MonoBehaviour
                         else
                         {
                             Monsters.Peek().GetComponent<MonsterBehavior>().isHit(Attack);
-                            if (MP + MPrecover < MPCeil)
+                            if (MP + MPrecover <= MPCeil)
                             {
                                 MP += MPrecover;
                             }
@@ -216,7 +215,7 @@ public class HeroBehavior : MonoBehaviour
                         else
                         {
                             Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
-                            if (MP + MPrecover < MPCeil)
+                            if (MP + MPrecover <= MPCeil)
                             {
                                 MP += MPrecover;
                             }
@@ -232,9 +231,9 @@ public class HeroBehavior : MonoBehaviour
                     GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayHeroHit();
                 }
 
-                #endregion
+                
 
-                #region MonsterRound
+          
 
                 else
                 {
@@ -255,8 +254,7 @@ public class HeroBehavior : MonoBehaviour
                     }
                 }
 
-                #endregion
-
+     
                 heroRound = !heroRound;
 
                 if (HP <= 0)
@@ -270,9 +268,7 @@ public class HeroBehavior : MonoBehaviour
                 mFightAt = 0;
             }
         }
-
-        #endregion
-
+        
         else if (!isFight && !death)
         {
             mAnimator.SetInteger("AnimState", 1);
