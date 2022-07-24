@@ -62,7 +62,7 @@ namespace Script.Staff.Armor
 
         public override void Use(GameObject target, bool isBoss)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

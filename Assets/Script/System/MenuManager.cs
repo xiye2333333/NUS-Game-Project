@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,8 +27,15 @@ public class MenuManager : MonoBehaviour
         
     }
 
-    public void OnClickPlayButton()
+    public void OnClickEasyButton()
     {
+        GameObject.Find("GameData").GetComponent<GamaData>().isChallenge = false;
+        SceneManager.LoadScene("Scenes/SampleScene");
+    }
+
+    public void OnClickChallengeButton()
+    {
+        GameObject.Find("GameData").GetComponent<GamaData>().isChallenge = true;
         SceneManager.LoadScene("Scenes/SampleScene");
     }
 

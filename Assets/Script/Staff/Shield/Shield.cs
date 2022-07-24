@@ -55,7 +55,7 @@ namespace Script.Staff.Shield
 
         public override void Use(GameObject target, bool isBoss)
         {
-            throw new System.NotImplementedException();
+
         }
     }
 }

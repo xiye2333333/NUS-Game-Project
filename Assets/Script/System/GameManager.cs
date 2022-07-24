@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     private GameObject PauseButton;
 
     private ArrayList buildings = new ArrayList();//type: GameObject
+    
+    public bool isChallenge = false;
     public enum GameStatus
     {
         Pause,
@@ -42,6 +45,8 @@ public class GameManager : MonoBehaviour
         Hero = GameObject.Find("Hero");
         Boss = GameObject.Find("Boss");
         PauseButton = GameObject.FindGameObjectWithTag("PauseButton");
+        isChallenge = GameObject.Find("GameData").GetComponent<GamaData>().isChallenge;
+        TimeManager.GameMode = isChallenge;
     }
 
     // Update is called once per frame

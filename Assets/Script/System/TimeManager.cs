@@ -27,7 +27,7 @@ public class TimeManager : MonoBehaviour
         DayText = GameObject.Find("DayText");
         Boss = GameObject.Find("Boss");
         GlobalDay = 1;
-        GameMode = false;
+        // GameMode = GameManager.getGM.isChallenge;
         BossDay = 5;
         MonsterNum = 1;
         MonsterUpd = 0;

@@ -54,7 +54,7 @@ namespace Script.Staff
 
         public override void Use(GameObject target, bool isBoss)
         {
-            throw new System.NotImplementedException();
+            
         }
     }
 }

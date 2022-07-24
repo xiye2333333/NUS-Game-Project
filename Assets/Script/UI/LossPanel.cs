@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class LossPanel : MonoBehaviour
 {
     GameObject Hero;
     GameObject Boss;
+    public GameObject Continue;
 
     // Start is called before the first frame update
     void Start()
@@ -15,10 +17,22 @@ public class LossPanel : MonoBehaviour
         Boss = GameObject.Find("Boss");
     }
 
+    private void Awake()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameManager.getGM.isChallenge)
+        {
+            Continue.SetActive(false);
+        }
+        else
+        {
+            Continue.SetActive(true);
+        }
     }
 
     public void OnClickContinue()
