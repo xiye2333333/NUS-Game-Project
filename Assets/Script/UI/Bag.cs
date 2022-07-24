@@ -28,9 +28,9 @@ public class Bag : MonoBehaviour
     
     public HeroBehavior Hero;
 
-    public GameObject[] EquipmentBagBlock = new GameObject[12];
+    public GameObject[] EquipmentBagBlock = new GameObject[16];
     
-    public GameObject[] EquipmentBagBack = new GameObject[12];
+    public GameObject[] EquipmentBagBack = new GameObject[16];
 
     public Sprite EquipmentBagBlockSprite;
     // Start is called before the first frame update

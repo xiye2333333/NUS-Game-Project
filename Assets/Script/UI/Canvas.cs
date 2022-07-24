@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class Canvas : MonoBehaviour
 {
-    public bool isDoubleSpeed = false;
+    public static int SpeedRate = 1;
+    public GameObject SpeedButton; 
     // Start is called before the first frame update
     void Start()
     {
-        
+        SpeedButton = GameObject.FindGameObjectWithTag("SpeedButton");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.H)){
+            SwitchSpeed(SpeedButton);
+        }
     }
 
     public void OnClickBuildButton()
@@ -37,23 +40,25 @@ public class Canvas : MonoBehaviour
 
     public void OnClickSpeedButton(GameObject button)
     {
-        if (isDoubleSpeed)
-        {
-            GameObject.Find("Hero").GetComponent<HeroBehavior>().TrueSpeed = 1f;
-            if(GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
-                GameObject.Find("Hero").GetComponent<HeroBehavior>().Speed = 1f;
-            button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/normal");
-            isDoubleSpeed = false;
-        }
-        else
-        {
-            GameObject.Find("Hero").GetComponent<HeroBehavior>().TrueSpeed = 5f;
-            if(GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
-                GameObject.Find("Hero").GetComponent<HeroBehavior>().Speed = 5f;
-            //Assets/Resources/uiui/quick.png
-            button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/quick");
-            isDoubleSpeed = true;
-        }
+        SwitchSpeed(button);
+    }
 
+    public void SwitchSpeed(GameObject button){
+        if (SpeedRate == 5)
+        {
+            button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/normal");
+            SpeedRate = 1;
+        }
+        else if (SpeedRate == 1)
+        {
+            button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/quick");
+            SpeedRate = 3;
+        }
+        else if (SpeedRate == 3)
+        {
+            //Assets/Resources/uiui/veryquick.png
+            button.GetComponent<Image>().sprite = Resources.Load<Sprite>("uiui/veryquick");
+            SpeedRate = 5;
+        }
     }
 }

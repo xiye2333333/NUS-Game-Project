@@ -49,6 +49,11 @@ public class GameManager : MonoBehaviour
             else if (_gameStatus == GameStatus.Running)
                 SwitchToPause();
         }
+
+        if (_gameStatus == GameStatus.Running){
+            Hero.GetComponent<HeroBehavior>().Speed = Canvas.SpeedRate;
+            Boss.GetComponent<BossBehavior>().Speed = Canvas.SpeedRate * 2;
+        }
     }
 
     public GameStatus GetGameStatus(){
@@ -84,8 +89,8 @@ public class GameManager : MonoBehaviour
 
     public void SwitchToRunning()
     {
-        Hero.GetComponent<HeroBehavior>().Speed = Hero.GetComponent<HeroBehavior>().TrueSpeed;
-        Boss.GetComponent<BossBehavior>().Speed = Hero.GetComponent<HeroBehavior>().TrueSpeed * 2;
+        Hero.GetComponent<HeroBehavior>().Speed = Canvas.SpeedRate;
+        Boss.GetComponent<BossBehavior>().Speed = Canvas.SpeedRate * 2;
         _gameStatus = GameStatus.Running;
     }
 
