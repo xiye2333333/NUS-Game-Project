@@ -10,6 +10,8 @@ public class Merchant : MonoBehaviour
     {
         if (StorePageIsOpen == false)
         {
+            if(GameObject.Find("Build Menu") != null)
+                GameObject.Find("Build Menu").SetActive(false);
             // if (GameObject.Find("MerchantSay") != null)
             //     GameObject.Find("MerchantSay").gameObject.SetActive(false);
             if (GameObject.Find("BuildButton") != null)

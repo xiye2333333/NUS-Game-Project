@@ -85,6 +85,7 @@ public class Bag : MonoBehaviour
             blockBehavior.isPutOn = false;
             blockBehavior.selfSprite = EquipmentBagBlockSprite;
             blockBehavior.back = EquipmentBagBack[i];
+            blockBehavior.InfoText = GameObject.Find("BuildingInfo");
             // Debug.Log(((Equipment) Hero.EquipmentBag[i]).SpiritPath);
         }
         

@@ -729,7 +729,7 @@ public class StoreBehavior : MonoBehaviour
         // GameObject.Find("BuildButton").gameObject.SetActive(true);
         // GameObject.Find("BagButton").gameObject.SetActive(false);
         GameObject.Find("StoreCanvas").transform.Find("StorePage").gameObject.SetActive(false);
-        GameManager.getGM.SwitchToPause();
+        // GameManager.getGM.SwitchToPause();
         GameObject.Find("Merchant").GetComponent<Merchant>().StorePageIsOpen = false;
         GameManager.getGM.SwitchToPause();
     }
