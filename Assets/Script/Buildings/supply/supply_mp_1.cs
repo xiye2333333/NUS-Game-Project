@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Script.UI;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -50,9 +51,11 @@ public class supply_mp_1 : Building
             else
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().MP = temp;
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayRecover();
+            GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainMP(mp);
+            // Invoke("Obtain",0.5f);
         }
     }
-
+    
     private void OnMouseDown()
     {
         if (level == 1)

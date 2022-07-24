@@ -7,6 +7,8 @@ namespace Script.Skill
     {
         public Bash()
         {
+            name = "Bash";
+            info = "Bash the enemy\nMake 2 times damage";
             SpiritPath = "Skill/Icon13";
         }
         

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 namespace Script.UI
 {
-    public class EquipmentBagBlockBehavior : MonoBehaviour, IPointerClickHandler
+    public class EquipmentBagBlockBehavior : MonoBehaviour, IPointerClickHandler,IPointerEnterHandler
     {
         public Equipment Equipment;
 
@@ -16,6 +16,8 @@ namespace Script.UI
         public Sprite selfSprite;
 
         public GameObject back;
+
+        public GameObject InfoText;
 
         // public void OnMouseDown()
         // {
@@ -41,14 +43,17 @@ namespace Script.UI
             }
         }
 
-        // public void OnMouseEnter()
-        // {
-        //     back.GetComponent<Image>().color = new Color(109/255f, 205/255f, 205/255f, 255f);
-        // }
-        //
-        // public void OnMouseExit()
-        // {
-        //     back.GetComponent<Image>().color = new Color(255/255f, 255/255f, 255/255f, 255/255f);
-        // }
+        private void OnMouseEnter()
+        {
+            Debug.Log(1);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            string text = "";
+            text += Equipment.name + "\n";
+            text += Equipment.info + "\n";
+            InfoText.GetComponent<Text>().text = text;
+        }
     }
 }

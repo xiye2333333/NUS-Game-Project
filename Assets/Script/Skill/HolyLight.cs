@@ -7,6 +7,8 @@ namespace Script.Skill
     {
         public HolyLight()
         {
+            name = "Holy Light";
+            info = "Attack enemy with a holy light\nAdd 20% of max HP";
             SpiritPath = "Skill/Icon11";
         }
         public override void Use(GameObject target, bool isBoss)

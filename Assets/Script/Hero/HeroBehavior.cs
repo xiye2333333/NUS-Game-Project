@@ -207,7 +207,24 @@ public class HeroBehavior : MonoBehaviour
                     }
                     else
                     {
-                        Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
+                        if (MP == MPCeil && Skill != null)
+                        {
+                            MP = 0;
+                            Skill.Use(Monsters.Peek(), true);
+                        }
+                        else
+                        {
+                            Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
+                            if (MP + MPrecover < MPCeil)
+                            {
+                                MP += MPrecover;
+                            }
+                            else if (MP + MPrecover > MPCeil && MP < MPCeil)
+                            {
+                                MP = MPCeil;
+                            }
+                        }
+                        // Monsters.Peek().GetComponent<BossBehavior>().isHit(Attack);
                     }
 
                     mAnimator.SetTrigger("Attack" + currentAttack);

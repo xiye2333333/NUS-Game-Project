@@ -14,6 +14,8 @@ namespace Script.Staff
 
         public Knife()
         {
+            name = "Knife";
+            info = "A simple knife\nAdd 5 attack power";
             SpiritPath = "Staff/Knife";
             Attack = 5;
         }
