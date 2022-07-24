@@ -92,7 +92,7 @@ public class BuildingModePicture : MonoBehaviour
     public bool PositionIsValid()
     {   
         Bounds thisBounds = GetComponent<SpriteRenderer>().bounds;
-        if (thisBounds.min.x < -24.5f || thisBounds.max.x > 28.5f)
+        if (thisBounds.min.x < -24.5f || thisBounds.max.x > 27f)
             return false;
         ArrayList buildings = GameManager.getGM.Buildings; //GameObject
         // Debug.Log(buildings.Count);

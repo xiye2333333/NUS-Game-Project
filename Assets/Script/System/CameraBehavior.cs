@@ -61,10 +61,11 @@ public class CameraBehavior : MonoBehaviour
             {
                 tmp = transform.position + Vector3.right * (cameraSpeed * Time.smoothDeltaTime);
             }
-
+            Vector3 t = transform.position + Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
+            if (t.x > -21 && t.x < 21)
+                transform.position += Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
             if (tmp.x > -21 && tmp.x < 21)
             {
-                transform.position += Input.GetAxis("Horizontal") * transform.right * (cameraSpeed * Time.smoothDeltaTime);
                 // transform.position = tmp;
                 if (Input.mousePosition.x < 10)
                 {
