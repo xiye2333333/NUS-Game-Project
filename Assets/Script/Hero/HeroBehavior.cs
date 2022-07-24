@@ -222,7 +222,7 @@ public class HeroBehavior : MonoBehaviour
                 {
                     foreach (GameObject M in Monsters)
                     {
-                        if (M != null)
+                        if (M != null){
                             if (!isBoss)
                             {
                                 M.GetComponent<MonsterBehavior>().attack();
@@ -233,6 +233,7 @@ public class HeroBehavior : MonoBehaviour
                                 M.GetComponent<BossBehavior>().attack();
                                 isHit(M.GetComponent<BossBehavior>().Attack);
                             }
+                        }
                     }
                 }
 
@@ -326,5 +327,6 @@ public class HeroBehavior : MonoBehaviour
     void isHit(int demage)
     {
         HP -= (int) Math.Round((double) demage * (1f - (double) Defense / ((double) Defense + 40f)));
+        mAnimator.SetTrigger("hurt");
     }
 }

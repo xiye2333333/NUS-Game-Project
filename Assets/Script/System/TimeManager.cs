@@ -36,14 +36,16 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
-        if (!BossBehavior.isWin)
-            Boss.SetActive((GlobalDay % BossDay == 0) ? true : false);
-        if (GlobalDay % BossDay == 0)
+        if (!BossBehavior.isWin){
+            BossBehavior.visiblity = (GlobalDay % BossDay == 0) ? true : false;
+            Boss.SetActive(BossBehavior.visiblity);
+        }
+        if (BossBehavior.visiblity)
         {
-            Debug.Log(123);
+            //Debug.Log(123);
             for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
             {
-                Debug.Log(111);
+                //Debug.Log(111);
                 ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
             }
         }

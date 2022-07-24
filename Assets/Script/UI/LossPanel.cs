@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class LossPanel : MonoBehaviour
 {
     GameObject Hero;
+    GameObject Boss;
 
     // Start is called before the first frame update
     void Start()
     {
         Hero = GameObject.Find("Hero");
+        Boss = GameObject.Find("Boss");
     }
 
     // Update is called once per frame
@@ -22,6 +24,8 @@ public class LossPanel : MonoBehaviour
     public void OnClickContinue()
     {
         GameObject.Find("LossPanel").SetActive(false);
+        if (BossBehavior.visiblity)
+            Boss.GetComponent<BossBehavior>().Reset();
         Hero.GetComponent<HeroBehavior>().Money /= 2;
         Hero.GetComponent<HeroBehavior>().death = false;
         Hero.GetComponent<HeroBehavior>().GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Hero Knight_0");

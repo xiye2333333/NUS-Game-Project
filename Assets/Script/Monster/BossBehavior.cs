@@ -29,6 +29,8 @@ public class BossBehavior : MonoBehaviour
 
     public static bool isWin;
 
+    public static bool visiblity;
+
     Vector3 StartPoint;
     // Start is called before the first frame update
     void Start()
@@ -43,6 +45,7 @@ public class BossBehavior : MonoBehaviour
         Hero = GameObject.Find("Hero");
         freeze  = false;
         isWin = false;
+        visiblity = false;
         StartPoint = transform.position;
         mAnimator = GetComponent<Animator>();
         //mAnimator.SetBool("Grounded",true);
@@ -58,7 +61,6 @@ public class BossBehavior : MonoBehaviour
             GameObject.Find("Canvas").transform.Find("WinPanel").gameObject.SetActive(true);
             //Hero.GetComponent<HeroBehavior>().Money += 50000;
             //mAnimator.SetTrigger("Death");
-            
         }
         FindDirection();
         if(!freeze){
@@ -69,11 +71,12 @@ public class BossBehavior : MonoBehaviour
             //mAnimator.SetTrigger("Attack");
         }
         HpBarSlider.value = (float) HP / (MaxHP * 1.0f);
-        if (Hero.GetComponent<HeroBehavior>().death){
-            HP = MaxHP;
-            transform.position = StartPoint;
-            DeFreeze();
-        }
+    }
+
+    public void Reset(){
+        HP = MaxHP;
+        transform.position = StartPoint;
+        DeFreeze();
     }
 
     void FindDirection(){

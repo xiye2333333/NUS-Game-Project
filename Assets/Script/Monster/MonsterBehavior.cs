@@ -21,6 +21,8 @@ public class MonsterBehavior : MonoBehaviour
 
     public int Wood;
     public int Stone;
+    public int Iron;
+    public int Gem;
     public int Money;
     public float dieTime;
 
@@ -44,6 +46,9 @@ public class MonsterBehavior : MonoBehaviour
         freeze  = false;
         Wood = 2 + Upd;
         Stone = 2 + Upd;
+        Iron = 1 + Upd / 2;
+        Gem = 1;
+
         Money = 50 + 20 * Upd;
 
         dieTime = 0.5f;
@@ -113,9 +118,20 @@ public class MonsterBehavior : MonoBehaviour
     void killMonster(){
         if (flag == 0)
         {
-            Hero.GetComponent<HeroBehavior>().Wood += Wood;
-            Hero.GetComponent<HeroBehavior>().Stone += Stone;
+            int Drop = UnityEngine.Random.Range(1,101);
             Hero.GetComponent<HeroBehavior>().Money += Money;
+            if (Drop > 0 && Drop <= 32)
+                Hero.GetComponent<HeroBehavior>().Wood += Wood;
+            else if (Drop >32 && Drop <= 64)
+                Hero.GetComponent<HeroBehavior>().Stone += Stone;
+            else if (Drop > 64 && Drop <= 84){
+                Hero.GetComponent<HeroBehavior>().Wood += Wood;
+                Hero.GetComponent<HeroBehavior>().Stone += Stone;
+            }
+            else if (Drop > 84 && Drop <= 89)
+                Hero.GetComponent<HeroBehavior>().Iron += Iron;
+            else if (Drop > 89 && Drop <= 90)
+                Hero.GetComponent<HeroBehavior>().Gem += Gem;
             flag = 1;
         }
         // Debug.Log(Money);
