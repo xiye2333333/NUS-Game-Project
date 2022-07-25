@@ -37,10 +37,10 @@ public class BossBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP = 300;
-        MaxHP = 300;
-        Attack = 40;
-        Defence = 20;
+        HP = 400;
+        MaxHP = 400;
+        Attack = 100;
+        Defence = 65;
         Speed = 2.0f;
         Critical = 0f;
         HpBarSlider.value = 1.0f;

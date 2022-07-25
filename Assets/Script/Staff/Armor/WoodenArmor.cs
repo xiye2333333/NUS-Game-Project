@@ -5,10 +5,10 @@ namespace Script.Staff.Armor
         public WoodenArmor()
         {
             name = "Wooden Armor";
-            info = "A good wooden armor\nAdd 100 HP, 50 defence";
-            HP = 100;
+            info = "A good wooden armor\nAdd 80 HP, 25 defence";
+            HP = 80;
             MP = 0;
-            Defence = 50;
+            Defence = 25;
             SpiritPath = "Staff/Wooden Armor";
         }
     }

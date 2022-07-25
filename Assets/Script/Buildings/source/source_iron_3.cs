@@ -15,8 +15,8 @@ public class source_iron_3 : Building
     {
         level = 3;
         name = "Iron Area(max)";
-        addIron = 6;
-        Info = "Iron Area(max)\nGet 6 irons.\nIt regenerates every day.";
+        addIron = 50;
+        Info = "Iron Area(max)\nGet 50 irons.\nIt regenerates every day.";
     }
 
     // Update is called once per frame

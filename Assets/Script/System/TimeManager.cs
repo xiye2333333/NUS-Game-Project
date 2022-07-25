@@ -37,7 +37,7 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         if (GameMode)
-            BossDay = 10;
+            BossDay = 20;
         else 
             BossDay = 5;
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;

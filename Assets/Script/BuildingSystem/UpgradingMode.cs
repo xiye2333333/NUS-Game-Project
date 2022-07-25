@@ -28,6 +28,7 @@ public class UpgradingMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
     }
 
     public void OnClickSure()
@@ -58,9 +59,14 @@ public class UpgradingMode : MonoBehaviour
         defense = 0;
         level = 0;
         addLevel = 0;
+        
         // building.GetComponent<Building>().Upgrade();
         // Debug.Log(building.GetComponent<Building>().name);
         GameObject.Find("Upgrade").SetActive(false);
+        for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+        {
+            ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = true;
+        }
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToRunning();
     }
@@ -79,6 +85,10 @@ public class UpgradingMode : MonoBehaviour
         level = 0;
         addLevel = 0;
         GameObject.Find("Upgrade").SetActive(false);
+        for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+        {
+            ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = true;
+        }
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToRunning();
     }
@@ -116,6 +126,7 @@ public class UpgradingMode : MonoBehaviour
     public void StatusChange()
     {
         GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil += hpCeil;
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().HP += hpCeil;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =

@@ -6,10 +6,10 @@ namespace Script.Staff.Helmet
         public IronHelmet()
         {
             name = "Iron Helmet";
-            info = "An excellent iron helmet\nAdd 200 HP, 50 defence";
-            HP = 200;
+            info = "An excellent iron helmet\nAdd 100 HP, 30 defence";
+            HP = 100;
             MP = 0;
-            Defence = 50;
+            Defence = 30;
             SpiritPath = "Staff/Iron Helmet";
         }
     }

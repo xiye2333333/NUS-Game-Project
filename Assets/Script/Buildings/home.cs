@@ -32,7 +32,7 @@ public class home : Building
         }
     }
 
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 1)
         {

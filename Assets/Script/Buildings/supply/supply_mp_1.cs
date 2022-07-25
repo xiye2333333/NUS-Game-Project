@@ -17,8 +17,8 @@ public class supply_mp_1 : Building
     {
         level = 1;
         name = "Magic Well - 1";
-        mp = 5;
-        Info = "Magic Well - 1\nIncrease your MP by 5.\nMagic flows in it.";
+        mp = 10;
+        Info = "Magic Well - 1\nIncrease your MP by 10.\nMagic flows in it.";
     }
     
     void Update()
@@ -26,16 +26,16 @@ public class supply_mp_1 : Building
         if (level == 2)
         {
             name = "Magic Well - 2";
-            mp = 10;
-            Info = "Magic Well - 2\nIncrease your MP by 10.\nMagic flows in it.";
+            mp = 20;
+            Info = "Magic Well - 2\nIncrease your MP by 20.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover2");
         }
 
         if (level == 3)
         {
             name = "Magic Well - 3(max)";
-            mp = 15;
-            Info = "Magic Well - 3(max)\nIncrease your MP by 15.\nMagic flows in it.";
+            mp = 30;
+            Info = "Magic Well - 3(max)\nIncrease your MP by 30.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover3");
         }
     }
@@ -56,7 +56,7 @@ public class supply_mp_1 : Building
         }
     }
     
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         if (level == 1)
         {
@@ -67,7 +67,11 @@ public class supply_mp_1 : Building
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                        ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 200;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 5;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
@@ -84,7 +88,11 @@ public class supply_mp_1 : Building
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-
+                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
+                {
+                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
+                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
+                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 500;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 20;
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 5;
