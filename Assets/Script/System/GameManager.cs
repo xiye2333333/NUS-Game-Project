@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_gameStatus);
+        // Debug.Log(_gameStatus);
         if (Input.GetKeyDown(KeyCode.Space)){
 
             // Debug.Log(_gameStatus+"1");

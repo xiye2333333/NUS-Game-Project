@@ -18,8 +18,9 @@ public class UpgradingMode : MonoBehaviour
     public int defense = 0;
 
     public int level;
-    
+
     public int addLevel = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,13 +61,14 @@ public class UpgradingMode : MonoBehaviour
             defense = 0;
             level = 0;
             addLevel = 0;
-            
+
             GameObject.Find("Upgrade").SetActive(false);
             if (GameObject.Find("Build Menu") == null)
             {
                 GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
             }
+
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
                 GameManager.getGM.SwitchToPause();
         }
@@ -80,6 +82,7 @@ public class UpgradingMode : MonoBehaviour
             {
                 GameObject.Find("UpgradeText").GetComponent<Text>().text = "Upgrade Failed:\nNot enough resources!";
             }
+
             Debug.Log("Not enough resources");
             money = 0;
             wood = 0;
@@ -99,10 +102,10 @@ public class UpgradingMode : MonoBehaviour
                 GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
             }
+
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
                 GameManager.getGM.SwitchToPause();
         }
-
     }
 
     public void OnClickCancel()
@@ -128,6 +131,7 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
             GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
         }
+
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToPause();
     }
@@ -172,15 +176,15 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
-        
+
         GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil += mpCeil;
-        if(GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil < 0)
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil < 0)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil = 0;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MP =
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
-        
+
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Defense += defense;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Level += addLevel;

@@ -127,8 +127,6 @@ public class HeroBehavior : MonoBehaviour
         StartPosition.x = StartCamp.transform.position.x;
         StartPosition.y = this.transform.position.y;
         StartPosition.z = this.transform.position.z;
-        
-
     }
 
     // Update is called once per frame
@@ -170,8 +168,6 @@ public class HeroBehavior : MonoBehaviour
             mAnimator.SetInteger("AnimState", 0);
             if (mFightAt > roundTime)
             {
-               
-
                 if (heroRound)
                 {
                     currentAttack++;
@@ -231,15 +227,13 @@ public class HeroBehavior : MonoBehaviour
                     GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayHeroHit();
                 }
 
-                
-
-          
 
                 else
                 {
                     foreach (GameObject M in Monsters)
                     {
-                        if (M != null){
+                        if (M != null)
+                        {
                             if (!isBoss)
                             {
                                 M.GetComponent<MonsterBehavior>().attack();
@@ -254,7 +248,7 @@ public class HeroBehavior : MonoBehaviour
                     }
                 }
 
-     
+
                 heroRound = !heroRound;
 
                 if (HP <= 0)
@@ -268,7 +262,7 @@ public class HeroBehavior : MonoBehaviour
                 mFightAt = 0;
             }
         }
-        
+
         else if (!isFight && !death)
         {
             mAnimator.SetInteger("AnimState", 1);

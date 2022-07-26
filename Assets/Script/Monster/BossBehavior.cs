@@ -129,5 +129,6 @@ public class BossBehavior : MonoBehaviour
     {
         mAnimator.SetTrigger("Attack");
         mAnimator.SetBool("Walk",false);
+        GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBossHit();
     }
 }

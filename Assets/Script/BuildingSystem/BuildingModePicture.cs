@@ -48,7 +48,7 @@ public class BuildingModePicture : MonoBehaviour
             color = Color.green;
             color.a = 0.5f;
             sp.color = color;
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonUp(0))
             {
                 //弹出确认窗口
                 //Assets/Resources/Prefab/PF Village Props - Well.prefab

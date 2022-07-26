@@ -29,8 +29,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip Vectory;
 
     public AudioClip Upgrade;
+
+    public AudioClip BossHit;
     
     public Slider VolumeSlider;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -94,5 +97,9 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(clip, AudioSound);
     }
     
+    public void PlayBossHit()
+    {
+        audioSource.PlayOneShot(BossHit, AudioSound);
+    }
     
 }

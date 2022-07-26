@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Script.BuildingSystem;
 using Script.UI;
 using UnityEngine;
-using UnityEngine.UI;
-using Random = UnityEngine.Random;
+
 
 public class treasure : Building
 {
@@ -37,4 +34,24 @@ public class treasure : Building
         }
     }
 
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonUp(1))
+        {
+            if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
+                GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
+            {
+                if (GameObject.Find("Build Menu") != null)
+                    GameObject.Find("Build Menu").SetActive(false);
+                if (GameObject.Find("BuildButton") != null)
+                    GameObject.Find("BuildButton").gameObject.SetActive(false);
+                if (GameObject.Find("BagButton") != null)
+                    GameObject.Find("BagButton").gameObject.SetActive(false);
+                GameManager.getGM.SwitchToUpgrading();
+                
+                GameObject.Find("Canvas").transform.Find("PullDown").gameObject.SetActive(true);
+                GameObject.Find("PullDown").GetComponent<PullDown>().TargetBuilding = gameObject;
+            }
+        }
+    }
 }

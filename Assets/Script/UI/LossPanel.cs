@@ -48,9 +48,19 @@ public class LossPanel : MonoBehaviour
         
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetInteger("AnimState", 1);
         // Hero.GetComponent<HeroBehavior>().mAnimator.SetTrigger("Run");
+        Culculate();
         Hero.GetComponent<HeroBehavior>().BackHome();
         Hero.GetComponent<HeroBehavior>().timer = 0f;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Monsters.Clear();
+
+    }
+
+    public void Culculate()
+    {
+        Hero.GetComponent<HeroBehavior>().Money += TimeManager.GlobalDay * 100;
+        Hero.GetComponent<HeroBehavior>().Wood += TimeManager.GlobalDay * 10;
+        Hero.GetComponent<HeroBehavior>().Stone += TimeManager.GlobalDay * 10;
+        Hero.GetComponent<HeroBehavior>().Iron += TimeManager.GlobalDay * 5;
     }
 
     public void OnClickExit()
