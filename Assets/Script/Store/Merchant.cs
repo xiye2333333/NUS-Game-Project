@@ -26,4 +26,9 @@ public class Merchant : MonoBehaviour
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
         }
     }
+
+    public void SetStorepage(bool isOpen)
+    {
+        StorePageIsOpen = isOpen;
+    }
 }

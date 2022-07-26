@@ -25,6 +25,7 @@ namespace Script.BuildingSystem
             HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
             if (heroBehavior.Gem >= Gem)
             {
+                GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayPlace();
                 heroBehavior.Gem -= Gem;
                 PullDownCnt++;
                 Gem += 2;
@@ -87,6 +88,17 @@ namespace Script.BuildingSystem
             {
                 GameManager.getGM.SwitchToPause();
             }
+
+            // gameObject.SetActive(false);
+        }
+        
+        
+        public void OnClickHelp()
+        {
+            GameObject.Find("Canvas").transform.Find("PullDown").transform.Find("sure").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("PullDown").transform.Find("cancel").gameObject.SetActive(true);
+            GameObject.Find("Canvas").transform.Find("PullDown").transform.Find("cancel2").gameObject.SetActive(false);
+            GameObject.Find("Canvas").transform.Find("PullDown").gameObject.SetActive(false);
 
             // gameObject.SetActive(false);
         }

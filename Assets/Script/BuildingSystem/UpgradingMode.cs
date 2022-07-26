@@ -102,10 +102,10 @@ public class UpgradingMode : MonoBehaviour
         defense = 0;
         level = 0;
         addLevel = 0;
-        GameObject.Find("Upgrade").transform.Find("sure").gameObject.SetActive(true);
-        GameObject.Find("Upgrade").transform.Find("cancel").gameObject.SetActive(true);
-        GameObject.Find("Upgrade").transform.Find("cancel2").gameObject.SetActive(false);
-        GameObject.Find("Upgrade").SetActive(false);
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("sure").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("cancel").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("cancel2").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(false);
         if (GameObject.Find("Build Menu") == null)
         {
             GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
@@ -113,7 +113,25 @@ public class UpgradingMode : MonoBehaviour
         }
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToPause();
-
+    }
+    
+    public void OnClickHelp()
+    {
+        money = 0;
+        wood = 0;
+        stone = 0;
+        iron = 0;
+        gem = 0;
+        hpCeil = 0;
+        mpDecent = 1;
+        attack = 0;
+        defense = 0;
+        level = 0;
+        addLevel = 0;
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("sure").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("cancel").gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.Find("Upgrade").transform.Find("cancel2").gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(false);
     }
 
     public bool CanUpgrade()
