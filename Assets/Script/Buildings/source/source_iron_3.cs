@@ -57,4 +57,8 @@ public class source_iron_3 : Building
         }
     }
 
+    public override void Culculate()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Iron += addIron;
+    }
 }

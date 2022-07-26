@@ -54,4 +54,8 @@ public class treasure : Building
             }
         }
     }
+    public override void Culculate()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem += 1;
+    }
 }

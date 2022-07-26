@@ -133,4 +133,10 @@ public class statue_hp_1 : Building
             }
         }
     }
+    public override void PullDown()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil -= hpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().HP > GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().HP = GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
+    }
 }

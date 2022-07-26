@@ -133,4 +133,11 @@ public class statue_mp_1 : Building
             }
         }
     }
+    public override void PullDown()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil -= mpCeil;
+        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP > GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
+            GameObject.Find("Hero").GetComponent<HeroBehavior>().MP = GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
+
+    }
 }

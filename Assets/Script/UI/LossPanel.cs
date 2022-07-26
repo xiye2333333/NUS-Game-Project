@@ -57,10 +57,10 @@ public class LossPanel : MonoBehaviour
 
     public void Culculate()
     {
-        Hero.GetComponent<HeroBehavior>().Money += TimeManager.GlobalDay * 100;
-        Hero.GetComponent<HeroBehavior>().Wood += TimeManager.GlobalDay * 10;
-        Hero.GetComponent<HeroBehavior>().Stone += TimeManager.GlobalDay * 10;
-        Hero.GetComponent<HeroBehavior>().Iron += TimeManager.GlobalDay * 5;
+        foreach (GameObject building in GameManager.getGM.Buildings)
+        {
+            building.GetComponent<Building>().Culculate();
+        }
     }
 
     public void OnClickExit()

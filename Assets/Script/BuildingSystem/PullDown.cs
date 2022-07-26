@@ -16,6 +16,7 @@ namespace Script.BuildingSystem
             if (heroBehavior.Gem >= Gem)
             {
                 heroBehavior.Gem -= Gem;
+                TargetBuilding.GetComponent<Building>().PullDown();
                 GameManager.getGM.Buildings.Remove(TargetBuilding);
                 heroBehavior.BuildingList.Remove(TargetBuilding);
                 Destroy(TargetBuilding);

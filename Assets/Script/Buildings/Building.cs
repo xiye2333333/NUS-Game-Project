@@ -45,6 +45,10 @@ public class Building : MonoBehaviour
         // BuildingInfo.SetActive(false);
         BuildingInfo.GetComponent<Text>().text = "";
     }
+    
+    public virtual void PullDown(){}
+    
+    public virtual void Culculate(){}
 
     // private void OnTriggerEnter2D(Collider2D other)
     // {

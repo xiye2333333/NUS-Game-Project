@@ -97,4 +97,8 @@ public class source_stone_2 : Building
             }
         }
     }
+    public override void Culculate()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Stone += addStone;
+    }
 }

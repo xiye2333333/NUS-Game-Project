@@ -55,6 +55,7 @@ public class BuildingModePicture : MonoBehaviour
                 GameObject target = Instantiate(Resources.Load("Prefab/" + targetName) as GameObject);
                 //Debug.Log(target.name);
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Add(target);
+                GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingLevelList.Add(1);
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)

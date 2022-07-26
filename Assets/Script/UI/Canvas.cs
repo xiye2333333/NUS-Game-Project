@@ -11,6 +11,7 @@ public class Canvas : MonoBehaviour
     void Start()
     {
         SpeedButton = GameObject.FindGameObjectWithTag("SpeedButton");
+        SpeedRate = 1;
     }
 
     // Update is called once per frame

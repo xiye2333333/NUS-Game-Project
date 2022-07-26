@@ -140,4 +140,8 @@ public class hunted_house : Building
             }
         }
     }
+    public override void Culculate()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Money += TimeManager.MonsterNum * (60 + 20 * TimeManager.MonsterUpd - TimeManager.GlobalDay / 5 * 20);
+    }
 }

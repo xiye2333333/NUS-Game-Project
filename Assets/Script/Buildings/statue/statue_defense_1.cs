@@ -120,4 +120,8 @@ public class statue_defense_1 : Building
             }
         }
     }
+    public override void PullDown()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Defense -= defense;
+    }
 }

@@ -83,6 +83,8 @@ public class HeroBehavior : MonoBehaviour
     private bool heroRound;
 
     public ArrayList BuildingList = new ArrayList();
+    
+    public ArrayList BuildingLevelList = new ArrayList();
 
     public float timer = 0f;
 
@@ -336,4 +338,5 @@ public class HeroBehavior : MonoBehaviour
         HP -= (int) Math.Round((double) demage * (1f - (double) Defense / ((double) Defense + 40f)));
         mAnimator.SetTrigger("hurt");
     }
+    
 }

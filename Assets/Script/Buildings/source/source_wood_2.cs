@@ -92,4 +92,8 @@ public class source_wood_2 : Building
             }
         }
     }
+    public override void Culculate()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Wood += addWood;
+    }
 }

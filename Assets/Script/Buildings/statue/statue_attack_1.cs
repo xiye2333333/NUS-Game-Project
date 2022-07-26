@@ -127,4 +127,11 @@ public class statue_attack_1 : Building
             }
         }
     }
+
+    public override void PullDown()
+    {
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack -= attack;
+    }
+    
+    
 }
