@@ -74,7 +74,7 @@ public class statue_attack_1 : Building
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().attack = 2;
                     GameObject.Find("UpgradeText").GetComponent<Text>().text =
-                        "Are you sure to upgrade\nKnight Statue - 1?\nIt needs 500 gold coins, 20 woods and 20 stones.";
+                        "Are you sure to upgrade\nKnight Statue - 1?\nIt needs 500 gold coins, 35 woods and 35 stones.";
                 }
             }
 
