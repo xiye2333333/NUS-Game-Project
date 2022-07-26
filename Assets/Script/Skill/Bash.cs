@@ -8,7 +8,7 @@ namespace Script.Skill
         public Bash()
         {
             name = "Bash";
-            info = "Bash the enemy\nMake 2 times damage";
+            info = "Bash the enemy\nMake 3 times damage";
             SpiritPath = "Skill/Icon13";
         }
         
@@ -17,12 +17,12 @@ namespace Script.Skill
             HeroBehavior hero = GameObject.Find("Hero").GetComponent<HeroBehavior>();
             if (!isBoss)
             {
-                target.GetComponent<MonsterBehavior>().isHit(hero.Attack * 2);
+                target.GetComponent<MonsterBehavior>().isHit(hero.Attack * 3);
                 GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().UseBash();
             }
             else
             {
-                target.GetComponent<BossBehavior>().isHit(hero.Attack * 2);
+                target.GetComponent<BossBehavior>().isHit(hero.Attack * 3);
                 GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().UseBash();
             }
         }

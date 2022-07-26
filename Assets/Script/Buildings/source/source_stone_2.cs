@@ -28,8 +28,8 @@ public class source_stone_2 : Building
         if (level == 3)
         {
             name = "Quarry - 2(max)";
-            addStone = 100;
-            Info = "Quarry - 2(max)\nGet 100 stones.\nIt regenerates every day.";
+            addStone = 80;
+            Info = "Quarry - 2(max)\nGet 80 stones.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("stone3");
         }
     }

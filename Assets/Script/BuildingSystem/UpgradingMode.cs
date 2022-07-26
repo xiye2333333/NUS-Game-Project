@@ -13,7 +13,7 @@ public class UpgradingMode : MonoBehaviour
     public int gem = 0;
 
     public int hpCeil = 0;
-    public int mpCeil = 0;
+    public float mpDecent = 1;
     public int attack = 0;
     public int defense = 0;
 
@@ -21,9 +21,11 @@ public class UpgradingMode : MonoBehaviour
 
     public int addLevel = 0;
 
+
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+        mpDecent = 1;
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class UpgradingMode : MonoBehaviour
             iron = 0;
             gem = 0;
             hpCeil = 0;
-            mpCeil = 0;
+            mpDecent = 1;
             attack = 0;
             defense = 0;
             level = 0;
@@ -90,7 +92,7 @@ public class UpgradingMode : MonoBehaviour
             iron = 0;
             gem = 0;
             hpCeil = 0;
-            mpCeil = 0;
+            mpDecent = 1;
             attack = 0;
             defense = 0;
             level = 0;
@@ -116,7 +118,7 @@ public class UpgradingMode : MonoBehaviour
         iron = 0;
         gem = 0;
         hpCeil = 0;
-        mpCeil = 0;
+        mpDecent = 1;
         attack = 0;
         defense = 0;
         level = 0;
@@ -177,7 +179,8 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
 
-        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil += mpCeil;
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPTrue *= mpDecent;
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil = (int)GameObject.Find("Hero").GetComponent<HeroBehavior>().MPTrue;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil < 0)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil = 0;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=

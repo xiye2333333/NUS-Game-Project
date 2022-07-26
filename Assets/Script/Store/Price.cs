@@ -23,9 +23,9 @@ namespace Script.Store
     public class IronSwordPrice
     {
         public static int Money = 1000;
-        public static int Wood = 200;
-        public static int Stone = 200;
-        public static int Iron = 100;
+        public static int Wood = 300;
+        public static int Stone = 300;
+        public static int Iron = 200;
         public static int Gem = 0;
         public static string Info = "Add 30 attack";
     }
@@ -33,10 +33,10 @@ namespace Script.Store
     public class GoldSwordPrice
     {
         public static int Money = 2000;
-        public static int Wood = 500;
-        public static int Stone = 500;
-        public static int Iron = 200;
-        public static int Gem = 5;
+        public static int Wood = 800;
+        public static int Stone = 800;
+        public static int Iron = 300;
+        public static int Gem = 6;
         public static string Info = "Add 80 attack";
     }
 
@@ -72,7 +72,7 @@ namespace Script.Store
 
     public class LeatherArmorPrice
     {
-        public static int Money = 200;
+        public static int Money = 350;
         public static int Wood = 0;
         public static int Stone = 0;
         public static int Iron = 0;
@@ -127,7 +127,7 @@ namespace Script.Store
         public static int Stone = 0;
         public static int Iron = 0;
         public static int Gem = 0;
-        public static string Info = "Add 10 defence";
+        public static string Info = "Add 20 defence";
     }
 
     public class IronShieldPrice

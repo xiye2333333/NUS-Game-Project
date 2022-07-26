@@ -20,6 +20,8 @@ public class HeroBehavior : MonoBehaviour
 
     public int MPCeil;
 
+    public float MPTrue;
+
     public int Attack;
 
     public int Defense;
@@ -83,7 +85,7 @@ public class HeroBehavior : MonoBehaviour
     private bool heroRound;
 
     public ArrayList BuildingList = new ArrayList();
-    
+
     public ArrayList BuildingLevelList = new ArrayList();
 
     public float timer = 0f;
@@ -108,6 +110,12 @@ public class HeroBehavior : MonoBehaviour
         Money = 300;
         Level = 1;
         MPrecover = 5;
+        MPTrue = 50f;
+        //
+        // for (int i = 0; i < 200; i++)
+        // {
+        //     MPnum[i] = (int) Math.Floor(50 * Math.Pow(0.85, i));
+        // }
 
         // set the initial Hp to be full
         HpBarSlider.value = 1.0f;
@@ -338,5 +346,4 @@ public class HeroBehavior : MonoBehaviour
         HP -= (int) Math.Round((double) demage * (1f - (double) Defense / ((double) Defense + 40f)));
         mAnimator.SetTrigger("hurt");
     }
-    
 }

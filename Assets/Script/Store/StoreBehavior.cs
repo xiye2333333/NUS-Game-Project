@@ -309,7 +309,7 @@ public class StoreBehavior : MonoBehaviour
         info += "Wood: " + GoldSwordPrice.Wood + "\n";
         info += "Stone: " + GoldSwordPrice.Stone + "\n";
         info += "Iron: " + GoldSwordPrice.Iron + "\n";
-        info += "Gem: " + IronSwordPrice.Gem + "\n";
+        info += "Gem: " + GoldSwordPrice.Gem + "\n";
         info += GoldSwordPrice.Info;
         text.text = info;
         Sword4.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);

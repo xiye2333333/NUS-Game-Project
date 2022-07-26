@@ -27,8 +27,8 @@ public class source_wood_2 : Building
         if (level == 3)
         {
             name = "Logging Camp - 2(max)";
-            addWood = 100;
-            Info = "Logging Camp - 2(max)\nGet 100 pieces of wood.\nIt regenerates every day.";
+            addWood = 80;
+            Info = "Logging Camp - 2(max)\nGet 80 pieces of wood.\nIt regenerates every day.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("wood3");
         }
     }

@@ -2732,7 +2732,7 @@ MonoBehaviour:
   Recover: {fileID: 8300000, guid: 1d874595210865b46adad5009be9114b, type: 3}
   Vectory: {fileID: 8300000, guid: 3069a665b2f84824889bf09ef4b1e10a, type: 3}
   Upgrade: {fileID: 8300000, guid: 38c84ce6707229e49829f88c9e22cc98, type: 3}
-  BossHit: {fileID: 8300000, guid: 4e9f7b0fb43c33d40abc49d6c1e7e245, type: 3}
+  BossHit: {fileID: 8300000, guid: d52f5f804c5e35040bb7f436f77b4b91, type: 3}
   VolumeSlider: {fileID: 1694418739}
 --- !u!82 &227464268
 AudioSource:
@@ -17718,11 +17718,12 @@ MonoBehaviour:
   iron: 0
   gem: 0
   hpCeil: 0
-  mpCeil: 0
+  mpDecent: 0
   attack: 0
   defense: 0
   level: 0
   addLevel: 0
+  MpStatueCnt: 0
 --- !u!114 &1278519053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18589,18 +18590,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 483abc871174e1b45ab76395a284fb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
-  MP: 23
+  HP: 0
+  MP: 0
   HPCeil: 0
   MPCeil: 0
-  Attack: 5
+  MPTrue: 0
+  Attack: 0
   Defense: 0
   Money: 0
   Wood: 0
   Stone: 0
   Iron: 0
   Gem: 0
-  Level: 2
+  Level: 0
   Speed: 0
   HpBarSlider: {fileID: 2052814756}
   isFight: 0

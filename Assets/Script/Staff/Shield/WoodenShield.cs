@@ -5,8 +5,8 @@ namespace Script.Staff.Shield
         public WoodenShield()
         {
             name = "Wooden Shield";
-            info = "A good wooden shield\nAdd 10 defence";
-            Defence = 10;
+            info = "A good wooden shield\nAdd 20 defence";
+            Defence = 20;
             SpiritPath = "Staff/Wooden Shield";
         }
     }
