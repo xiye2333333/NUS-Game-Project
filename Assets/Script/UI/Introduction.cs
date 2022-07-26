@@ -33,14 +33,14 @@ public class Introduction : MonoBehaviour
         if (step == 0)
         {
             text =
-                "Welcome to the game!\nPlease click me to start a guidance.\nIf you close this window, it will not show again.";
+                "Welcome to\nPath To Strength!\nPlease click me to start a guidance.\nIf you close this window, it will not appear again.";
         }
         else if (step >= 1 && step < 2)
         {
             if (step == 1)
             {
                 text =
-                    "Try to use <color=#FF0000>A/D</color> to move your screen.\n This will work when game is paused like now." +
+                    "Try to use <color=#FF0000>A/D</color> to move your screen.\nThis will work when game is paused like now." +
                     "\nTry <color=#FF0000>D</color> first.";
             }
 
@@ -63,9 +63,9 @@ public class Introduction : MonoBehaviour
             if (step == 2)
             {
                 text =
-                    "You can also try to move your <color=#FF0000>mouse</color> on the screen side to move your screen.\n " +
+                    "You can also try to move your <color=#FF0000>mouse</color> on the screen side to move your screen.\n" +
                     "This will work when game is paused like now." +
-                    "\nTry the right side of the screen first.";
+                    "\nTry the <color=#FF0000>right</color> side of the screen first.";
             }
 
             if (Input.mousePosition.x < 10)
@@ -78,7 +78,7 @@ public class Introduction : MonoBehaviour
 
             if (Input.mousePosition.x > Screen.width - 10)
             {
-                text = "Try left side!";
+                text = "Try <color=#FF0000>left</color> side!";
                 step = 2.1f;
             }
         }
@@ -86,10 +86,10 @@ public class Introduction : MonoBehaviour
         {
             if (step == 3)
             {
-                text = "Now try to press <color=#FF0000>space</color> to start the game.";
+                text = "Now try to press <color=#FF0000>Space</color> to start the game.";
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    text = "Now try to press <color=#FF0000>space</color> to stop the game.";
+                    text = "Now try to press <color=#FF0000>Space</color> to stop the game.";
                     step = 3.1f;
                 }
             }
@@ -106,17 +106,17 @@ public class Introduction : MonoBehaviour
             if (step == 4)
             {
                 text = "Now let's try to build your first building!\n" +
-                       "Click <color=#FF0000>build</color> button to open the build menu.";
+                       "Click <color=#FF0000>Build</color> button to open the build menu.";
             }
             else if (step == 4.1f)
             {
-                text = "Click the first build (hunted house). \nIt will create a monster when the hero pass it.\n" +
+                text = "Click the first build (Monster House).\nIt will create monsters when the hero pass it.\n" +
                        "Defeat the monster to get some money and other resources.";
             }
             else if (step == 4.2f)
             {
                 text = "Choose a valid place to build it!\n" +
-                       "<color=#FF0000>Red</color> means invalid or lacking of resource, <color=#66CD00>green</color> means valid.";
+                       "<color=#FF0000>Red</color> means invalid or lacking of resource, <color=#014900>Green</color> means valid.";
                 if (Hero.GetComponent<HeroBehavior>().BuildingList.Count > 0)
                 {
                     step = 5f;
@@ -138,7 +138,7 @@ public class Introduction : MonoBehaviour
         else if (step >= 6 && step < 7)
         {
             text =
-                   "Now you can click <color=#FF0000>speed up</color>button or double press H to run out of the first day.";
+                   "Now you can click <color=#FF0000>Speed Up</color> button or double press <color=#FF0000>H</color> to run out of the first day.";
             if (TimeManager.GlobalDay == 2)
             {
                 step = 7f;
@@ -149,15 +149,15 @@ public class Introduction : MonoBehaviour
             if (step == 7)
             {
                 text = "Here comes a merchant!\n" +
-                       "Click him to open the store page. \n" +
-                       "He will tell you some plot everyday when you open the store.";
+                       "Click him to open the store page.\n" +
+                       "He will tell you something about the world everyday.";
                 if (StorePage.active)
                 {
                     step = 7.1f;
                 }
             }else if (step == 7.1f)
             {
-                text = "Click the <color=#FF0000>knife</color> to buy it!.";
+                text = "Click the <color=#FF0000>Knife</color> to buy it!.";
                 if (Hero.GetComponent<HeroBehavior>().EquipmentBag.Count != 0)
                 {
                     step = 8f;
@@ -167,15 +167,15 @@ public class Introduction : MonoBehaviour
         {
             if (step == 8f)
             {
-                text = "Now close the store and click the <color=#FF0000>bag button</color> to open your bag!";
+                text = "Now close the store and click the <color=#FF0000>Bag</color> button to open your bag!";
                 if (bag.active && !StorePage.active)
                 {
                     step = 8.1f;
                 }
             } else if (step == 8.1f)
             {
-                text = "Now you can click the <color=#FF0000>knife</color> to put on it!\n" +
-                       "The weapon will increase your attack power. Make it easier to defeat the monster.";
+                text = "Now you can click the <color=#FF0000>Knife</color> to put it on!\n" +
+                       "The weapon will increase your attack power, and make it easier to defeat the monster.";
                 if (Hero.GetComponent<HeroBehavior>().Weapon != null)
                 {
                     step = 9f;
@@ -187,7 +187,7 @@ public class Introduction : MonoBehaviour
             {
                 text = "Now all the introductions are finished!\n" +
                        "You can close this window and enjoy the game!\n" +
-                       "If you still have questions, please click the <color=#FF0000>help button</color>.";
+                       "If you still have questions, please click the <color=#FF0000>HELP</color> button.";
             }
         }
 
