@@ -37,12 +37,12 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         if (GameMode)
-            BossDay = 20;
+            BossDay = 17;
         else 
             BossDay = 5;
         DayText.GetComponent<Text>().text = "Day: " + GlobalDay;
         if (!BossBehavior.isWin && Boss != null){
-            BossBehavior.visiblity = (GlobalDay % BossDay == 0) ? true : false;
+            BossBehavior.visiblity = (GlobalDay % BossDay == 0 && GlobalDay >= 10) ? true : false;
             Boss.SetActive(BossBehavior.visiblity);
         }
         if (BossBehavior.visiblity)
