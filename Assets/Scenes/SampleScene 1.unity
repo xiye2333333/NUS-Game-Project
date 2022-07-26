@@ -5886,7 +5886,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c960a1b16a3504fafd211e2a675827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   Continue: {fileID: 0}
+=======
+>>>>>>> parent of 8b84c6b (beta)
 --- !u!114 &481404232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8561,7 +8564,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+<<<<<<< HEAD
   m_AnchoredPosition: {x: 0, y: -138}
+=======
+  m_AnchoredPosition: {x: 0, y: -168}
+>>>>>>> parent of 8b84c6b (beta)
   m_SizeDelta: {x: 400, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &656420926
@@ -21245,12 +21252,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   m_UiScaleMode: 1
+=======
+  m_UiScaleMode: 0
+>>>>>>> parent of 8b84c6b (beta)
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
+<<<<<<< HEAD
   m_MatchWidthOrHeight: 0.44
+=======
+  m_MatchWidthOrHeight: 0
+>>>>>>> parent of 8b84c6b (beta)
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -25523,7 +25538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d680db263d1f624f966eed0e8a32d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   isChallenge: 0
+=======
+>>>>>>> parent of 8b84c6b (beta)
 --- !u!1 &1680220305
 GameObject:
   m_ObjectHideFlags: 0
