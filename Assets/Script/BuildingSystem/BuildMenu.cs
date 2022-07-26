@@ -46,7 +46,7 @@ public class BuildMenu : MonoBehaviour
 
     private void SwitchToBuildMode()
     {
-        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
+        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running || GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             GameManager.getGM.SwitchToBuilding();
     }
 

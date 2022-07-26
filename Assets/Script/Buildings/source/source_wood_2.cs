@@ -47,17 +47,19 @@ public class source_wood_2 : Building
     {
         if (level == 2)
         {
-            if (!BuildMenu.BuildingFlag && GameManager.getGM.GetGameStatus() != GameManager.GameStatus.Bagging)
+            if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running || GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {
-                if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
-                    GameManager.getGM.SwitchToUpgrading();
+                if(GameObject.Find("Build Menu") != null)
+                    GameObject.Find("Build Menu").SetActive(false);
+                // if (GameObject.Find("MerchantSay") != null)
+                //     GameObject.Find("MerchantSay").gameObject.SetActive(false);
+                if (GameObject.Find("BuildButton") != null)
+                    GameObject.Find("BuildButton").gameObject.SetActive(false);
+                if (GameObject.Find("BagButton") != null)
+                    GameObject.Find("BagButton").gameObject.SetActive(false);
+                GameManager.getGM.SwitchToUpgrading();
 
                 GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
-                for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
-                {
-                    if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
-                    ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
-                }
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
 
                 GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;

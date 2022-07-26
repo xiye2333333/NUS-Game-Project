@@ -30,12 +30,15 @@ public class Canvas : MonoBehaviour
 
     public void OnClickBagButton()
     {
-        transform.Find("Bag").gameObject.SetActive(true);
-        transform.Find("BuildButton").gameObject.SetActive(false);
-        transform.Find("BagButton").gameObject.SetActive(false);
-        transform.Find("Bag").gameObject.GetComponent<Bag>().UpdateEquipmentBag();
-        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running)
+        if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
+            GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
+        {
             GameManager.getGM.SwitchToBagging();
+            transform.Find("Bag").gameObject.SetActive(true);
+            transform.Find("BuildButton").gameObject.SetActive(false);
+            transform.Find("BagButton").gameObject.SetActive(false);
+            transform.Find("Bag").gameObject.GetComponent<Bag>().UpdateEquipmentBag();
+        }
     }
 
     public void OnClickSpeedButton(GameObject button)

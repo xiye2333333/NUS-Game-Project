@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         Running,
         Building,
         Upgrading,
-        Bagging
+        Bagging,
     }
 
     private void Awake()
@@ -52,11 +52,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(_gameStatus);
         if (Input.GetKeyDown(KeyCode.Space)){
-            if (_gameStatus == GameStatus.Pause)
+
+            // Debug.Log(_gameStatus+"1");
+            if (_gameStatus.Equals(GameStatus.Pause))
                 SwitchToRunning();
-            else if (_gameStatus == GameStatus.Running)
+            else if (_gameStatus .Equals(GameStatus.Running))
                 SwitchToPause();
+            // Debug.Log(_gameStatus+"2");
         }
 
         if (_gameStatus == GameStatus.Running){

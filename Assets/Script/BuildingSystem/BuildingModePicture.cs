@@ -58,7 +58,7 @@ public class BuildingModePicture : MonoBehaviour
                 GameManager.getGM.Buildings.Add(target);
                 target.transform.position = transform.position;
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
-                    GameManager.getGM.SwitchToRunning();
+                    GameManager.getGM.SwitchToPause();
                 Purchase();
                 foreach (GameObject button in BuildMenu.Buttons)
                 {
@@ -88,7 +88,7 @@ public class BuildingModePicture : MonoBehaviour
             Destroy(gameObject);
             BuildMenu.BuildingFlag = false;
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Building)
-                GameManager.getGM.SwitchToRunning();
+                GameManager.getGM.SwitchToPause();
         }
     }
 

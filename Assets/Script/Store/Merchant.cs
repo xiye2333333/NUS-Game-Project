@@ -8,7 +8,8 @@ public class Merchant : MonoBehaviour
     public bool StorePageIsOpen = false;
     public void OnMouseDown()
     {
-        if (StorePageIsOpen == false && !GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.activeInHierarchy)
+        if (StorePageIsOpen == false && (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
+            GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause))
         {
             if(GameObject.Find("Build Menu") != null)
                 GameObject.Find("Build Menu").SetActive(false);
@@ -19,7 +20,7 @@ public class Merchant : MonoBehaviour
             if (GameObject.Find("BagButton") != null)
                 GameObject.Find("BagButton").gameObject.SetActive(false);
             GameObject.Find("StoreCanvas").transform.Find("StorePage").gameObject.SetActive(true);
-            GameManager.getGM.SwitchToPause();
+            // GameManager.getGM.SwitchToPause();
             StorePageIsOpen = true;
             GameManager.getGM.SwitchToBagging();
         }
