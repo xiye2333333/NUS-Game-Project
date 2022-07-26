@@ -6184,6 +6184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1c960a1b16a3504fafd211e2a675827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Hero: {fileID: 0}
+  Boss: {fileID: 564906797}
   Continue: {fileID: 1138886444}
 --- !u!114 &481404232
 MonoBehaviour:

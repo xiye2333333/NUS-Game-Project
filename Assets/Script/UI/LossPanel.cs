@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class LossPanel : MonoBehaviour
 {
-    GameObject Hero;
-    GameObject Boss;
+    public  GameObject Hero;
+    public GameObject Boss;
     public GameObject Continue;
 
     // Start is called before the first frame update
     void Start()
     {
         Hero = GameObject.Find("Hero");
-        Boss = GameObject.Find("Boss");
+        // Boss = GameObject.Find("Boss");
     }
 
     private void Awake()
