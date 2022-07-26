@@ -20,6 +20,7 @@ namespace Script.UI
                 Equipment.PutDown();
                 GetComponent<Image>().sprite = Resources.Load<Sprite>(BlockSpritePath);
                 GetComponent<Image>().color = new Color(255, 255, 255, 0);
+                GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayEquipment();
                 Destroy(this);
             }
         }

@@ -76,37 +76,75 @@ public class StoreBehavior : MonoBehaviour
 
         StoreText.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2 + Vector3.right * 1.2f);
 
-        if (TimeManager.GlobalDay%10 == 2)
+if (TimeManager.GlobalDay % 20 == 2)
             Chat.GetComponent<Text>().text =
-                "I am a merchant. Click on me if you need anything. You're gonna have to give me something in exchange.";
-        if (TimeManager.GlobalDay%10 == 3)
+                "I am a merchant. Click me if you need anything. You're gonna have to give me something in exchange.";
+        if (TimeManager.GlobalDay % 20 == 3)
             Chat.GetComponent<Text>().text =
                 "These are left over from the brave men of the past. Some of them are because of better equipment. Others are because... They could no longer pick up their equipment.";
-        if (TimeManager.GlobalDay%10 == 4)
+        if (TimeManager.GlobalDay % 20 == 4)
             Chat.GetComponent<Text>().text =
                 "You want to know why you're here? That's funny. I'd also like to know.";
-        if (TimeManager.GlobalDay%10 == 1)
-            Chat.GetComponent<Text>().text =
+        if (TimeManager.GlobalDay % 20 == 5)
+            Chat.GetComponent<Text>().text = 
                 "You have to find a way to survive. Those guys are getting stronger every day.";
-        if (TimeManager.GlobalDay%10 == 5)
+        if (TimeManager.GlobalDay % 20 == 6)
             Chat.GetComponent<Text>().text =
-                "You ask the big guy? God knows where it comes from!";
-        if (TimeManager.GlobalDay%10 == 6)
-            Chat.GetComponent<Text>().text =
-                "Yesterday was a close call! I saw it knock you down, and today you're standing here unharmed. Maybe one day you can beat it.";
-        if (TimeManager.GlobalDay%10 == 7)
+                "There's a big guy in the world... It will come to make trouble for you one day.";
+        if (TimeManager.GlobalDay % 20 == 7)
             Chat.GetComponent<Text>().text =
                 "I guess we're cursed... You have to run laps here every day, and I have to stand here every day.";
-        if (TimeManager.GlobalDay%10 == 8)
+        if (TimeManager.GlobalDay % 20 == 8)
             Chat.GetComponent<Text>().text =
                 "I have seen generations of brave men. Someone once got the better of the big guy and disappeared from the world. If you want to get out of this world, you're gonna have to make an effort.";
-        if (TimeManager.GlobalDay%10 == 9)
+        if (TimeManager.GlobalDay % 20 == 9)
             Chat.GetComponent<Text>().text =
                 "If one day you buy everything from me, I will still come back every day... You're the only friend in the world.";
-        if (TimeManager.GlobalDay%10 == 0)
+        if (TimeManager.GlobalDay % 20 == 10 && !TimeManager.GameMode) //easy
             Chat.GetComponent<Text>().text =
-                "Watch out, the big guy's coming, and it's getting stronger!";
-
+                "You ask the big guy? God knows where it comes from!";
+        if (TimeManager.GlobalDay % 20 == 10 && TimeManager.GameMode) //challenge
+            Chat.GetComponent<Text>().text =
+                "I hate 17. In this world, 17 is a dangerous number.";
+        if(TimeManager.GlobalDay % 20 == 11)
+            Chat.GetComponent<Text>().text =
+                "There used to be people who could relate to their weapons. I mean, their seemingly ordinary sword swings sometimes have gorgeous effects. They taught me a little bit, but that was a long time ago.";
+        if(TimeManager.GlobalDay % 20 == 12)
+            Chat.GetComponent<Text>().text =
+                "You may have seen a knight -- I mean, a statue of him. He used to protect me with his golden sword. If you give me something I need, I can give you that sword.";
+        if(TimeManager.GlobalDay % 20 == 13)
+            Chat.GetComponent<Text>().text =
+                "You may wonder where I go after seeing you every day. What if everyone like you had their own world, and I walked through it? Well, I'm just kidding.";
+        if(TimeManager.GlobalDay % 20 == 14)
+            Chat.GetComponent<Text>().text =
+                "Do you want me to sell something that will cure you anytime? I tried to do that, but I couldn't make it.";
+        if(TimeManager.GlobalDay % 20 == 15 && !TimeManager.GameMode) //easy
+            Chat.GetComponent<Text>().text =
+                "That guy comes again. Watch out, it's getting stronger too!";
+        if(TimeManager.GlobalDay % 20 == 15 && TimeManager.GameMode) //challenge
+            Chat.GetComponent<Text>().text =
+                "Do you feel it? A powerful force is approaching. I mean in time.";
+        if(TimeManager.GlobalDay % 20 == 16)
+            Chat.GetComponent<Text>().text =
+                "If you are leaving, my friend, I won't miss you. But I hope we never see each other again, at least not in this same world.";
+        if(TimeManager.GlobalDay % 20 == 17 && !TimeManager.GameMode)
+            Chat.GetComponent<Text>().text =
+                "Some of the worlds are changing dramatically today. The wind tells me this.";
+        if(TimeManager.GlobalDay % 20 == 17 && TimeManager.GameMode)
+            Chat.GetComponent<Text>().text =
+                "It's time for the final battle. Bring all my best wishes!";
+        if(TimeManager.GlobalDay % 20 == 18)
+            Chat.GetComponent<Text>().text =
+                "Not many people have been with me as long as you have. To be honest, I appreciate it.";
+        if(TimeManager.GlobalDay % 20 == 19)
+            Chat.GetComponent<Text>().text =
+                "Can you believe it? No two worlds are exactly the same. I have no proof. I'm just saying.";
+        if(TimeManager.GlobalDay % 20 == 0)
+            Chat.GetComponent<Text>().text =
+                "You've seen it all before, haven't you? Go fight and believe in yourself!";
+        if(TimeManager.GlobalDay % 20 == 1)
+            Chat.GetComponent<Text>().text =
+                "I don't remember the first time I saw you. Maybe it's because we've seen each other in so many different worlds. Do I look familiar to you?";
     }
 
     // public void AddEvent(GameObject GO)
@@ -158,7 +196,7 @@ public class StoreBehavior : MonoBehaviour
         info += "Stone: " + IronHelmetPrice.Stone + "\n";
         info += "Iron: " + IronHelmetPrice.Iron + "\n";
         info += "Gem: " + IronHelmetPrice.Gem + "\n";
-        info += HelmetPrice.Info;
+        info += IronHelmetPrice.Info;
         text.text = info;
         Helm3.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);
         CurrentObject = Helm3;
@@ -351,7 +389,7 @@ public class StoreBehavior : MonoBehaviour
         string info = "";
         info += "Holy Light" + "\n";
         info += "Money: "+ 500 + "\n";
-        info += "Heal 20% of your max HP\n";
+        info += "Heal 15% of your max HP\n";
         text.text = info;
         HolyLight.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);
         CurrentObject = HolyLight;
@@ -386,6 +424,7 @@ public class StoreBehavior : MonoBehaviour
         }
         else
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
             Debug.Log("Source not enough");
         }
         
@@ -405,11 +444,13 @@ public class StoreBehavior : MonoBehaviour
             heroBehavior.Gem -= WoodSwordPrice.Gem;
             Debug.Log("Buy a Wood Sword");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            
             DisableBlock(gameObject);
         }
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
         
     }
@@ -433,6 +474,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
         
     }
@@ -456,6 +498,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
         
     }
@@ -479,6 +522,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
         
     }
@@ -502,6 +546,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
         
     }
@@ -525,6 +570,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 
@@ -547,6 +593,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 
@@ -569,6 +616,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
     
@@ -591,6 +639,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 
@@ -613,6 +662,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
     
@@ -635,6 +685,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
     
@@ -657,6 +708,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 
@@ -679,6 +731,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
     
@@ -697,6 +750,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 
@@ -715,6 +769,7 @@ public class StoreBehavior : MonoBehaviour
         else
         {
             Debug.Log("Source not enough");
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
 

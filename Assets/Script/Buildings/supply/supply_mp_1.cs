@@ -18,8 +18,8 @@ public class supply_mp_1 : Building
     {
         level = 1;
         name = "Magic Well - 1";
-        mp = 10;
-        Info = "Magic Well - 1\nIncrease your MP by 10.\nMagic flows in it.";
+        mp = 30;
+        Info = "Magic Well - 1\nIncrease your MP by 30.\nMagic flows in it.";
     }
 
     void Update()
@@ -27,16 +27,16 @@ public class supply_mp_1 : Building
         if (level == 2)
         {
             name = "Magic Well - 2";
-            mp = 20;
-            Info = "Magic Well - 2\nIncrease your MP by 20.\nMagic flows in it.";
+            mp = 40;
+            Info = "Magic Well - 2\nIncrease your MP by 40.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover2");
         }
 
         if (level == 3)
         {
             name = "Magic Well - 3(max)";
-            mp = 30;
-            Info = "Magic Well - 3(max)\nIncrease your MP by 30.\nMagic flows in it.";
+            mp = 50;
+            Info = "Magic Well - 3(max)\nIncrease your MP by 50.\nMagic flows in it.";
             GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("MpRecover3");
         }
     }
@@ -61,6 +61,7 @@ public class supply_mp_1 : Building
     {
         if (Input.GetMouseButtonUp(0))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (level == 1)
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
@@ -120,6 +121,7 @@ public class supply_mp_1 : Building
         }
         else if (Input.GetMouseButtonUp(1))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
                 GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {

@@ -31,9 +31,18 @@ public class AudioManager : MonoBehaviour
     public AudioClip Upgrade;
 
     public AudioClip BossHit;
+    //钻石 45~1
+    //购买失败，升级失败：16
+    //装卸装备：20
+    //其余click（build/buy，选择建筑，返回，打开商店，商店返回，点击建筑（升级界面），sure，cancel，背包返回，help等任何地方）：32
+
+    public AudioClip Diamond;
+    
+    public AudioClip Fail;
+    
+    public AudioClip Equipment;
     
     public Slider VolumeSlider;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +55,6 @@ public class AudioManager : MonoBehaviour
         BGMSource.volume = VolumeSlider.value;
         audioSource.volume = VolumeSlider.value;
     }
-    
     public void PlayWood()
     {
         audioSource.PlayOneShot(Wood, AudioSound);
@@ -97,6 +105,21 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(clip, AudioSound);
     }
     
+    public void PlayDiamond()
+    {
+        audioSource.PlayOneShot(Diamond, AudioSound);
+    }
+    
+    public void PlayFail()
+    {
+        audioSource.PlayOneShot(Fail, AudioSound);
+    }
+    
+    public void PlayEquipment()
+    {
+        audioSource.PlayOneShot(Equipment, AudioSound);
+    }
+
     public void PlayBossHit()
     {
         audioSource.PlayOneShot(BossHit, AudioSound);

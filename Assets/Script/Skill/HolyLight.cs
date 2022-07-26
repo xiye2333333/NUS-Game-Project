@@ -8,7 +8,7 @@ namespace Script.Skill
         public HolyLight()
         {
             name = "Holy Light";
-            info = "Attack enemy with a holy light\nAdd 20% of max HP";
+            info = "Attack enemy with a holy light\nAdd 15% of max HP";
             SpiritPath = "Skill/Icon11";
         }
         public override void Use(GameObject target, bool isBoss)
@@ -17,9 +17,9 @@ namespace Script.Skill
             if (!isBoss)
             {
                 target.GetComponent<MonsterBehavior>().isHit(hero.Attack);
-                if(hero.HP + hero.HPCeil * 0.2 <= hero.HPCeil)
+                if(hero.HP + hero.HPCeil * 0.15 <= hero.HPCeil)
                 {
-                    hero.HP += (int)(hero.HPCeil * 0.2);
+                    hero.HP += (int)(hero.HPCeil * 0.15);
                 }
                 else
                 {

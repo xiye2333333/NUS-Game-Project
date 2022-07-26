@@ -30,6 +30,7 @@ public class treasure : Building
             {
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem += addGem;
                 GameObject.Find("HeroCanvas").GetComponent<HeroCanvas>().ObtainGem(addGem);
+                GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayDiamond();
             }
         }
     }

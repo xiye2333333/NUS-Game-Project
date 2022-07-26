@@ -23,6 +23,7 @@ public class Merchant : MonoBehaviour
             // GameManager.getGM.SwitchToPause();
             StorePageIsOpen = true;
             GameManager.getGM.SwitchToBagging();
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
         }
     }
 }

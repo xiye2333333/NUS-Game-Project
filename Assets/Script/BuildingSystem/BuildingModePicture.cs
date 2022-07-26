@@ -81,6 +81,7 @@ public class BuildingModePicture : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
             foreach (GameObject button in BuildMenu.Buttons)
             {
                 button.gameObject.SetActive(true);

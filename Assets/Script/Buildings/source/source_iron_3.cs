@@ -40,6 +40,7 @@ public class source_iron_3 : Building
     {
         if (Input.GetMouseButtonUp(1))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
                 GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {

@@ -36,6 +36,7 @@ public class home : Building
     {
         if (level == 1)
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running || GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {
                 if(GameObject.Find("Build Menu") != null)
@@ -60,6 +61,7 @@ public class home : Building
 
         if (level == 2)
         {
+            
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running || GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {
                 if(GameObject.Find("Build Menu") != null)

@@ -48,6 +48,7 @@ public class source_stone_2 : Building
     {
         if (Input.GetMouseButtonUp(0))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (level == 2)
             {
                 if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
@@ -81,6 +82,7 @@ public class source_stone_2 : Building
         }
         else if (Input.GetMouseButtonUp(1))
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayClick();
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Running ||
                 GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Pause)
             {

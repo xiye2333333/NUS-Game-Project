@@ -282,7 +282,7 @@ public class BuildMenu : MonoBehaviour
         // statue_mp_1 statue = new statue_mp_1() ;
         string text = "";
         text += "Magic Well" + "\n";
-        text += "Increase your MP by 1.\nMagic flows in it." + "\n";
+        text += "Increase your MP by 10.\nMagic flows in it." + "\n";
         text += "Need: 80 gold coins";
         BuildingInfo.GetComponent<Text>().text = text;
     }
@@ -292,7 +292,7 @@ public class BuildMenu : MonoBehaviour
         // supply_hp_1 statue = new supply_hp_1() ;
         string text = "";
         text += "Goddess Statue" + "\n";
-        text += "Increase HP ceiling by 10.\nGoddess blesses you." + "\n";
+        text += "Increase HP ceiling by 20.\nGoddess blesses you." + "\n";
         text += "Need: 150 gold coins and 5 woods";
         BuildingInfo.GetComponent<Text>().text = text;
     }
@@ -302,7 +302,7 @@ public class BuildMenu : MonoBehaviour
         // supply_mp_1 statue = new supply_mp_1() ;
         string text = "";
         text += "Cross Statue" + "\n";
-        text += "Decrease MP ceiling by 5.\nReward for piety." + "\n";
+        text += "Decrease MP ceiling by 15%.\nReward for piety." + "\n";
         text += "Need: 150 gold coins and 5 stones";
         BuildingInfo.GetComponent<Text>().text = text;
     }

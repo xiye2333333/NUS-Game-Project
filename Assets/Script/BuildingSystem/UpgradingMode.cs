@@ -18,13 +18,11 @@ public class UpgradingMode : MonoBehaviour
     public int defense = 0;
 
     public int level;
-
+    
     public int addLevel = 0;
-
-
     // Start is called before the first frame update
     void Start()
-    { 
+    {
         mpDecent = 1;
     }
 
@@ -63,19 +61,22 @@ public class UpgradingMode : MonoBehaviour
             defense = 0;
             level = 0;
             addLevel = 0;
-
+            
             GameObject.Find("Upgrade").SetActive(false);
             if (GameObject.Find("Build Menu") == null)
             {
                 GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
                 GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
             }
-
             if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
                 GameManager.getGM.SwitchToPause();
         }
         else
         {
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
+            GameObject.Find("Upgrade").transform.Find("sure").gameObject.SetActive(false);
+            GameObject.Find("Upgrade").transform.Find("cancel").gameObject.SetActive(false);
+            GameObject.Find("Upgrade").transform.Find("cancel2").gameObject.SetActive(true);
             if (GameObject.Find("Hero").GetComponent<HeroBehavior>().Level < level)
             {
                 GameObject.Find("UpgradeText").GetComponent<Text>().text = "Upgrade Failed:\nInsufficient home level!";
@@ -84,32 +85,10 @@ public class UpgradingMode : MonoBehaviour
             {
                 GameObject.Find("UpgradeText").GetComponent<Text>().text = "Upgrade Failed:\nNot enough resources!";
             }
-
             Debug.Log("Not enough resources");
-            money = 0;
-            wood = 0;
-            stone = 0;
-            iron = 0;
-            gem = 0;
-            hpCeil = 0;
-            mpDecent = 1;
-            attack = 0;
-            defense = 0;
-            level = 0;
-            addLevel = 0;
-
-            GameObject.Find("Upgrade").SetActive(false);
-            if (GameObject.Find("Build Menu") == null)
-            {
-                GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
-                GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
-            }
-
-            if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
-                GameManager.getGM.SwitchToPause();
+            GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
     }
-
     public void OnClickCancel()
     {
         money = 0;
@@ -123,19 +102,18 @@ public class UpgradingMode : MonoBehaviour
         defense = 0;
         level = 0;
         addLevel = 0;
+        GameObject.Find("Upgrade").transform.Find("sure").gameObject.SetActive(true);
+        GameObject.Find("Upgrade").transform.Find("cancel").gameObject.SetActive(true);
+        GameObject.Find("Upgrade").transform.Find("cancel2").gameObject.SetActive(false);
         GameObject.Find("Upgrade").SetActive(false);
-        // for (int i = 0; i < GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList.Count; i++)
-        // {
-        //     ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = true;
-        // }
         if (GameObject.Find("Build Menu") == null)
         {
             GameObject.Find("Canvas").transform.Find("BuildButton").gameObject.SetActive(true);
             GameObject.Find("Canvas").transform.Find("BagButton").gameObject.SetActive(true);
         }
-
         if (GameManager.getGM.GetGameStatus() == GameManager.GameStatus.Upgrading)
             GameManager.getGM.SwitchToPause();
+
     }
 
     public bool CanUpgrade()
@@ -147,18 +125,7 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Hero").GetComponent<HeroBehavior>().Gem >= gem &&
             GameObject.Find("Hero").GetComponent<HeroBehavior>().Level >= level)
             return true;
-        else if (GameObject.Find("Hero").GetComponent<HeroBehavior>().Level < level)
-        {
-            GameObject.Find("BuildingInfo").GetComponent<Text>().text = "Upgrade Failed:\nInsufficient home level!";
-            GameObject.Find("UpgradeText").GetComponent<Text>().text = "Upgrade Failed:\nInsufficient home level!";
-            return false;
-        }
-        else
-        {
-            GameObject.Find("BuildingInfo").GetComponent<Text>().text = "Upgrade Failed:\nNot enough resources!";
-            GameObject.Find("UpgradeText").GetComponent<Text>().text = "Upgrade Failed:\nNot enough resources!";
-            return false;
-        }
+        return false;
     }
 
     public void Purchase()
@@ -178,18 +145,19 @@ public class UpgradingMode : MonoBehaviour
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().HP =
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().HPCeil;
-
+        
         GameObject.Find("Hero").GetComponent<HeroBehavior>().MPTrue *= mpDecent;
-        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil = (int)GameObject.Find("Hero").GetComponent<HeroBehavior>().MPTrue;
-        if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil < 0)
+        GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil =(int) GameObject.Find("Hero").GetComponent<HeroBehavior>().MPTrue;
+        if(GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil < 0)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil = 0;
         if (GameObject.Find("Hero").GetComponent<HeroBehavior>().MP >=
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil)
             GameObject.Find("Hero").GetComponent<HeroBehavior>().MP =
                 GameObject.Find("Hero").GetComponent<HeroBehavior>().MPCeil;
-
+        
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Attack += attack;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Defense += defense;
         GameObject.Find("Hero").GetComponent<HeroBehavior>().Level += addLevel;
     }
 }
+    
