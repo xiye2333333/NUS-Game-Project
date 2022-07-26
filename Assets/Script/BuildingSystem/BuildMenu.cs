@@ -282,7 +282,7 @@ public class BuildMenu : MonoBehaviour
         // statue_mp_1 statue = new statue_mp_1() ;
         string text = "";
         text += "Magic Well" + "\n";
-        text += "Increase your MP by 10.\nMagic flows in it." + "\n";
+        text += "Increase your MP by 30.\nMagic flows in it." + "\n";
         text += "Need: 80 gold coins";
         BuildingInfo.GetComponent<Text>().text = text;
     }

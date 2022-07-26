@@ -377,7 +377,7 @@ if (TimeManager.GlobalDay % 20 == 2)
         string info = "";
         info += "Bash" + "\n";
         info += "Money: "+ 500 + "\n";
-        info += "Double Damage\n";
+        info += "Triple Damage\n";
         text.text = info;
         Bash.GetComponent<Image>().color = new Color(255/255f,165/255f,165/255f,255/255f);
         CurrentObject = Bash;
