@@ -30,12 +30,16 @@ public class MenuManager : MonoBehaviour
     public void OnClickEasyButton()
     {
         GameObject.Find("GameData").GetComponent<GamaData>().isChallenge = false;
+        GameObject.Find("GameData").GetComponent<GamaData>().MusicVolume =
+            GameObject.Find("MusicManager").GetComponent<AudioSource>().volume;
         SceneManager.LoadScene("Scenes/SampleScene");
     }
 
     public void OnClickChallengeButton()
     {
         GameObject.Find("GameData").GetComponent<GamaData>().isChallenge = true;
+        GameObject.Find("GameData").GetComponent<GamaData>().MusicVolume =
+            GameObject.Find("MusicManager").GetComponent<AudioSource>().volume;
         SceneManager.LoadScene("Scenes/SampleScene");
     }
 

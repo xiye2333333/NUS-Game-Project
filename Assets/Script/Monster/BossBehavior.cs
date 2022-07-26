@@ -39,8 +39,8 @@ public class BossBehavior : MonoBehaviour
     {
         HP = 400;
         MaxHP = 400;
-        Attack = 100;
-        Defence = 65;
+        Attack = 120;
+        Defence = 70;
         Speed = 2.0f;
         Critical = 0f;
         HpBarSlider.value = 1.0f;

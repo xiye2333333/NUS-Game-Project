@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Script.System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,6 +48,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        VolumeSlider.value = GameObject.Find("GameData").GetComponent<GamaData>().MusicVolume;
     }
 
     // Update is called once per frame
@@ -123,6 +125,12 @@ public class AudioManager : MonoBehaviour
     public void PlayBossHit()
     {
         audioSource.PlayOneShot(BossHit, AudioSound);
+    }
+    
+    private void OnDestroy()
+    {
+        
+        GameObject.Find("GameData").GetComponent<GamaData>().MusicVolume = VolumeSlider.value;
     }
     
 }

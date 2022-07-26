@@ -412,6 +412,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickKnife(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(KnifePrice.Money,KnifePrice.Wood,KnifePrice.Stone,KnifePrice.Iron,KnifePrice.Gem))
@@ -420,10 +421,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Money -= KnifePrice.Money;
             Debug.Log("Buy a Knife");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
             Debug.Log("Source not enough");
         }
@@ -432,6 +435,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickWoodSword(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(WoodSwordPrice.Money,WoodSwordPrice.Wood,WoodSwordPrice.Stone,WoodSwordPrice.Iron,WoodSwordPrice.Gem))
@@ -444,11 +448,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= WoodSwordPrice.Gem;
             Debug.Log("Buy a Wood Sword");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
-            
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -457,6 +462,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickIronSword(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(IronSwordPrice.Money,IronSwordPrice.Wood,IronSwordPrice.Stone,IronSwordPrice.Iron,IronSwordPrice.Gem))
@@ -469,10 +475,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= IronSwordPrice.Gem;
             Debug.Log("Buy a Iron Sword");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -481,6 +489,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickGoldSword(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(GoldSwordPrice.Money,GoldSwordPrice.Wood,GoldSwordPrice.Stone,GoldSwordPrice.Iron,GoldSwordPrice.Gem))
@@ -493,10 +502,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= GoldSwordPrice.Gem;
             Debug.Log("Buy a Gold Sword");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -505,6 +516,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickWoodShield(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(WoodShieldPrice.Money,WoodShieldPrice.Wood,WoodShieldPrice.Stone,WoodShieldPrice.Iron,WoodShieldPrice.Gem))
@@ -517,10 +529,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= WoodShieldPrice.Gem;
             Debug.Log("Buy a Wooden Shield");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -529,6 +543,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickIronShield(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(IronShieldPrice.Money,IronShieldPrice.Wood,IronShieldPrice.Stone,IronShieldPrice.Iron,IronShieldPrice.Gem))
@@ -541,10 +556,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= IronShieldPrice.Gem;
             Debug.Log("Buy a Iron Shield");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -553,6 +570,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickLeatherHelmet(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(LeatherHelmetPrice.Money,LeatherHelmetPrice.Wood,LeatherHelmetPrice.Stone,LeatherHelmetPrice.Iron,LeatherHelmetPrice.Gem))
@@ -565,10 +583,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= LeatherHelmetPrice.Gem;
             Debug.Log("Buy a Leather Helmet");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -576,6 +596,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickHelmet(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(HelmetPrice.Money,HelmetPrice.Wood,HelmetPrice.Stone,HelmetPrice.Iron,HelmetPrice.Gem))
@@ -588,10 +609,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= HelmetPrice.Gem;
             Debug.Log("Buy a Normal Helmet");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -599,6 +622,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickIronHelmet(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(IronHelmetPrice.Money,IronHelmetPrice.Wood,IronHelmetPrice.Stone,IronHelmetPrice.Iron,IronHelmetPrice.Gem))
@@ -611,10 +635,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= IronHelmetPrice.Gem;
             Debug.Log("Buy a Iron Helmet");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -622,6 +648,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickLeatherArmor(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(LeatherArmorPrice.Money,LeatherArmorPrice.Wood,LeatherArmorPrice.Stone,LeatherArmorPrice.Iron,LeatherArmorPrice.Gem))
@@ -634,10 +661,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= LeatherArmorPrice.Gem;
             Debug.Log("Buy a Leather Armor");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -645,6 +674,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickWoodArmor(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(WoodArmorPrice.Money,WoodArmorPrice.Wood,WoodArmorPrice.Stone,WoodArmorPrice.Iron,WoodArmorPrice.Gem))
@@ -657,10 +687,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= WoodArmorPrice.Gem;
             Debug.Log("Buy a Wooden Armor");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -668,6 +700,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickIronArmor(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(IronArmorPrice.Money,IronArmorPrice.Wood,IronArmorPrice.Stone,IronArmorPrice.Iron,IronArmorPrice.Gem))
@@ -680,10 +713,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= IronArmorPrice.Gem;
             Debug.Log("Buy a Iron Armor");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -691,6 +726,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickLeatherBoots(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(LeatherBootPrice.Money,LeatherBootPrice.Wood,LeatherBootPrice.Stone,LeatherBootPrice.Iron,LeatherBootPrice.Gem))
@@ -703,10 +739,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= LeatherBootPrice.Gem;
             Debug.Log("Buy a Leather Boots");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -714,6 +752,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickIronBoot(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(IronBootPrice.Money,IronBootPrice.Wood,IronBootPrice.Stone,IronBootPrice.Iron,IronBootPrice.Gem))
@@ -726,10 +765,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Gem -= IronBootPrice.Gem;
             Debug.Log("Buy a Iron Boots");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -737,6 +778,7 @@ if (TimeManager.GlobalDay % 20 == 2)
     
     public void OnClickBash(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(500,0,0,0,0))
@@ -745,10 +787,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Money -= 500;
             Debug.Log("Buy Bash");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }
@@ -756,6 +800,7 @@ if (TimeManager.GlobalDay % 20 == 2)
 
     public void OnClickHolyLight(GameObject gameObject)
     {
+        Text text = InfoText.GetComponent<Text>();
         Hero = GameObject.Find("Hero");
         HeroBehavior heroBehavior = Hero.GetComponent<HeroBehavior>();
         if (SourceIsEnough(500,0,0,0,0))
@@ -764,10 +809,12 @@ if (TimeManager.GlobalDay % 20 == 2)
             heroBehavior.Money -= 500;
             Debug.Log("Buy Bash");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayBuy();
+            text.text = "Buy successfully, remember to put on it in bag";
             DisableBlock(gameObject);
         }
         else
         {
+            text.text = "Not enough source";
             Debug.Log("Source not enough");
             GameObject.Find("AudioEffect").GetComponent<AudioManager>().PlayFail();
         }

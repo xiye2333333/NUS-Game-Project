@@ -68,13 +68,13 @@ public class statue_defense_1 : Building
                     //     if (((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).name != "Hunter(Clone)")
                     //     ((GameObject)(GameObject.Find("Hero").GetComponent<HeroBehavior>().BuildingList[i])).GetComponent<BoxCollider2D>().enabled = false;
                     // }
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 400;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 20;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 20;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 500;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 35;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 35;
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 2;
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().defense = 2;
                     GameObject.Find("UpgradeText").GetComponent<Text>().text =
-                        "Are you sure to upgrade\nShield Statue - 1?\nIt needs 400 gold coins, 20 woods and 20 stones.";
+                        "Are you sure to upgrade\nShield Statue - 1?\nIt needs 500 gold coins, 35 woods and 35 stones.";
                 }
             }
 
@@ -93,14 +93,14 @@ public class statue_defense_1 : Building
 
                     GameObject.Find("Canvas").transform.Find("Upgrade").gameObject.SetActive(true);
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().building = gameObject;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1000;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 50;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 50;
-                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 10;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().money = 1500;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().wood = 100;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().stone = 100;
+                    GameObject.Find("Upgrade").GetComponent<UpgradingMode>().iron = 30;
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().level = 3;
                     GameObject.Find("Upgrade").GetComponent<UpgradingMode>().defense = 4;
                     GameObject.Find("UpgradeText").GetComponent<Text>().text =
-                        "Are you sure to upgrade\nShield Statue - 2?\nIt needs 1000 gold coins, 50 woods, 50 stones and 10 irons.";
+                        "Are you sure to upgrade\nShield Statue - 2?\nIt needs 1500 gold coins, 100 woods, 100 stones and 30 irons.";
                 }
             }
         }else if (Input.GetMouseButtonUp(1))
